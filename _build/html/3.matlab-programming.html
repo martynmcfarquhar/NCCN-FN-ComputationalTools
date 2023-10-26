@@ -1,0 +1,837 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>MATLAB Programming &#8212; Computational Tools</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '3.matlab-programming';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Linear Algebra" href="4.linear-algebra.html" />
+    <link rel="prev" title="MATLAB and SPM" href="2.matlab-and-spm.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Computational Tools - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Computational Tools - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="1.understanding-medical-images.html">Understanding Medical Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2.matlab-and-spm.html">MATLAB and SPM</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">MATLAB Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4.linear-algebra.html">Linear Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5.summary.html">Summary</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F3.matlab-programming.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/3.matlab-programming.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>MATLAB Programming</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-matlab-prompt">The MATLAB Prompt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scripts">Scripts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-flow">Control Flow</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-statement">If-statement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops">For-loops</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-structures">Data Structures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix">Matrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#character-array">Character Array</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="matlab-programming">
+<h1>MATLAB Programming<a class="headerlink" href="#matlab-programming" title="Permalink to this heading">#</a></h1>
+<p>You should now have some idea about both MATLAB and SPM. Although possible to use SPM without any further knowledge of MATLAB, there is an argument to be made for being at least a bit familiar with MATLAB programming. Although many of our initial interactions with SPM will be via its graphical interface, understanding how programming works, even superficially, will pay dividends in the future. For starters, understanding how to program in MATLAB can be instructive because you can use MATLAB to play around with some of the concepts we will be learning about. This is something we will be doing in the synchronous sessions and so the more familiarity you have before these sessions the better. In addition, there are elements of SPM that can be automated with just a bit of programming knowledge. This can save a huge amount of time and effort and is particularly important if you are looking towards a research career. We will not be getting into this aspect too much yet, but we will do in Advanced Image Analysis in Semester 2 and so building a good foundation now is no bad thing. If nothing else, programming is a very useful transferable skill that warrants some degree of attention.</p>
+<p>One thing to note about this section is that it is written as more of a reference for future use and can be a bit tedious to go through. We would recommend doing it at this stage, but you may want to return here when you see some of these elements later in the course in order to contextualise their use. You also do not need to memorise any of this, just read through it and try and get the gist. You may want to have MATLAB open as well so you can try some of the code for yourself.</p>
+<section id="the-matlab-prompt">
+<h2>The MATLAB Prompt<a class="headerlink" href="#the-matlab-prompt" title="Permalink to this heading">#</a></h2>
+<p>In order to interact with MATLAB, we have to use the MATLAB prompt. The prompt is signified in the Command Window by the two angled brackets &gt;&gt;. These brackets indicate where we can type in commands for MATLAB to interpret. The general workflow is that we type something at the prompt, hit the <ENTER> key and then whatever we typed gets sent to the MATLAB interpreter to try and make sense of it. If MATLAB understands what we typed then it will do whatever we asked and return the answer. If MATLAB does not understand what we typed, it will return an error trying to tell us what it did not understand. Alternatively, MATLAB might understand us, but then runs into problems trying to do what we asked it to do. In this case it will also return an error telling us what went wrong.</p>
+<p>Throughout this section, we will indicate MATLAB code like this</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>ans = 12</pre></body></html></div></div>
+</div>
+<p>where the text in the box indicates what you can type at the MATLAB prompt and the text below indicates the output of the command. If the code in the grey box contains multiple lines, it can be typed at the prompt one line at a time, but usually this will indicate a MATLAB script instead (more on scripts later). We will often show the output of these commands as well so you can compare our answer to the one MATLAB has given you.</p>
+<p>If you mistype something, MATLAB will likely return an error.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">3</span><span class="w"> </span><span class="s">$</span><span class="w"> </span><span class="s">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Invalid text character. Check for unsupported symbol, invisible character, or pasting of non-ASCII characters.
+</pre></div>
+</div>
+</div>
+</div>
+<p>When faced with an error, part of the skill of computer programming is trying to work out why the command failed. Even for seasoned programmers, errors are common. Errors will decrease with experience, but they will never disappear. The trick is not panicking when you see red text, but rather reading what it says carefully and trying to fix it quickly. In the error above, MATLAB is telling us that it does not understand what $ means, but note that errors will not always be this obvious. More times than not, the problem is a user error. So the best advice we can give when faced with a problem is to look for mistakes you have made as carefully as possible. Only when you have exhausted all other possibilities should you start wondering whether it is a bug or problem with MATLAB.</p>
+</section>
+<section id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this heading">#</a></h2>
+<p>The most basic element of any programming language is the ability to store things in memory for later use. We do this by using a variable, which you can think of as a box with a name that we put something inside to keep for later. As an example, the code below shows the declaration of a variable called a and assigning it the number 5.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is like having a box called a that contains the number 5. Now, every time we type a, MATLAB will replace it with the number 5. This means we can do the following</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">7</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>ans = 12</pre></body></html></div></div>
+</div>
+<p>Similarly, we could declare another variable with a different name.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can then add those variables together</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>ans = 15</pre></body></html></div></div>
+</div>
+<p>Although these examples have used numbers, variables can hold any data type that MATLAB recognises. For instance, one of the most useful data types we can save to a variable is text</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">hello_text</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;hello&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>which we could use to store a file path or file name, for instance.</p>
+<p>There are a few rules you have to adhere to when naming variables. A variable name cannot start with a number, it cannot contain spaces and the only special character you can use is an underscore. You also need to be aware that MATLAB is case-sensitive and so hello_text and HELLO_TEXT would be seen as different variables. In addition, remember that a variable can only hold one thing at a time and if you re-assign a variable then the original value will be lost.</p>
+</section>
+<section id="scripts">
+<h2>Scripts<a class="headerlink" href="#scripts" title="Permalink to this heading">#</a></h2>
+<p>Typically, if we are writing code to complete some task we will not be entering it line by line at the MATLAB prompt. Instead, we will write all our steps inside a script. You can think of a script as a recipe that we write in code inside a text file. It has multiple steps that are written on different lines read from top to bottom that MATLAB will execute one at a time. These scripts can be saved so they can be re-used or used as templates for other scripts in the future. Indeed, writing scripts is one of the best ways of leaving a paper trail for your analysis to fully document what you did to the data.</p>
+<p>In order to start writing a script click the New Script icon in the MATLAB toolbar to open the blank script editor. We can now enter all our code in this new window. When we want to run it, we save the file and then click the big green Run button in the toolbar. Usefully, we can also include comments in a script. These are pieces of text that MATLAB will ignore, but serve as notes for our future selves. You can include a comment in a script by typing the percentage symbol, followed by whatever text you like. These will be coloured green to make the comments obvious. For example</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% This is a comment</span>
+<span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+
+<span class="c">% This is another comment. It will be ignored by MATLAB when the script is executed.</span>
+<span class="n">b</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+
+<span class="c">% Comments can be used to describe what code is doing. For instance, add a to b and save to c.</span>
+<span class="n">c</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="control-flow">
+<h2>Control Flow<a class="headerlink" href="#control-flow" title="Permalink to this heading">#</a></h2>
+<p>In the process of writing a script, we may need to decide whether to run code based on some criteria. Alternatively, we may need to repeat a chunk of code a certain number of times. Both of these tasks are examples of control flow where we dictate a more complex path for the code to follow (rather than just running line-by-line). We can break the main types of control flow down into if-statements and for-loops.</p>
+<section id="if-statement">
+<h3>If-statement<a class="headerlink" href="#if-statement" title="Permalink to this heading">#</a></h3>
+<p>An if-statement allows us to make a choice about whether some code is run or not. This is intimately tied to the ideas of variables. Because we do not necessarily know what value a variable will have when we run some code, we may want to check what the value is and then decide what we want to do. An if-statement allows us to ask a question and then decide whether to run some code or not, depending on the answer. This question has to either be true or false, so we can only ask things like “is this variable larger than 5”. We can then decide what we want MATLAB to do if the question is true and what we want MATLAB to do if the question is false.</p>
+<p>An if-statement has the following structure</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%if % Ask question</span>
+<span class="w">    </span><span class="c">% What to do if question is true</span>
+<span class="c">%else</span>
+<span class="w">    </span><span class="c">% What to do if question is false</span>
+<span class="c">%end</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>So, for example, if we wanted to set some text to be different if the variable a was larger than 5 compared to if it is smaller than (or equal) to 5, we could write</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">number</span><span class="w">  </span><span class="p">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
+<span class="n">message</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;&#39;</span><span class="p">;</span>
+
+<span class="k">if</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">5</span>
+<span class="w">    </span><span class="n">message</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;The number you typed is greater than 5&#39;</span><span class="p">;</span>
+<span class="k">else</span>
+<span class="w">    </span><span class="n">message</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;The number you typed is is less than (or equal) to 5&#39;</span><span class="p">;</span>
+<span class="k">end</span>
+
+<span class="nb">disp</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The number you typed is greater than 5
+</pre></div>
+</div>
+</div>
+</div>
+<p>When this script is run, you will be prompted to type in a number and then you will see a message about whether the number was greater than 5 or not. Not exactly Nobel prize stuff, but hopefully the use of the if-statement is clear.</p>
+<p>We can also place an if-statement inside another if-statement to make different choices if the original question is true. This is known as nesting statements.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">number</span><span class="w">  </span><span class="p">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<span class="n">message</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;&#39;</span><span class="p">;</span>
+
+<span class="k">if</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">5</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">5</span>
+<span class="w">        </span><span class="n">message</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;The number you typed was 5&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">else</span>
+<span class="w">        </span><span class="n">message</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;The number you typed was greater than 5&#39;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">end</span>
+<span class="k">else</span>
+<span class="w">    </span><span class="n">message</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;The number you typed was less than 5&#39;</span><span class="p">;</span>
+<span class="k">end</span>
+
+<span class="nb">disp</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The number you typed was 5
+</pre></div>
+</div>
+</div>
+</div>
+<p>In all of these examples, the symbols &gt;, &gt;= and == are all examples of relational operations that allow us to compare variables in different ways. You can read about the operations that MATLAB supports in the documentation.</p>
+</section>
+<section id="for-loops">
+<h3>For-loops<a class="headerlink" href="#for-loops" title="Permalink to this heading">#</a></h3>
+<p>Beyond checking variable values, we often want to repeat some code a certain number of times in a script. For instance, we may want to copy multiple files, or run some image processing on multiple images. In both cases we want MATLAB to repeat the same set of steps multiple times, but with a different input. For this purpose, all programming languages contain the concept of loops, which allow us to write a set of steps once and then ask the computer to repeat those steps as many times as we want.</p>
+<p>The main type of loop we use is known as a for-loop, which has the following structure</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%for % index_variable = start_value:end_value</span>
+<span class="w">    </span><span class="c">% What to do on each iteration</span>
+<span class="c">%end</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>and could be used to sum all the number from 1 to 10</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">number</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="nb">sum</span><span class="w">    </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="n">number</span>
+<span class="w">    </span><span class="nb">sum</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">sum</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">i</span><span class="p">;</span>
+<span class="k">end</span>
+
+<span class="nb">disp</span><span class="p">(</span><span class="nb">sum</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    55
+</pre></div>
+</div>
+</div>
+</div>
+<p>An important part of the for-loop is the index variable which tells us the current iteration of the loop. In the example above, the index variable is called i. We asked MATLAB to start i with a value of 1 and then continue adding 1 until it reached the value of number, at which point the loop will exit. This is all given in the syntax for i = 1:number. On the first iteration of the loop, i will have a value of 1, on the second iteration i will have a value of 2 and so on. The utility of this is that we can use i inside the loop to know which iteration is currently running. In the example above, we used this to add the current number onto the previous sum, but the real utility of this is that we can use i to select different variables for each iteration of the loop. For instance, if we had a list of images we wanted to process we can use a for-loop and then use the index variable to select the correct image on each iteration.</p>
+<p>For-loops can also be nested, which we will see quite often because these allow us to loop over 2D and 3D structures. For instance, if we wanted to access every voxel of a 3D image we could use three nested for-loops that move over the rows, columns and slices of an image</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">image_rows</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+<span class="n">image_cols</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+<span class="n">image_slcs</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+
+<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="n">image_rows</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nb">j</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="n">image_cols</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="n">image_slcs</span>
+<span class="w">            </span><span class="c">% Do something with the voxel at row i column j slice k</span>
+<span class="w">        </span><span class="k">end</span>
+<span class="w">    </span><span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="data-structures">
+<h2>Data Structures<a class="headerlink" href="#data-structures" title="Permalink to this heading">#</a></h2>
+<p>We have now seen how we can use variables and control flow to build basic scripts. However, one limitation of what we have so far is that if we want to access and process many values within the script we would need to assign each to a different variable with a different name. For instance, if we have 100 values we wanted access to, it would be incredibly tedious to assign each one to a separate variable. In these instances, we can make use of various data structures in MATLAB that allow us to assign multiple values to the same variable.</p>
+<section id="matrix">
+<h3>Matrix<a class="headerlink" href="#matrix" title="Permalink to this heading">#</a></h3>
+<p>The most basic form of data structure in MATLAB is a matrix. We will talk about the mathematical interpretation of a matrix in the next section, but for now we can just treat it as a container for numbers that has a certain number of rows and a certain number of columns (like a spreadsheet or a table). You specify a matrix in MATLAB using square brackets, where a space indicates a new column and a semi-colon indicates a new row. For example, the following code</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">4</span><span class="w"> </span><span class="s">5</span><span class="w"> </span><span class="s">6]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>A = 2x3 double
+     1     2     3
+     4     5     6
+</pre></body></html></div></div>
+</div>
+<p>specifies a matrix called A that has 2 rows, 3 columns and contains the numbers 1-6.</p>
+<p>Accessing the individual elements of a matrix requires indexing. We use curved brackets after the variable name and then indicate which row and column we want, separated by commas. For example, to access the number 2 we would use the following code to indicate that we want row 1 and column 2</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>ans = 2</pre></body></html></div></div>
+</div>
+<p>The utility of the for-loop is hopefully a bit clearer now, as we can use it to access all the elements inside a matrix using the index variables</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="nb">size</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nb">j</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="nb">size</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">        </span><span class="n">number</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="nb">j</span><span class="p">);</span>
+<span class="w">        </span><span class="nb">disp</span><span class="p">(</span><span class="n">number</span><span class="p">);</span>
+<span class="w">    </span><span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     1
+
+     2
+
+     3
+
+     4
+
+     5
+
+     6
+</pre></div>
+</div>
+</div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">size(A,1)</span></code> tells you how many rows <code class="docutils literal notranslate"><span class="pre">A</span></code> has, <code class="docutils literal notranslate"><span class="pre">size(A,2)</span></code> tells you how many columns <code class="docutils literal notranslate"><span class="pre">A</span></code> has and the <code class="docutils literal notranslate"><span class="pre">disp()</span></code> function tells MATLAB to print the number at the prompt.</p>
+</section>
+<section id="character-array">
+<h3>Character Array<a class="headerlink" href="#character-array" title="Permalink to this heading">#</a></h3>
+<p>Beyond numbers, we may also want to store text in some sort of data structure. This is where the character array comes in. We actually saw a character array earlier when we specified the <code class="docutils literal notranslate"><span class="pre">hello_text</span></code> variable. Rather than being a variable with a single value, what was returned was actually a character array with 1 row and as many columns as letters. So a character array is really the same as a matrix, but the rows and columns refer to letters instead of numbers. A limitation to this approach, however, is that if you want multiple rows there needs to be the same number of characters in each row.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="s">&#39;hello this is some text&#39;</span><span class="p">;</span><span class="w"> </span><span class="s">&#39;hello this is more text&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>a = 2x23 char array
+    'hello this is some text'
+    'hello this is more text'
+</pre></body></html></div></div>
+</div>
+<p>Alternatively, you have to pad the rows with spaces to make up the difference.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="s">&#39;hello this is some text&#39;</span><span class="p">;</span><span class="w"> </span><span class="s">&#39;hello this is padding  &#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>a = 2x23 char array
+    'hello this is some text'
+    'hello this is padding  '
+</pre></body></html></div></div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "jupyter_matlab_kernel"
+        },
+        kernelOptions: {
+            name: "jupyter_matlab_kernel",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'jupyter_matlab_kernel'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="2.matlab-and-spm.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">MATLAB and SPM</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="4.linear-algebra.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Linear Algebra</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-matlab-prompt">The MATLAB Prompt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scripts">Scripts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-flow">Control Flow</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-statement">If-statement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops">For-loops</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-structures">Data Structures</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix">Matrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#character-array">Character Array</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Dr Martyn McFarquhar
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
