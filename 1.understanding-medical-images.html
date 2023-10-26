@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Notebooks with MyST Markdown &#8212; Computational Tools</title>
+    <title>Understanding Medical Images &#8212; Computational Tools</title>
   
   
   
@@ -62,10 +62,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'markdown-notebooks';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '1.understanding-medical-images';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Content with notebooks" href="notebooks.html" />
+    <link rel="next" title="MATLAB and SPM" href="2.matlab-and-spm.html" />
+    <link rel="prev" title="Introduction" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -162,14 +163,16 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Welcome to your Jupyter Book
+                    Introduction
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Notebooks with MyST Markdown</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Understanding Medical Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2.matlab-and-spm.html">MATLAB and SPM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.matlab-programming.html">MATLAB Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4.linear-algebra.html">Linear Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5.summary.html">Summary</a></li>
 </ul>
 
     </div>
@@ -241,7 +244,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fmarkdown-notebooks.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F1.understanding-medical-images.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -271,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/markdown-notebooks.md" target="_blank"
+      <li><a href="_sources/1.understanding-medical-images.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -353,7 +356,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Notebooks with MyST Markdown</h1>
+    <h1>Understanding Medical Images</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -363,9 +366,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-cell">An example cell</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-notebook-with-myst-markdown">Create a notebook with MyST Markdown</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quickly-add-yaml-metadata-for-myst-notebooks">Quickly add YAML metadata for MyST Notebooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-an-image">What is an Image?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-images-in-a-computer">Working with Images in a Computer</a></li>
 </ul>
             </nav>
         </div>
@@ -377,50 +379,20 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="notebooks-with-myst-markdown">
-<h1>Notebooks with MyST Markdown<a class="headerlink" href="#notebooks-with-myst-markdown" title="Permalink to this heading">#</a></h1>
-<p>Jupyter Book also lets you write text-based notebooks using MyST Markdown.
-See <a class="reference external" href="https://jupyterbook.org/file-types/myst-notebooks.html">the Notebooks with MyST Markdown documentation</a> for more detailed instructions.
-This page shows off a notebook written in MyST Markdown.</p>
-<section id="an-example-cell">
-<h2>An example cell<a class="headerlink" href="#an-example-cell" title="Permalink to this heading">#</a></h2>
-<p>With MyST Markdown, you can define code cells with a directive like so:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
-</pre></div>
-</div>
-</div>
-</div>
-<p>When your book is built, the contents of any <code class="docutils literal notranslate"><span class="pre">{code-cell}</span></code> blocks will be
-executed with your default Jupyter kernel, and their outputs will be displayed
-in-line with the rest of your content.</p>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p>Jupyter Book uses <a class="reference external" href="https://jupytext.readthedocs.io/en/latest/">Jupytext</a> to convert text-based files to notebooks, and can support <a class="reference external" href="https://jupyterbook.org/file-types/jupytext.html">many other text-based notebook files</a>.</p>
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="understanding-medical-images">
+<h1>Understanding Medical Images<a class="headerlink" href="#understanding-medical-images" title="Permalink to this heading">#</a></h1>
+<p>As mentioned in the overview, there are three main computational tools we rely on for this course. The first is the MATLAB computing environment, the second is the Statistical Parametric Mapping (SPM) analysis software, and the third is the branch of mathematics known as linear algebra. Before discussing any of these topics in detail, it is useful to contextualise their utility for analysing brain images in order to motivate this lesson. As such, we are going to spend a little bit of time making sure we understand what a medical image actually is and how it is represented in a computer.</p>
+<section id="what-is-an-image">
+<h2>What is an Image?<a class="headerlink" href="#what-is-an-image" title="Permalink to this heading">#</a></h2>
+<p>Put simply, a digital image is an array of numbers that correspond to spatial locations. The elements of this array can be visualised by a computer by assigning each number a colour. For traditional digital images, the array is two-dimensional and each element is called a picture-element (pixel). These types of image contain three values for each pixel, corresponding to the colours red, green and blue. Each pixel can therefore represent any colour within the RGB spectrum. Medical images, by comparison, are generally a bit simpler. A standard structural MR image, for example, is a three-dimensional array where each element contains only a single value representing the magnitude of the signal captured at that location. This can be thought of as a stack of 2D images (like a pack of playing cards), where each image is known as a slice. Because these images are constructed from cubes rather than squares, each element is called a volume-element (voxel). To make this clear, the figure on the right shows a rendering of a scan designed to make the voxel structure obvious.</p>
+<p>Because medical images contain values of signal magnitudes rather than colour, an additional step is needed in order to visualise them. To draw an image on the screen, the computer needs to associate each voxel value with a colour. This is a process known as colour mapping, where the range of values in the image are associated with a pre-selected range of colours (known as a colour map). Typically, this is done by associating small numbers with dark colours and large numbers with bright colours. There are a variety of different colour maps that are used in neuroimaging. For instance, structural MR images traditionally use a greyscale map, whereas results from fMRI experiments are often shown using a hot colour map. To indicate how this mapping has been performed, displays of medical images will often include a colour bar, which is a visual representation of how the range of voxel values has been associated with the range of colours. This is shown in the figure below where a traditional 2D digital image is compared to a 3D medical image.</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/camera-medical.png"><img alt="camera-medical" class="bg-primary mb-1 align-center" src="_images/camera-medical.png" style="width: 700px;" /></a>
+<p>The important point here is that visual display is a primary feature of a traditional digital image, as the only information contained in the image is colour information. For a medical image, visual display can be considered a secondary feature, as the main information the image contains is not colour but magnitude of a biological signal. As such, it is important to remember that when it comes to analysing brain images, our primary interest is often the numbers inside the image and not necessarily what the image looks like. In that sense, we can more accurately think of medical images as maps of signal intensity, as shown below.</p>
 </section>
-<section id="create-a-notebook-with-myst-markdown">
-<h2>Create a notebook with MyST Markdown<a class="headerlink" href="#create-a-notebook-with-myst-markdown" title="Permalink to this heading">#</a></h2>
-<p>MyST Markdown notebooks are defined by two things:</p>
-<ol class="arabic simple">
-<li><p>YAML metadata that is needed to understand if / how it should convert text files to notebooks (including information about the kernel needed).
-See the YAML at the top of this page for example.</p></li>
-<li><p>The presence of <code class="docutils literal notranslate"><span class="pre">{code-cell}</span></code> directives, which will be executed with your book.</p></li>
-</ol>
-<p>That’s all that is needed to get started!</p>
-</section>
-<section id="quickly-add-yaml-metadata-for-myst-notebooks">
-<h2>Quickly add YAML metadata for MyST Notebooks<a class="headerlink" href="#quickly-add-yaml-metadata-for-myst-notebooks" title="Permalink to this heading">#</a></h2>
-<p>If you have a markdown file and you’d like to quickly add YAML metadata to it, so that Jupyter Book will treat it as a MyST Markdown Notebook, run the following command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span><span class="o">-</span><span class="n">book</span> <span class="n">myst</span> <span class="n">init</span> <span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">markdownfile</span><span class="o">.</span><span class="n">md</span>
-</pre></div>
-</div>
+<section id="working-with-images-in-a-computer">
+<h2>Working with Images in a Computer<a class="headerlink" href="#working-with-images-in-a-computer" title="Permalink to this heading">#</a></h2>
+<p>As explained above, a medical image is just an array of numbers. This is all the computer understands when an image is loaded into memory. The fact that this array can be visualised to represent a physical object is inconsequential, as far as the computer is concerned. Throughout this course, our basic aim is to take these arrays of numbers and do things that changes those numbers into different numbers. The hope is that these new numbers can be used to tell us something meaningful about the real-life object represented in the image. Our images start out as meaningful representations of a brain. Throughout all the processing steps, we have to make sure that this is retained in order for our images to have any utility as scientific data.</p>
+<p>In order to interact with and manipulate images we need a suitable computing environment that allows access to the voxel values. In this course, we will be using MATLAB for this purpose. Usually we will not be doing this directly through MATLAB code, but rather indirectly using the methods implemented in the SPM software. SPM is written using the MATLAB language and as such leverages many of the core linear algebra tools that MATLAB contains. Because of this, understanding MATLAB and SPM also requires some understanding of linear algebra itself. As such, understanding MATLAB, SPM and linear algebra is going to be important for making meaningful progress on this course. With this in mind, the main aim of this lesson is to start creating some familiarity with each of these topics. It is not expected that you will have mastery by the end of this lesson, but what you should have is some understanding of what MATLAB and SPM are, familiarity with basic MATLAB programming concepts and some familiarity with basic linear algebra concepts.</p>
 </section>
 </section>
 
@@ -455,13 +427,22 @@ See the YAML at the top of this page for example.</p></li>
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="notebooks.html"
+       href="intro.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Content with notebooks</p>
+        <p class="prev-next-title">Introduction</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="2.matlab-and-spm.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">MATLAB and SPM</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -478,9 +459,8 @@ See the YAML at the top of this page for example.</p></li>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-cell">An example cell</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-notebook-with-myst-markdown">Create a notebook with MyST Markdown</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quickly-add-yaml-metadata-for-myst-notebooks">Quickly add YAML metadata for MyST Notebooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-an-image">What is an Image?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-images-in-a-computer">Working with Images in a Computer</a></li>
 </ul>
   </nav></div>
 
@@ -495,7 +475,7 @@ See the YAML at the top of this page for example.</p></li>
   <div class="footer-item">
     
 <p class="component-author">
-By Dr Martyn Mcfarquhar
+By Dr Martyn McFarquhar
 </p>
 
   </div>
