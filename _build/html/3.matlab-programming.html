@@ -377,8 +377,12 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-structures">Data Structures</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix">Matrix</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#character-array">Character Array</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cell-array">Cell Array</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#struct">Struct</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
             </nav>
         </div>
@@ -393,7 +397,10 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="matlab-programming">
 <h1>MATLAB Programming<a class="headerlink" href="#matlab-programming" title="Permalink to this heading">#</a></h1>
 <p>You should now have some idea about both MATLAB and SPM. Although possible to use SPM without any further knowledge of MATLAB, there is an argument to be made for being at least a bit familiar with MATLAB programming. Although many of our initial interactions with SPM will be via its graphical interface, understanding how programming works, even superficially, will pay dividends in the future. For starters, understanding how to program in MATLAB can be instructive because you can use MATLAB to play around with some of the concepts we will be learning about. This is something we will be doing in the synchronous sessions and so the more familiarity you have before these sessions the better. In addition, there are elements of SPM that can be automated with just a bit of programming knowledge. This can save a huge amount of time and effort and is particularly important if you are looking towards a research career. We will not be getting into this aspect too much yet, but we will do in Advanced Image Analysis in Semester 2 and so building a good foundation now is no bad thing. If nothing else, programming is a very useful transferable skill that warrants some degree of attention.</p>
-<p>One thing to note about this section is that it is written as more of a reference for future use and can be a bit tedious to go through. We would recommend doing it at this stage, but you may want to return here when you see some of these elements later in the course in order to contextualise their use. You also do not need to memorise any of this, just read through it and try and get the gist. You may want to have MATLAB open as well so you can try some of the code for yourself.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This section is written as more of a reference for future use, so it can be a bit tedious to go through. We would recommend doing so at this stage, but you may also want to return here when you see some of these elements in context later in the course.</p>
+</div>
 <section id="the-matlab-prompt">
 <h2>The MATLAB Prompt<a class="headerlink" href="#the-matlab-prompt" title="Permalink to this heading">#</a></h2>
 <p>In order to interact with MATLAB, we have to use the MATLAB prompt. The prompt is signified in the Command Window by the two angled brackets &gt;&gt;. These brackets indicate where we can type in commands for MATLAB to interpret. The general workflow is that we type something at the prompt, hit the <ENTER> key and then whatever we typed gets sent to the MATLAB interpreter to try and make sense of it. If MATLAB understands what we typed then it will do whatever we asked and return the answer. If MATLAB does not understand what we typed, it will return an error trying to tell us what it did not understand. Alternatively, MATLAB might understand us, but then runs into problems trying to do what we asked it to do. In this case it will also return an error telling us what went wrong.</p>
@@ -408,7 +415,7 @@ document.write(`
 <div class="output text_html"><html><body><pre>ans = 12</pre></body></html></div></div>
 </div>
 <p>where the text in the box indicates what you can type at the MATLAB prompt and the text below indicates the output of the command. If the code in the grey box contains multiple lines, it can be typed at the prompt one line at a time, but usually this will indicate a MATLAB script instead (more on scripts later). We will often show the output of these commands as well so you can compare our answer to the one MATLAB has given you.</p>
-<p>If you mistype something, MATLAB will likely return an error.</p>
+<p>If you mistype something, MATLAB will likely return an error. For instance, if we accidentally typed <code class="docutils literal notranslate"><span class="pre">$</span></code> instead of <code class="docutils literal notranslate"><span class="pre">*</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">3</span><span class="w"> </span><span class="s">$</span><span class="w"> </span><span class="s">b</span>
@@ -421,7 +428,10 @@ document.write(`
 </div>
 </div>
 </div>
-<p>When faced with an error, part of the skill of computer programming is trying to work out why the command failed. Even for seasoned programmers, errors are common. Errors will decrease with experience, but they will never disappear. The trick is not panicking when you see red text, but rather reading what it says carefully and trying to fix it quickly. In the error above, MATLAB is telling us that it does not understand what $ means, but note that errors will not always be this obvious. More times than not, the problem is a user error. So the best advice we can give when faced with a problem is to look for mistakes you have made as carefully as possible. Only when you have exhausted all other possibilities should you start wondering whether it is a bug or problem with MATLAB.</p>
+<div class="tip admonition">
+<p class="admonition-title">Tip</p>
+<p>When faced with an error, part of the skill of computer programming is trying to work out why the command failed. Even for seasoned programmers, errors are common. Errors will decrease with experience, but they will never disappear. The trick is not panicking when you see red text, but rather reading what it says carefully and trying to fix it quickly. More times than not, the problem is a user error. So the best advice we can give when faced with a problem is to look for mistakes you have made as carefully as possible. Only when you have exhausted all other possibilities should you start wondering whether it is a bug or problem with MATLAB.</p>
+</div>
 </section>
 <section id="variables">
 <h2>Variables<a class="headerlink" href="#variables" title="Permalink to this heading">#</a></h2>
@@ -451,7 +461,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>We can then add those variables together</p>
+<p>and then add the variables together</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span>
@@ -470,11 +480,11 @@ document.write(`
 </div>
 </div>
 <p>which we could use to store a file path or file name, for instance.</p>
-<p>There are a few rules you have to adhere to when naming variables. A variable name cannot start with a number, it cannot contain spaces and the only special character you can use is an underscore. You also need to be aware that MATLAB is case-sensitive and so hello_text and HELLO_TEXT would be seen as different variables. In addition, remember that a variable can only hold one thing at a time and if you re-assign a variable then the original value will be lost.</p>
+<p>There are a few rules you have to adhere to when naming variables. A variable name cannot start with a number, it cannot contain spaces and the only special character you can use is an underscore. You also need to be aware that MATLAB is case-sensitive, meaning that <code class="docutils literal notranslate"><span class="pre">hello_text</span></code> and <code class="docutils literal notranslate"><span class="pre">HELLO_TEXT</span></code> will be interpreted as different variables. In addition, remember that a variable can only hold one thing at a time and if you re-assign a variable then the original value will be lost.</p>
 </section>
 <section id="scripts">
 <h2>Scripts<a class="headerlink" href="#scripts" title="Permalink to this heading">#</a></h2>
-<p>Typically, if we are writing code to complete some task we will not be entering it line by line at the MATLAB prompt. Instead, we will write all our steps inside a script. You can think of a script as a recipe that we write in code inside a text file. It has multiple steps that are written on different lines read from top to bottom that MATLAB will execute one at a time. These scripts can be saved so they can be re-used or used as templates for other scripts in the future. Indeed, writing scripts is one of the best ways of leaving a paper trail for your analysis to fully document what you did to the data.</p>
+<p>Typically, if we are writing code to complete some task we will not enter it line-by-line at the MATLAB prompt. Instead, we will write the steps inside a script. You can think of a script as a recipe that we write in code inside a text file. It has multiple steps that are written on different lines that MATLAB will execute one at a time. These scripts can be saved so they can be re-used, or used as templates for other scripts in the future. Indeed, writing scripts is one of the best ways of leaving a paper trail for your analysis, to fully document what you did to the data.</p>
 <p>In order to start writing a script click the New Script icon in the MATLAB toolbar to open the blank script editor. We can now enter all our code in this new window. When we want to run it, we save the file and then click the big green Run button in the toolbar. Usefully, we can also include comments in a script. These are pieces of text that MATLAB will ignore, but serve as notes for our future selves. You can include a comment in a script by typing the percentage symbol, followed by whatever text you like. These will be coloured green to make the comments obvious. For example</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -558,7 +568,10 @@ document.write(`
 </div>
 </div>
 </div>
-<p>In all of these examples, the symbols &gt;, &gt;= and == are all examples of relational operations that allow us to compare variables in different ways. You can read about the operations that MATLAB supports in the documentation.</p>
+<div class="tip admonition">
+<p class="admonition-title">Tip</p>
+<p>In all of these examples, the symbols <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> and <code class="docutils literal notranslate"><span class="pre">==</span></code> are examples of <em>relational operators</em> that allow the comparison of variables in different ways. You can read about the operations that MATLAB supports in the <a class="reference external" href="https://uk.mathworks.com/help/matlab/relational-operators.html">documentation</a>.</p>
+</div>
 </section>
 <section id="for-loops">
 <h3>For-loops<a class="headerlink" href="#for-loops" title="Permalink to this heading">#</a></h3>
@@ -702,6 +715,170 @@ document.write(`
 </pre></body></html></div></div>
 </div>
 </section>
+<section id="cell-array">
+<h3>Cell Array<a class="headerlink" href="#cell-array" title="Permalink to this heading">#</a></h3>
+<p>The fact that a matrix and a character array behave so similarly is a testament to the MATLAB design principles of treating everything generically like a matrix. The issue with this is that a matrix and a character array can only contain one type of data. This means you need to have multiple variables if you want to store both text and numeric data. To get around this problem the concept of a cell was created. A cell is a container that can hold any type of data. So a cell could contain a matrix, a character array or even another cell. You can then have multiple cells stored together in a single variable called a cell array.</p>
+<p>We can create an empty cell array with 2 rows and 3 columns using the following code</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">cell</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>a = 2x3 cell array
+    {0x0 double}    {0x0 double}    {0x0 double}
+    {0x0 double}    {0x0 double}    {0x0 double}
+</pre></body></html></div></div>
+</div>
+<p>Which we could then populate with the names, age and favourite cheese of staff on the course</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;Martyn&#39;</span><span class="p">;</span>
+<span class="n">a</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">35</span><span class="p">;</span>
+<span class="n">a</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;Red Leicester&#39;</span><span class="p">;</span>
+<span class="n">a</span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;Dan&#39;</span><span class="p">;</span>
+<span class="n">a</span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">93</span><span class="p">;</span>
+<span class="n">a</span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;Gorgonzola&#39;</span><span class="p">;</span>
+<span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>a = 2x3 cell array
+    {'Martyn'}    {[35]}    {'Red Leicester'}
+    {'Dan'   }    {[93]}    {'Gorgonzola'   }
+</pre></body></html></div></div>
+</div>
+<p>So now we have a single variable called <code class="docutils literal notranslate"><span class="pre">a</span></code> that contains both numbers and text. Notice as well that we can have text in multiple rows without constraints on its length. We can then use the same indexing approaches used previously to access the data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span>
+<span class="n">a</span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">}</span>
+<span class="n">a</span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>ans = 'Dan'</pre></body></html></div><div class="output text_html"><html><body><pre>ans = 93</pre></body></html></div><div class="output text_html"><html><body><pre>ans = 'Gorgonzola'</pre></body></html></div></div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Tip</p>
+<p>Notice that we index a cell array using curly brackets, rather than curved brackets. The distinction is that curved brackets would return the cell itself, whereas curly brackets would return the contents of the cell. This is a confusing design decision on the part of MathWorks, so do not worry if this is not that clear.</p>
+</div>
+</section>
+<section id="struct">
+<h3>Struct<a class="headerlink" href="#struct" title="Permalink to this heading">#</a></h3>
+<p>Continuing the theme of data structures that can store different types, an alternative to a cell array is to use something called a struct. Where a struct differs from a cell array is that rather than using indices a struct uses named fields to store the data. This is useful because we can access data by name rather than having to remember what index we need for each type of data.</p>
+<p>Structs are defined by specifying the name of the struct and then using a dot to create fields. For instance</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">Lecturer</span><span class="p">.</span><span class="n">Name</span><span class="w">   </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;Martyn&#39;</span><span class="p">;</span>
+<span class="n">Lecturer</span><span class="p">.</span><span class="n">Age</span><span class="w">    </span><span class="p">=</span><span class="w"> </span><span class="mi">35</span><span class="p">;</span>
+<span class="n">Lecturer</span><span class="p">.</span><span class="n">Cheese</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;Red Leicester&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we have a struct called <code class="docutils literal notranslate"><span class="pre">Lecturer</span></code> with the fields <code class="docutils literal notranslate"><span class="pre">Name</span></code>, <code class="docutils literal notranslate"><span class="pre">Age</span></code> and <code class="docutils literal notranslate"><span class="pre">Cheese</span></code>. We can then access the values of the fields using the same dot syntax.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">Lecturer</span><span class="p">.</span><span class="n">Cheese</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>ans = 'Red Leicester'</pre></body></html></div></div>
+</div>
+<p>Structs can also be nested, which means you can end up with some quite complex multi-level structures</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span><span class="w"> </span><span class="n">Lecturer</span><span class="p">;</span>
+
+<span class="n">Lecturer</span><span class="p">.</span><span class="n">Name</span><span class="p">.</span><span class="n">Title</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;Dr&#39;</span><span class="p">;</span>
+<span class="n">Lecturer</span><span class="p">.</span><span class="n">Name</span><span class="p">.</span><span class="n">First</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;Martyn&#39;</span><span class="p">;</span>
+<span class="n">Lecturer</span><span class="p">.</span><span class="n">Name</span><span class="p">.</span><span class="n">Last</span><span class="w">  </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;McFarquhar&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>So here the struct <code class="docutils literal notranslate"><span class="pre">Lecturer</span></code> contains another struct called <code class="docutils literal notranslate"><span class="pre">Name</span></code> which has the fields <code class="docutils literal notranslate"><span class="pre">Title</span></code>, <code class="docutils literal notranslate"><span class="pre">First</span></code> and <code class="docutils literal notranslate"><span class="pre">Last</span></code>. A trick you can use with an unfamiliar struct is to type the name of the struct, then a dot and then press the <TAB> key to see a menu pop-up of the fields that are available.</p>
+<p>We can also combine indices and fields to create an array of structs. For example</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">Lecturer</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="n">Name</span><span class="p">.</span><span class="n">Title</span><span class="w">  </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;Dr&#39;</span><span class="p">;</span>
+<span class="n">Lecturer</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="n">Name</span><span class="p">.</span><span class="n">First</span><span class="w">  </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;Martyn&#39;</span><span class="p">;</span>
+<span class="n">Lecturer</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="n">Name</span><span class="p">.</span><span class="n">Last</span><span class="w">   </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;McFarquhar&#39;</span><span class="p">;</span>
+<span class="n">Lecturer</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="n">Age</span><span class="w">         </span><span class="p">=</span><span class="w"> </span><span class="mi">35</span><span class="p">;</span>
+<span class="n">Lecturer</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="n">Cheese</span><span class="w">      </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;Red Leicester&#39;</span><span class="p">;</span>
+
+<span class="n">Lecturer</span><span class="p">(</span><span class="mi">2</span><span class="p">).</span><span class="n">Name</span><span class="p">.</span><span class="n">Title</span><span class="w">  </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;Lord High Admiral&#39;</span><span class="p">;</span>
+<span class="n">Lecturer</span><span class="p">(</span><span class="mi">2</span><span class="p">).</span><span class="n">Name</span><span class="p">.</span><span class="n">First</span><span class="w">  </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;Daniel&#39;</span><span class="p">;</span>
+<span class="n">Lecturer</span><span class="p">(</span><span class="mi">2</span><span class="p">).</span><span class="n">Name</span><span class="p">.</span><span class="n">Last</span><span class="w">   </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;Cox&#39;</span><span class="p">;</span>
+<span class="n">Lecturer</span><span class="p">(</span><span class="mi">2</span><span class="p">).</span><span class="n">Age</span><span class="w">         </span><span class="p">=</span><span class="w"> </span><span class="mi">93</span><span class="p">;</span>
+<span class="n">Lecturer</span><span class="p">(</span><span class="mi">2</span><span class="p">).</span><span class="n">Cheese</span><span class="w">      </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;Gorgonzola&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>which we can then index in the usual fashion</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">Lecturer</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>ans = struct with fields:
+      Name: [1x1 struct]
+       Age: 93
+    Cheese: 'Gorgonzola'
+</pre></body></html></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">Lecturer</span><span class="p">(</span><span class="mi">2</span><span class="p">).</span><span class="n">Name</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>ans = struct with fields:
+    Title: 'Lord High Admiral'
+    First: 'Daniel'
+     Last: 'Cox'
+</pre></body></html></div></div>
+</div>
+</section>
+</section>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">#</a></h2>
+<p>The final topic of this section is one of the most important concepts that we need for programming with MATLAB. One of the central tenets of writing code that can be re-used and easily maintained is to make it modular. This means breaking the code up into independent chunks that do very specific jobs. Those individual chunks are written to be very generic so they can be re-used in many places. The way we achieve this is by isolating chunks of code into functions. You can think of these like a black box that we pass data into and it gives us some data back again.</p>
+<p>An example of a function is given below</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span>a<span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nf">add_five</span><span class="p">(</span>b<span class="p">)</span>
+<span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This declares a function called <code class="docutils literal notranslate"><span class="pre">add_five</span></code> that takes a single input variable called <code class="docutils literal notranslate"><span class="pre">b</span></code> and returns a single output variable called <code class="docutils literal notranslate"><span class="pre">a</span></code>. From the body of the function, we can see that all this does is take the value of <code class="docutils literal notranslate"><span class="pre">b</span></code> and adds five to it.</p>
+<p>In order to use this function we have to write it in a script and then save it using the same filename as the function. So in this case we would save the script as <code class="docutils literal notranslate"><span class="pre">add_five.m</span></code>. This needs to be saved in a location that is on the MATLAB path, so either the current directory or Documents &gt; MATLAB are safe bets. Once you have done that, you can use the <code class="docutils literal notranslate"><span class="pre">add_five</span></code> function at the prompt or in another script like so</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">add_five</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>ans = 12</pre></body></html></div></div>
+</div>
+<p>So what we have done here is saved code in a format where we can use it again simply by typing <code class="docutils literal notranslate"><span class="pre">add_five</span></code> with whatever argument we like. Now, obviously, a function that just adds 5 to a number is a bit useless. However, if you think of something more complex, such as reading neuroimaging data from a file name and returning a matrix of voxel values, you can start appreciating the power of functions. Not only do they make code re-useable, but they also make code easier to understand. For instance, seeing <code class="docutils literal notranslate"><span class="pre">image</span> <span class="pre">=</span> <span class="pre">read_data('image_file.nii')</span></code> in a script is a lot easier to understand than suddenly seeing 300 lines of code for reading the file from disk. We will see functions come up a lot during this course, mainly in terms of the functions that come with SPM. The main thing to understand is that a function is effectively hiding code from you and that in order to use a function you just need understand what it needs in terms of input variables and what it will return in terms of output variables.</p>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<p>It may seem unfair to call this section a brief introduction to programming in MATLAB, however, the world of computer programming is huge and we have only covered the very basics here. If you are new to programming, this may have felt a bit overwhelming, but do not worry. As we said at the outset, treat this section as a reference that you can come back to in future. A lot of these topics will become clearer over time as you see more examples of code and scripts. What we want at this stage is for you to have some familiarity with this so that the first time you see a MATLAB script you are not doing so cold. We will be providing more guidance on this as we go through the course. If this has whetted your appetite and you want to learn more, there are many books on MATLAB programming, such as MATLAB for Psychologists by Borgo, Soranzo and Grassi.</p>
 </section>
 </section>
 
@@ -779,8 +956,12 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-structures">Data Structures</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix">Matrix</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#character-array">Character Array</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cell-array">Cell Array</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#struct">Struct</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 </ul>
   </nav></div>
 

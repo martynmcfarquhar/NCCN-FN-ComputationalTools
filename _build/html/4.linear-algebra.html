@@ -62,6 +62,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '4.linear-algebra';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -163,7 +165,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Welcome to your Jupyter Book
+                    Introduction
                 </a>
             </li>
         </ul>
@@ -370,6 +372,12 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="linear-algebra">
 <h1>Linear Algebra<a class="headerlink" href="#linear-algebra" title="Permalink to this heading">#</a></h1>
+<p>In the final part of this lesson, we are going to focus on a branch of mathematics called linear algebra. Many concepts in linear algebra are central to image processing and statistical analysis, as we will see as the course progresses. However, we recognise that this prospect may be filling some of you with anxiety and dread, especially if you are one of those people who says “I can’t do maths” or “I just don’t get maths”. The key thing to stress is that we will be emphasising conceptual knowledge over working knowledge. In other words, we will not be asking you to solve equations or write proofs, but we do need you to know what a matrix is, what a vector is, what a matrix inverse is used for and so on. The aim is that after reading this section you will be able to see an equation such as</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{A} = \boldsymbol{B}^{\prime}\boldsymbol{C}^{-1}\boldsymbol{D} + \boldsymbol{E}
+\]</div>
+<p>and have a degree of confidence in understanding what is going on. You will not have the skills to manipulate the equation, or even understand where the equation comes from, but you will have some understanding of the different elements of the equation and what they mean. In addition, we will not be expecting you to do any arithmetic. Instead, we encourage exploration of linear algebra through playing around inside MATLAB to solidify your understanding, without having to go through the pain of calculating things manually. So hopefully, this will be relatively painless, even if you have concerns about your mathematical ability.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">M</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">rand</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
