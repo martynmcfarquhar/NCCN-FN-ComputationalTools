@@ -403,8 +403,7 @@ document.write(`
 </div>
 <section id="the-matlab-prompt">
 <h2>The MATLAB Prompt<a class="headerlink" href="#the-matlab-prompt" title="Permalink to this heading">#</a></h2>
-<p>In order to interact with MATLAB, we have to use the MATLAB prompt. The prompt is signified in the Command Window by the two angled brackets &gt;&gt;. These brackets indicate where we can type in commands for MATLAB to interpret. The general workflow is that we type something at the prompt, hit the <ENTER> key and then whatever we typed gets sent to the MATLAB interpreter to try and make sense of it. If MATLAB understands what we typed then it will do whatever we asked and return the answer. If MATLAB does not understand what we typed, it will return an error trying to tell us what it did not understand. Alternatively, MATLAB might understand us, but then runs into problems trying to do what we asked it to do. In this case it will also return an error telling us what went wrong.</p>
-<p>Throughout this section, we will indicate MATLAB code like this</p>
+<p>To interact with MATLAB, we use the MATLAB prompt. The prompt is signified in the Command Window by the two angled brackets <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>. These brackets indicate where we can type commands for MATLAB to interpret. We type something at the prompt, hit the <code class="docutils literal notranslate"><span class="pre">ENTER</span></code> key and then whatever we typed gets sent to the MATLAB interpreter. If MATLAB understands what we typed, it will return the answer. If MATLAB does not understand what we typed, it will return an error. For instance, if we meant to type</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">4</span>
@@ -414,11 +413,10 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_html"><html><body><pre>ans = 12</pre></body></html></div></div>
 </div>
-<p>where the text in the box indicates what you can type at the MATLAB prompt and the text below indicates the output of the command. If the code in the grey box contains multiple lines, it can be typed at the prompt one line at a time, but usually this will indicate a MATLAB script instead (more on scripts later). We will often show the output of these commands as well so you can compare our answer to the one MATLAB has given you.</p>
-<p>If you mistype something, MATLAB will likely return an error. For instance, if we accidentally typed <code class="docutils literal notranslate"><span class="pre">$</span></code> instead of <code class="docutils literal notranslate"><span class="pre">*</span></code>.</p>
+<p>but instead  typed <code class="docutils literal notranslate"><span class="pre">$</span></code> instead of <code class="docutils literal notranslate"><span class="pre">*</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">3</span><span class="w"> </span><span class="s">$</span><span class="w"> </span><span class="s">b</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">3</span><span class="w"> </span><span class="s">$</span><span class="w"> </span><span class="s">4</span>
 </pre></div>
 </div>
 </div>
