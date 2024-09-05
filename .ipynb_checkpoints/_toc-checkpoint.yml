@@ -5,7 +5,6 @@ format: jb-book
 root: 0.intro
 chapters:
 - file: 1.understanding-medical-images
-- file: 2.matlab-and-spm
-- file: 3.matlab-programming
-- file: 4.linear-algebra
+- file: 2.spm
+- file: 3.matlab-linear-algebra
 - file: 5.summary
