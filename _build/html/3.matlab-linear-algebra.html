@@ -389,17 +389,20 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transposition">Transposition</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-addition-and-subtraction">Matrix Addition and Subtraction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-multiplication">Matrix Multiplication</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-division">Matrix Division</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-additional-important-concepts">Some Additional Important Concepts</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab-scripts">MATLAB Scripts</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab-functions">MATLAB Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-operations">Matrix Operations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#addition-and-subtraction">Addition and Subtraction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiplication">Multiplication</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#division">Division</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-additional-programming-concepts">Some Additional Programming Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scripts">Scripts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Variables</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scripts">Scripts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Scripts</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-flow">Control Flow</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-statement">If-statement</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops">For-loops</a></li>
@@ -412,8 +415,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#struct">Struct</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Summary</a></li>
 </ul>
             </nav>
         </div>
@@ -590,8 +593,10 @@ Error in connector.internal.fevalJSON
 <section id="transposition">
 <h2>Transposition<a class="headerlink" href="#transposition" title="Link to this heading">#</a></h2>
 </section>
-<section id="matrix-addition-and-subtraction">
-<h2>Matrix Addition and Subtraction<a class="headerlink" href="#matrix-addition-and-subtraction" title="Link to this heading">#</a></h2>
+<section id="matrix-operations">
+<h2>Matrix Operations<a class="headerlink" href="#matrix-operations" title="Link to this heading">#</a></h2>
+<section id="addition-and-subtraction">
+<h3>Addition and Subtraction<a class="headerlink" href="#addition-and-subtraction" title="Link to this heading">#</a></h3>
 <p>Formally, we can write that</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -610,20 +615,22 @@ a_{j1} + b_{j1} &amp; a_{j2} + b_{j2} &amp; \dots  &amp; a_{jk} + b_{jk} \\
 \]</div>
 <p>which, again, is only defined when <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> have the same dimensions. For instance</p>
 </section>
-<section id="matrix-multiplication">
-<h2>Matrix Multiplication<a class="headerlink" href="#matrix-multiplication" title="Link to this heading">#</a></h2>
+<section id="multiplication">
+<h3>Multiplication<a class="headerlink" href="#multiplication" title="Link to this heading">#</a></h3>
 </section>
-<section id="matrix-division">
-<h2>Matrix Division<a class="headerlink" href="#matrix-division" title="Link to this heading">#</a></h2>
+<section id="division">
+<h3>Division<a class="headerlink" href="#division" title="Link to this heading">#</a></h3>
 <p>The use of <code class="docutils literal notranslate"><span class="pre">inv()</span></code> is an example of a <em>function</em>. This is a key programming concept that will be explained briefly at the end of this section.</p>
 </section>
-<section id="some-additional-important-concepts">
-<h2>Some Additional Important Concepts<a class="headerlink" href="#some-additional-important-concepts" title="Link to this heading">#</a></h2>
-<section id="matlab-scripts">
-<h3>MATLAB Scripts<a class="headerlink" href="#matlab-scripts" title="Link to this heading">#</a></h3>
 </section>
-<section id="matlab-functions">
-<h3>MATLAB Functions<a class="headerlink" href="#matlab-functions" title="Link to this heading">#</a></h3>
+<section id="some-additional-programming-concepts">
+<h2>Some Additional Programming Concepts<a class="headerlink" href="#some-additional-programming-concepts" title="Link to this heading">#</a></h2>
+<section id="scripts">
+<h3>Scripts<a class="headerlink" href="#scripts" title="Link to this heading">#</a></h3>
+</section>
+<section id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h3>
+<p>Beyond just writing code within a separate script, we can further containerise</p>
 </section>
 </section>
 <section id="summary">
@@ -684,8 +691,8 @@ a_{j1} + b_{j1} &amp; a_{j2} + b_{j2} &amp; \dots  &amp; a_{jk} + b_{jk} \\
 <p>which we could use to store a file path or file name, for instance.</p>
 <p>There are a few rules you have to adhere to when naming variables. A variable name cannot start with a number, it cannot contain spaces and the only special character you can use is an underscore. You also need to be aware that MATLAB is case-sensitive, meaning that <code class="docutils literal notranslate"><span class="pre">hello_text</span></code> and <code class="docutils literal notranslate"><span class="pre">HELLO_TEXT</span></code> will be interpreted as different variables. In addition, remember that a variable can only hold one thing at a time and if you re-assign a variable then the original value will be lost.</p>
 </section>
-<section id="scripts">
-<h2>Scripts<a class="headerlink" href="#scripts" title="Link to this heading">#</a></h2>
+<section id="id2">
+<h2>Scripts<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>Typically, if we are writing code to complete some task we will not enter it line-by-line at the MATLAB prompt. Instead, we will write the steps inside a script. You can think of a script as a recipe that we write in code inside a text file. It has multiple steps that are written on different lines that MATLAB will execute one at a time. These scripts can be saved so they can be re-used, or used as templates for other scripts in the future. Indeed, writing scripts is one of the best ways of leaving a paper trail for your analysis, to fully document what you did to the data.</p>
 <p>In order to start writing a script click the New Script icon in the MATLAB toolbar to open the blank script editor. We can now enter all our code in this new window. When we want to run it, we save the file and then click the big green Run button in the toolbar. Usefully, we can also include comments in a script. These are pieces of text that MATLAB will ignore, but serve as notes for our future selves. You can include a comment in a script by typing the percentage symbol, followed by whatever text you like. These will be coloured green to make the comments obvious. For example</p>
 <div class="cell docutils container">
@@ -1052,8 +1059,8 @@ a_{j1} + b_{j1} &amp; a_{j2} + b_{j2} &amp; \dots  &amp; a_{jk} + b_{jk} \\
 </div>
 </section>
 </section>
-<section id="functions">
-<h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h2>
+<section id="id3">
+<h2>Functions<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <p>The final topic of this section is one of the most important concepts that we need for programming with MATLAB. One of the central tenets of writing code that can be re-used and easily maintained is to make it modular. This means breaking the code up into independent chunks that do very specific jobs. Those individual chunks are written to be very generic so they can be re-used in many places. The way we achieve this is by isolating chunks of code into functions. You can think of these like a black box that we pass data into and it gives us some data back again.</p>
 <p>An example of a function is given below</p>
 <div class="cell docutils container">
@@ -1078,8 +1085,8 @@ a_{j1} + b_{j1} &amp; a_{j2} + b_{j2} &amp; \dots  &amp; a_{jk} + b_{jk} \\
 </div>
 <p>So what we have done here is saved code in a format where we can use it again simply by typing <code class="docutils literal notranslate"><span class="pre">add_five</span></code> with whatever argument we like. Now, obviously, a function that just adds 5 to a number is a bit useless. However, if you think of something more complex, such as reading neuroimaging data from a file name and returning a matrix of voxel values, you can start appreciating the power of functions. Not only do they make code re-useable, but they also make code easier to understand. For instance, seeing <code class="docutils literal notranslate"><span class="pre">image</span> <span class="pre">=</span> <span class="pre">read_data('image_file.nii')</span></code> in a script is a lot easier to understand than suddenly seeing 300 lines of code for reading the file from disk. We will see functions come up a lot during this course, mainly in terms of the functions that come with SPM. The main thing to understand is that a function is effectively hiding code from you and that in order to use a function you just need understand what it needs in terms of input variables and what it will return in terms of output variables.</p>
 </section>
-<section id="id2">
-<h2>Summary<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="id4">
+<h2>Summary<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <p>It may seem unfair to call this section a brief introduction to programming in MATLAB, however, the world of computer programming is huge and we have only covered the very basics here. If you are new to programming, this may have felt a bit overwhelming, but do not worry. As we said at the outset, treat this section as a reference that you can come back to in future. A lot of these topics will become clearer over time as you see more examples of code and scripts. What we want at this stage is for you to have some familiarity with this so that the first time you see a MATLAB script you are not doing so cold. We will be providing more guidance on this as we go through the course. If this has whetted your appetite and you want to learn more, there are many books on MATLAB programming, such as MATLAB for Psychologists by Borgo, Soranzo and Grassi.</p>
 </section>
 </section>
@@ -1156,17 +1163,20 @@ a_{j1} + b_{j1} &amp; a_{j2} + b_{j2} &amp; \dots  &amp; a_{jk} + b_{jk} \\
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transposition">Transposition</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-addition-and-subtraction">Matrix Addition and Subtraction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-multiplication">Matrix Multiplication</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-division">Matrix Division</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-additional-important-concepts">Some Additional Important Concepts</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab-scripts">MATLAB Scripts</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab-functions">MATLAB Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-operations">Matrix Operations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#addition-and-subtraction">Addition and Subtraction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiplication">Multiplication</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#division">Division</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-additional-programming-concepts">Some Additional Programming Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scripts">Scripts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Variables</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scripts">Scripts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Scripts</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-flow">Control Flow</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-statement">If-statement</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops">For-loops</a></li>
@@ -1179,8 +1189,8 @@ a_{j1} + b_{j1} &amp; a_{j2} + b_{j2} &amp; \dots  &amp; a_{jk} + b_{jk} \\
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#struct">Struct</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Summary</a></li>
 </ul>
   </nav></div>
 
