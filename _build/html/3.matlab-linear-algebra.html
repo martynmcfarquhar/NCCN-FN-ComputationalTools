@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>MATLAB and Linear Algebra &#8212; Computational Tools</title>
+    <title>Linear Algebra with MATLAB &#8212; Computational Tools</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -63,7 +63,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Summary" href="5.summary.html" />
-    <link rel="prev" title="Statistical Parametric Mapping (SPM)" href="2.spm.html" />
+    <link rel="prev" title="Installing MATLAB and SPM" href="2.MATLAB-SPM.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -182,9 +182,9 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="1.understanding-medical-images.html">Understanding Medical Images</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2.spm.html">Statistical Parametric Mapping (SPM)</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">MATLAB and Linear Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1.medical-images.html">Medical Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2.MATLAB-SPM.html">Installing MATLAB and SPM</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Linear Algebra with MATLAB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="5.summary.html">Summary</a></li>
 </ul>
 
@@ -371,7 +371,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>MATLAB and Linear Algebra</h1>
+    <h1>Linear Algebra with MATLAB</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -381,14 +381,24 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-matlab">Installing MATLAB</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-matlab-interface">The MATLAB Interface</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-matlab-prompt">The MATLAB Prompt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-matlab-prompt">The MATLAB Prompt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vectors-and-matrices">Vectors and Matrices</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vectors">Vectors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matrices">Matrices</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vectors-and-matrices">Vectors and Matrices</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programming-with-matlab">Programming with MATLAB</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transposition">Transposition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-addition-and-subtraction">Matrix Addition and Subtraction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-multiplication">Matrix Multiplication</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-division">Matrix Division</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-additional-important-concepts">Some Additional Important Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab-scripts">MATLAB Scripts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab-functions">MATLAB Functions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Variables</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scripts">Scripts</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-flow">Control Flow</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-statement">If-statement</a></li>
@@ -403,7 +413,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Summary</a></li>
 </ul>
             </nav>
         </div>
@@ -415,21 +425,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="matlab-and-linear-algebra">
-<h1>MATLAB and Linear Algebra<a class="headerlink" href="#matlab-and-linear-algebra" title="Link to this heading">#</a></h1>
-<p>You should now have some idea about both MATLAB and SPM. Although possible to use SPM without any further knowledge of MATLAB, there is an argument to be made for being at least a bit familiar with MATLAB programming. Although many of our initial interactions with SPM will be via its graphical interface, understanding how programming works, even superficially, will pay dividends in the future. For starters, understanding how to program in MATLAB can be instructive because you can use MATLAB to play around with some of the concepts we will be learning about. This is something we will be doing in the synchronous sessions and so the more familiarity you have before these sessions the better. In addition, there are elements of SPM that can be automated with just a bit of programming knowledge. This can save a huge amount of time and effort and is particularly important if you are looking towards a research career. We will not be getting into this aspect too much yet, but we will do in Advanced Image Analysis in Semester 2 and so building a good foundation now is no bad thing. If nothing else, programming is a very useful transferable skill that warrants some degree of attention.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This section is written as more of a reference for future use, so it can be a bit tedious to go through. We would recommend doing so at this stage, but you may also want to return here when you see some of these elements in context later in the course.</p>
-</div>
-<section id="installing-matlab">
-<h2>Installing MATLAB<a class="headerlink" href="#installing-matlab" title="Link to this heading">#</a></h2>
-<p>If you are using a University cluster PC, MATLAB will already be ready for you to use. …</p>
-</section>
-<section id="the-matlab-interface">
-<h2>The MATLAB Interface<a class="headerlink" href="#the-matlab-interface" title="Link to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="linear-algebra-with-matlab">
+<h1>Linear Algebra with MATLAB<a class="headerlink" href="#linear-algebra-with-matlab" title="Link to this heading">#</a></h1>
+<p>As mentioned in the previous section, SPM is a software package that is built <em>on top</em> of the MATLAB scientific computing environment, using the MATLAB programming language. Although possible to use SPM without any further knowledge of MATLAB, there is an argument to be made for being at least a <em>bit</em> familiar with the MATLAB language. Although most of our interactions with SPM will be via its graphical interface, understanding MATLAB in more detail can pay dividends in the future. For starters, having some MATLAB basics will allow you to use MATLAB to play around with some of the key concepts we will be covering on the course. In addition, there are elements of SPM that can be automated with just a bit of programming knowledge. This can save a huge amount of time and is particularly important if you are looking towards a research career. Unfortunately, we do not have time on this course for in-depth training on computer programming, however, we can start using MATLAB as a way of understanding some of the mathematical theory that we will need going forward. This will do double-duty as both a way of getting familiar with MATLAB and a way of seeing some of the mathematical concepts in an interactive fashion. This will be our focus in the last part of this lesson.</p>
 <section id="the-matlab-prompt">
-<h3>The MATLAB Prompt<a class="headerlink" href="#the-matlab-prompt" title="Link to this heading">#</a></h3>
+<h2>The MATLAB Prompt<a class="headerlink" href="#the-matlab-prompt" title="Link to this heading">#</a></h2>
 <p>To interact with MATLAB, we use the MATLAB prompt. The prompt is signified in the Command Window by the two angled brackets <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>. These brackets indicate where we can type commands for MATLAB to interpret. We type something at the prompt, hit the <code class="docutils literal notranslate"><span class="pre">ENTER</span></code> key and then whatever we typed gets sent to the MATLAB interpreter. If MATLAB understands what we typed, it will return the answer. If MATLAB does not understand what we typed, it will return an error. For instance, if we wanted to ask MATLAB what <span class="math notranslate nohighlight">\(3 \times 4\)</span> was and we meant to type</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -459,12 +459,175 @@ document.write(`
 <p>When faced with an error, part of the skill of computer programming is trying to work out why the command failed. Even for seasoned programmers, errors are common. Errors will decrease with experience, but they will never disappear. The trick is not panicking when you see red text, but rather reading what it says carefully and trying to fix it quickly. More times than not, the problem is a user error. So the best advice we can give when faced with a problem is to look for mistakes you have made as carefully as possible. Only when you have exhausted all other possibilities should you start wondering whether it is a bug or problem with MATLAB.</p>
 </div>
 </section>
+<section id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Link to this heading">#</a></h2>
 </section>
 <section id="vectors-and-matrices">
 <h2>Vectors and Matrices<a class="headerlink" href="#vectors-and-matrices" title="Link to this heading">#</a></h2>
+<p>The most fundamental entities in linear algebra are <em>vectors</em> and <em>matrices</em>. We will be using these a lot on this course, so it is important to both understand what a vector or matrix is, as well as understanding how they can be manipulated.</p>
+<section id="vectors">
+<h3>Vectors<a class="headerlink" href="#vectors" title="Link to this heading">#</a></h3>
+<p>A vector is simply a list of numbers. For instance</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{a} = \begin{bmatrix}3 &amp; 4 &amp; 5\end{bmatrix}.
+\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> is a 3-dimensional row vector with elements 3, 4 and 5. We can refer to the individual elements using <em>subscripts</em>. For instance, <span class="math notranslate nohighlight">\(\mathbf{a}_{1} = 3\)</span>, <span class="math notranslate nohighlight">\(\mathbf{a}_{2} = 4\)</span> and so on. A vector can also be defined as a <em>column</em> of numbers, for instance</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{b} = 
+\begin{bmatrix}
+    6 \\  
+    7 \\ 
+    8 \\
+\end{bmatrix}.
+\end{split}\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(\mathbf{b}\)</span> is a 3-dimensional column-vector with elements 6, 7 and 8. Although the orientation of a vector may seem like a trivial detail, we will soon see how important the orientation of vectors and matrices is.</p>
+<p>In MATLAB, a vector is defined using a list of numbers between square brackets. For instance, we can define <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> in MATLAB as</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MATLAB Kernel Error:
+Error using &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&gt;updateRequest&#39;, &#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/+jupyter/execute.m&#39;, 72)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&gt;updateRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/+jupyter/execute.m&#39;,72,0)&quot;&gt;line 72&lt;/a&gt;)
+Invalid API version. Create an issue at https://github.com/mathworks/jupyter-matlab-proxy for further support.
+
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&#39;, &#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/+jupyter/execute.m&#39;, 43)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/+jupyter/execute.m&#39;,43,0)&quot;&gt;line 43&lt;/a&gt;)
+request = updateRequest(request, code);
+
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;processJupyterKernelRequest&#39;, &#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/processJupyterKernelRequest.m&#39;, 54)&quot; style=&quot;font-weight:bold&quot;&gt;processJupyterKernelRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/processJupyterKernelRequest.m&#39;,54,0)&quot;&gt;line 54&lt;/a&gt;)
+            output = jupyter.execute(code, kernelId);
+
+Error in connector.internal.fevalMatlab
+
+Error in connector.internal.fevalJSON
+</pre></div>
+</div>
+</div>
+</div>
+<p>and can access the individual elements using curved brackets</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MATLAB Kernel Error:
+Error using &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&gt;updateRequest&#39;, &#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/+jupyter/execute.m&#39;, 72)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&gt;updateRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/+jupyter/execute.m&#39;,72,0)&quot;&gt;line 72&lt;/a&gt;)
+Invalid API version. Create an issue at https://github.com/mathworks/jupyter-matlab-proxy for further support.
+
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&#39;, &#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/+jupyter/execute.m&#39;, 43)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/+jupyter/execute.m&#39;,43,0)&quot;&gt;line 43&lt;/a&gt;)
+request = updateRequest(request, code);
+
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;processJupyterKernelRequest&#39;, &#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/processJupyterKernelRequest.m&#39;, 54)&quot; style=&quot;font-weight:bold&quot;&gt;processJupyterKernelRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/processJupyterKernelRequest.m&#39;,54,0)&quot;&gt;line 54&lt;/a&gt;)
+            output = jupyter.execute(code, kernelId);
+
+Error in connector.internal.fevalMatlab
+
+Error in connector.internal.fevalJSON
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MATLAB Kernel Error:
+Error using &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&gt;updateRequest&#39;, &#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/+jupyter/execute.m&#39;, 72)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&gt;updateRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/+jupyter/execute.m&#39;,72,0)&quot;&gt;line 72&lt;/a&gt;)
+Invalid API version. Create an issue at https://github.com/mathworks/jupyter-matlab-proxy for further support.
+
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&#39;, &#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/+jupyter/execute.m&#39;, 43)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/+jupyter/execute.m&#39;,43,0)&quot;&gt;line 43&lt;/a&gt;)
+request = updateRequest(request, code);
+
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;processJupyterKernelRequest&#39;, &#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/processJupyterKernelRequest.m&#39;, 54)&quot; style=&quot;font-weight:bold&quot;&gt;processJupyterKernelRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/processJupyterKernelRequest.m&#39;,54,0)&quot;&gt;line 54&lt;/a&gt;)
+            output = jupyter.execute(code, kernelId);
+
+Error in connector.internal.fevalMatlab
+
+Error in connector.internal.fevalJSON
+</pre></div>
+</div>
+</div>
+</div>
+<p>Similarly, we can create a column vector by designating new rows with <code class="docutils literal notranslate"><span class="pre">;</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">6</span><span class="p">;</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span><span class="w"> </span><span class="mi">8</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MATLAB Kernel Error:
+Error using &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&gt;updateRequest&#39;, &#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/+jupyter/execute.m&#39;, 72)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&gt;updateRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/+jupyter/execute.m&#39;,72,0)&quot;&gt;line 72&lt;/a&gt;)
+Invalid API version. Create an issue at https://github.com/mathworks/jupyter-matlab-proxy for further support.
+
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&#39;, &#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/+jupyter/execute.m&#39;, 43)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/+jupyter/execute.m&#39;,43,0)&quot;&gt;line 43&lt;/a&gt;)
+request = updateRequest(request, code);
+
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;processJupyterKernelRequest&#39;, &#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/processJupyterKernelRequest.m&#39;, 54)&quot; style=&quot;font-weight:bold&quot;&gt;processJupyterKernelRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/processJupyterKernelRequest.m&#39;,54,0)&quot;&gt;line 54&lt;/a&gt;)
+            output = jupyter.execute(code, kernelId);
+
+Error in connector.internal.fevalMatlab
+
+Error in connector.internal.fevalJSON
+</pre></div>
+</div>
+</div>
+</div>
 </section>
-<section id="programming-with-matlab">
-<h2>Programming with MATLAB<a class="headerlink" href="#programming-with-matlab" title="Link to this heading">#</a></h2>
+<section id="matrices">
+<h3>Matrices<a class="headerlink" href="#matrices" title="Link to this heading">#</a></h3>
+</section>
+</section>
+<section id="transposition">
+<h2>Transposition<a class="headerlink" href="#transposition" title="Link to this heading">#</a></h2>
+</section>
+<section id="matrix-addition-and-subtraction">
+<h2>Matrix Addition and Subtraction<a class="headerlink" href="#matrix-addition-and-subtraction" title="Link to this heading">#</a></h2>
+<p>Formally, we can write that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{C} = \mathbf{A} + \mathbf{B} =
+\begin{bmatrix}
+a_{11} + b_{11} &amp; a_{12} + b_{12} &amp; \dots  &amp; a_{1k} + b_{1k} \\
+a_{21} + b_{21} &amp; a_{22} + b_{22} &amp; \dots  &amp; a_{2k} + b_{2k} \\
+\vdots          &amp; \vdots          &amp; \ddots &amp; \vdots          \\
+a_{j1} + b_{j1} &amp; a_{j2} + b_{j2} &amp; \dots  &amp; a_{jk} + b_{jk} \\
+\end{bmatrix}
+\end{split}\]</div>
+<p>where the ellipses just mean “continue the pattern along this direction”. Matrix subtraction works in the same way, so we have</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{C} = \mathbf{A} - \mathbf{B}
+\]</div>
+<p>which, again, is only defined when <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> have the same dimensions. For instance</p>
+</section>
+<section id="matrix-multiplication">
+<h2>Matrix Multiplication<a class="headerlink" href="#matrix-multiplication" title="Link to this heading">#</a></h2>
+</section>
+<section id="matrix-division">
+<h2>Matrix Division<a class="headerlink" href="#matrix-division" title="Link to this heading">#</a></h2>
+<p>The use of <code class="docutils literal notranslate"><span class="pre">inv()</span></code> is an example of a <em>function</em>. This is a key programming concept that will be explained briefly at the end of this section.</p>
+</section>
+<section id="some-additional-important-concepts">
+<h2>Some Additional Important Concepts<a class="headerlink" href="#some-additional-important-concepts" title="Link to this heading">#</a></h2>
+<section id="matlab-scripts">
+<h3>MATLAB Scripts<a class="headerlink" href="#matlab-scripts" title="Link to this heading">#</a></h3>
+</section>
+<section id="matlab-functions">
+<h3>MATLAB Functions<a class="headerlink" href="#matlab-functions" title="Link to this heading">#</a></h3>
+</section>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
 <p>In this lesson, we have treated MATLAB as simply a means of understanding some basic concepts in linear algebra. However, MATLAB is really a fully-fledged programming language. We have not touched any programming concepts beyond simply variable assignment, however, if you want to make the most of MATLAB as a tool then you will need to learn to use it as a programming language. Although not an essential part of this course, this would be a skill that will come in very handy in Semester 2, as well as in your dissertation project work. There are many resources available to learn to programme in MATLAB and we would encourage everyone to try and go through them as part of the additional reading throughout this course. Some resources we recommend are:</p>
 <ul class="simple">
 <li></li>
@@ -472,8 +635,8 @@ document.write(`
 <li></li>
 </ul>
 </section>
-<section id="variables">
-<h2>Variables<a class="headerlink" href="#variables" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h2>Variables<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>The most basic element of any programming language is the ability to store things in memory for later use. We do this by using a variable, which you can think of as a box with a name that we put something inside to keep for later. As an example, the code below shows the declaration of a variable called a and assigning it the number 5.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -915,8 +1078,8 @@ document.write(`
 </div>
 <p>So what we have done here is saved code in a format where we can use it again simply by typing <code class="docutils literal notranslate"><span class="pre">add_five</span></code> with whatever argument we like. Now, obviously, a function that just adds 5 to a number is a bit useless. However, if you think of something more complex, such as reading neuroimaging data from a file name and returning a matrix of voxel values, you can start appreciating the power of functions. Not only do they make code re-useable, but they also make code easier to understand. For instance, seeing <code class="docutils literal notranslate"><span class="pre">image</span> <span class="pre">=</span> <span class="pre">read_data('image_file.nii')</span></code> in a script is a lot easier to understand than suddenly seeing 300 lines of code for reading the file from disk. We will see functions come up a lot during this course, mainly in terms of the functions that come with SPM. The main thing to understand is that a function is effectively hiding code from you and that in order to use a function you just need understand what it needs in terms of input variables and what it will return in terms of output variables.</p>
 </section>
-<section id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<section id="id2">
+<h2>Summary<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>It may seem unfair to call this section a brief introduction to programming in MATLAB, however, the world of computer programming is huge and we have only covered the very basics here. If you are new to programming, this may have felt a bit overwhelming, but do not worry. As we said at the outset, treat this section as a reference that you can come back to in future. A lot of these topics will become clearer over time as you see more examples of code and scripts. What we want at this stage is for you to have some familiarity with this so that the first time you see a MATLAB script you are not doing so cold. We will be providing more guidance on this as we go through the course. If this has whetted your appetite and you want to learn more, there are many books on MATLAB programming, such as MATLAB for Psychologists by Borgo, Soranzo and Grassi.</p>
 </section>
 </section>
@@ -952,12 +1115,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="2.spm.html"
+       href="2.MATLAB-SPM.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Statistical Parametric Mapping (SPM)</p>
+        <p class="prev-next-title">Installing MATLAB and SPM</p>
       </div>
     </a>
     <a class="right-next"
@@ -985,14 +1148,24 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-matlab">Installing MATLAB</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-matlab-interface">The MATLAB Interface</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-matlab-prompt">The MATLAB Prompt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-matlab-prompt">The MATLAB Prompt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vectors-and-matrices">Vectors and Matrices</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vectors">Vectors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matrices">Matrices</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vectors-and-matrices">Vectors and Matrices</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programming-with-matlab">Programming with MATLAB</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transposition">Transposition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-addition-and-subtraction">Matrix Addition and Subtraction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-multiplication">Matrix Multiplication</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-division">Matrix Division</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-additional-important-concepts">Some Additional Important Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab-scripts">MATLAB Scripts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab-functions">MATLAB Functions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Variables</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scripts">Scripts</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-flow">Control Flow</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-statement">If-statement</a></li>
@@ -1007,7 +1180,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Summary</a></li>
 </ul>
   </nav></div>
 

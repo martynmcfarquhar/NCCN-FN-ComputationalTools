@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Statistical Parametric Mapping (SPM) &#8212; Computational Tools</title>
+    <title>Installing MATLAB and SPM &#8212; Computational Tools</title>
   
   
   
@@ -57,11 +57,11 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '2.spm';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '2.MATLAB-SPM';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="MATLAB Programming and Linear Algebra" href="3.matlab-linear-algebra.html" />
-    <link rel="prev" title="Understanding Medical Images" href="1.understanding-medical-images.html" />
+    <link rel="next" title="Linear Algebra with MATLAB" href="3.matlab-linear-algebra.html" />
+    <link rel="prev" title="Medical Images" href="1.medical-images.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -180,9 +180,9 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="1.understanding-medical-images.html">Understanding Medical Images</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Statistical Parametric Mapping (SPM)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="3.matlab-linear-algebra.html">MATLAB Programming and Linear Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1.medical-images.html">Medical Images</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Installing MATLAB and SPM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.matlab-linear-algebra.html">Linear Algebra with MATLAB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="5.summary.html">Summary</a></li>
 </ul>
 
@@ -255,7 +255,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F2.spm.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F2.MATLAB-SPM.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -285,7 +285,7 @@
       
       
       
-      <li><a href="_sources/2.spm.md" target="_blank"
+      <li><a href="_sources/2.MATLAB-SPM.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -356,7 +356,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -367,11 +369,28 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Statistical Parametric Mapping (SPM)</h1>
+    <h1>Installing MATLAB and SPM</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab">MATLAB</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-matlab">Installing MATLAB</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-matlab-interface">The MATLAB Interface¶</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spm">SPM</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-spm">Installing SPM</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resolving-errors-on-macos">Resolving Errors on macOS</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -381,8 +400,35 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="statistical-parametric-mapping-spm">
-<h1>Statistical Parametric Mapping (SPM)<a class="headerlink" href="#statistical-parametric-mapping-spm" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="installing-matlab-and-spm">
+<h1>Installing MATLAB and SPM<a class="headerlink" href="#installing-matlab-and-spm" title="Link to this heading">#</a></h1>
+<p>As mentioned in the previous section, SPM is the software we will be using to analyse brain images on this course. SPM is developed by the <a class="reference external" href="https://www.fil.ion.ucl.ac.uk/">Wellcome Centre for Human Neuroimaging</a> at University College London (UCL). It is notable for being written in the MATLAB programming language, meaning that we need a copy of MATLAB in order for SPM to run.</p>
+<section id="matlab">
+<h2>MATLAB<a class="headerlink" href="#matlab" title="Link to this heading">#</a></h2>
+<p>MATLAB (MATrix LABoratory) is a scientific computing environment and programming language developed by the MathWorks corporation. It was originally developed to allow for easy programming using concepts from linear algebra. Since then, the software has expanded into a large suite of functions that include image processing, computer vision, statistics, machine learning and graphical user interfaces. In this section, we will see how to install MATLAB (if you want it on your own computer) and have a quick tour of the interface. We will begin learning how to use MATLAB in the next section.</p>
+<section id="installing-matlab">
+<h3>Installing MATLAB<a class="headerlink" href="#installing-matlab" title="Link to this heading">#</a></h3>
+<p>MATLAB is not free software. If you are using a University cluster PC, MATLAB will already be ready for you to use. However, if you are planning on using your own computer, you will need to install MATLAB using the University license. First, visit the <a class="reference external" href="https://uk.mathworks.com/">Mathworks website</a> and then click the <code class="docutils literal notranslate"><span class="pre">Get</span> <span class="pre">MATLAB</span></code> button. You will be prompted to create an account. Make sure you do this using your University email address so that the license is available. Once you have signed in, click the <code class="docutils literal notranslate"><span class="pre">Install</span> <span class="pre">MATLAB</span></code> button. Once you are on the downloads page, you can select the version that you want to install. For Windows, just install the latest version. If you are using a Mac, make sure you install version <code class="docutils literal notranslate"><span class="pre">R2023a</span></code>, otherwise there will be compatibility issues with SPM12. Once downloaded, just run the installer and MATLAB will be available to use.</p>
+</section>
+<section id="the-matlab-interface">
+<h3>The MATLAB Interface¶<a class="headerlink" href="#the-matlab-interface" title="Link to this heading">#</a></h3>
+<p>Once open, it is a good idea to familiarise yourself with the MATLAB layout. The video below will provide a brief tour of the MATLAB interface.</p>
+<div style="max-width: 1280px"><div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;"><iframe src="https://livemanchesterac.sharepoint.com/sites/UOM-FBMH-MSc-NCCN/_layouts/15/embed.aspx?UniqueId=b3ee28fc-ecf9-44a7-b324-acd7ce29ee05&embed=%7B%22hvm%22%3Atrue%2C%22ust%22%3Atrue%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" width="1280" height="720" frameborder="0" scrolling="no" allowfullscreen title="MATLAB-Tour.mp4" style="border:none; position: absolute; top: 0; left: 0; right: 0; bottom: 0; height: 100%; max-width: 100%;"></iframe></div></div>
+</section>
+</section>
+<section id="spm">
+<h2>SPM<a class="headerlink" href="#spm" title="Link to this heading">#</a></h2>
+<p>SPM is one of the oldest and most widely used software packages for processing and analysing brain images. It was originally developed by Karl Friston in the early 90s as a means of analysing PET data, but was soon expanded for the analysis of fMRI, MEG and EEG datasets. SPM12 is the 5th major version of the SPM software, released at the end of 2012. Many of the approaches we use to analyse neuroimaging data were initially developed by the SPM team, as discussed in the retrospective by <a class="reference external" href="https://doi.org/10.1016/j.neuroimage.2011.10.025">Ashburner (2012)</a>.</p>
+</section>
+<section id="installing-spm">
+<h2>Installing SPM<a class="headerlink" href="#installing-spm" title="Link to this heading">#</a></h2>
+<p>At its most basic, SPM is a collection of MATLAB scripts. You download the software as a folder, tell MATLAB where that folder is located and then launch the software by typing spm at the MATLAB prompt. The three main windows of SPM will then open, as shown in the screenshot below.</p>
+<p>In order to install SPM, follow along with the video below. You will see how to download the software, get it working with MATLAB and the finally how to use SPM to view an example image (which you can download from <a class="reference external" href="https://github.com/martynmcfarquhar/NCCNDatasets/blob/2021-22/F%26CN/1b.ComputationalTools/comp_tools_anat1.nii?raw=1">here</a>). Note that if you are using macOS, there will be some additional steps to perform to get SPM working, which are explained in the section below the video.</p>
+<section id="resolving-errors-on-macos">
+<h3>Resolving Errors on macOS<a class="headerlink" href="#resolving-errors-on-macos" title="Link to this heading">#</a></h3>
+<p>For anyone installing SPM on macOS, there are some additional steps that will be required before the software will function correctly.</p>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -416,12 +462,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="1.understanding-medical-images.html"
+       href="1.medical-images.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Understanding Medical Images</p>
+        <p class="prev-next-title">Medical Images</p>
       </div>
     </a>
     <a class="right-next"
@@ -429,7 +475,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">MATLAB Programming and Linear Algebra</p>
+        <p class="prev-next-title">Linear Algebra with MATLAB</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -439,6 +485,30 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab">MATLAB</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-matlab">Installing MATLAB</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-matlab-interface">The MATLAB Interface¶</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spm">SPM</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-spm">Installing SPM</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resolving-errors-on-macos">Resolving Errors on macOS</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
