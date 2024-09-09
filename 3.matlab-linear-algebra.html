@@ -1,72 +1,69 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>MATLAB Programming &#8212; Computational Tools</title>
+    <title>Linear Algebra with MATLAB &#8212; Computational Tools</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '3.matlab-programming';</script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '3.matlab-linear-algebra';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Linear Algebra" href="4.linear-algebra.html" />
-    <link rel="prev" title="MATLAB and SPM" href="2.matlab-and-spm.html" />
+    <link rel="next" title="Summary" href="5.summary.html" />
+    <link rel="prev" title="Installing MATLAB and SPM" href="2.MATLAB-SPM.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -76,28 +73,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -119,12 +111,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -139,6 +139,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="0.intro.html">
@@ -157,7 +160,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -168,10 +182,9 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="1.understanding-medical-images.html">Understanding Medical Images</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2.matlab-and-spm.html">MATLAB and SPM</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">MATLAB Programming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="4.linear-algebra.html">Linear Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1.medical-images.html">Medical Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2.MATLAB-SPM.html">Installing MATLAB and SPM</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Linear Algebra with MATLAB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="5.summary.html">Summary</a></li>
 </ul>
 
@@ -188,7 +201,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -197,14 +210,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -244,7 +257,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F3.matlab-programming.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F3.matlab-linear-algebra.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -274,7 +287,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/3.matlab-programming.ipynb" target="_blank"
+      <li><a href="_sources/3.matlab-linear-algebra.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -326,26 +339,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -356,7 +371,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>MATLAB Programming</h1>
+    <h1>Linear Algebra with MATLAB</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -368,7 +383,26 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-matlab-prompt">The MATLAB Prompt</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">Variables</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scripts">Scripts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vectors-and-matrices">Vectors and Matrices</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vectors">Vectors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matrices">Matrices</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transposition">Transposition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-operations">Matrix Operations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#addition-and-subtraction">Addition and Subtraction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiplication">Multiplication</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#division">Division</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-additional-programming-concepts">Some Additional Programming Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scripts">Scripts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Scripts</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-flow">Control Flow</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-statement">If-statement</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops">For-loops</a></li>
@@ -381,8 +415,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#struct">Struct</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Summary</a></li>
 </ul>
             </nav>
         </div>
@@ -392,18 +426,14 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="matlab-programming">
-<h1>MATLAB Programming<a class="headerlink" href="#matlab-programming" title="Permalink to this heading">#</a></h1>
-<p>You should now have some idea about both MATLAB and SPM. Although possible to use SPM without any further knowledge of MATLAB, there is an argument to be made for being at least a bit familiar with MATLAB programming. Although many of our initial interactions with SPM will be via its graphical interface, understanding how programming works, even superficially, will pay dividends in the future. For starters, understanding how to program in MATLAB can be instructive because you can use MATLAB to play around with some of the concepts we will be learning about. This is something we will be doing in the synchronous sessions and so the more familiarity you have before these sessions the better. In addition, there are elements of SPM that can be automated with just a bit of programming knowledge. This can save a huge amount of time and effort and is particularly important if you are looking towards a research career. We will not be getting into this aspect too much yet, but we will do in Advanced Image Analysis in Semester 2 and so building a good foundation now is no bad thing. If nothing else, programming is a very useful transferable skill that warrants some degree of attention.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This section is written as more of a reference for future use, so it can be a bit tedious to go through. We would recommend doing so at this stage, but you may also want to return here when you see some of these elements in context later in the course.</p>
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="linear-algebra-with-matlab">
+<h1>Linear Algebra with MATLAB<a class="headerlink" href="#linear-algebra-with-matlab" title="Link to this heading">#</a></h1>
+<p>As mentioned in the previous section, SPM is a software package that is built <em>on top</em> of the MATLAB scientific computing environment, using the MATLAB programming language. Although possible to use SPM without any further knowledge of MATLAB, there is an argument to be made for being at least a <em>bit</em> familiar with the MATLAB language. Although most of our interactions with SPM will be via its graphical interface, understanding MATLAB in more detail can pay dividends in the future. For starters, having some MATLAB basics will allow you to use MATLAB to play around with some of the key concepts we will be covering on the course. In addition, there are elements of SPM that can be automated with just a bit of programming knowledge. This can save a huge amount of time and is particularly important if you are looking towards a research career. Unfortunately, we do not have time on this course for in-depth training on computer programming, however, we can start using MATLAB as a way of understanding some of the mathematical theory that we will need going forward. This will do double-duty as both a way of getting familiar with MATLAB and a way of seeing some of the mathematical concepts in an interactive fashion. This will be our focus in the last part of this lesson.</p>
 <section id="the-matlab-prompt">
-<h2>The MATLAB Prompt<a class="headerlink" href="#the-matlab-prompt" title="Permalink to this heading">#</a></h2>
-<p>To interact with MATLAB, we use the MATLAB prompt. The prompt is signified in the Command Window by the two angled brackets <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>. These brackets indicate where we can type commands for MATLAB to interpret. We type something at the prompt, hit the <code class="docutils literal notranslate"><span class="pre">ENTER</span></code> key and then whatever we typed gets sent to the MATLAB interpreter. If MATLAB understands what we typed, it will return the answer. If MATLAB does not understand what we typed, it will return an error. For instance, if we meant to type</p>
+<h2>The MATLAB Prompt<a class="headerlink" href="#the-matlab-prompt" title="Link to this heading">#</a></h2>
+<p>To interact with MATLAB, we use the MATLAB prompt. The prompt is signified in the Command Window by the two angled brackets <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>. These brackets indicate where we can type commands for MATLAB to interpret. We type something at the prompt, hit the <code class="docutils literal notranslate"><span class="pre">ENTER</span></code> key and then whatever we typed gets sent to the MATLAB interpreter. If MATLAB understands what we typed, it will return the answer. If MATLAB does not understand what we typed, it will return an error. For instance, if we wanted to ask MATLAB what <span class="math notranslate nohighlight">\(3 \times 4\)</span> was and we meant to type</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">4</span>
@@ -413,7 +443,7 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_html"><html><body><pre>ans = 12</pre></body></html></div></div>
 </div>
-<p>but instead  typed <code class="docutils literal notranslate"><span class="pre">$</span></code> instead of <code class="docutils literal notranslate"><span class="pre">*</span></code>.</p>
+<p>but instead  typed <code class="docutils literal notranslate"><span class="pre">$</span></code> instead of <code class="docutils literal notranslate"><span class="pre">*</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">3</span><span class="w"> </span><span class="s">$</span><span class="w"> </span><span class="s">4</span>
@@ -426,13 +456,157 @@ document.write(`
 </div>
 </div>
 </div>
+<p>MATLAB would return an error, because it does not undestand what <code class="docutils literal notranslate"><span class="pre">$</span></code> means in this context.</p>
 <div class="tip admonition">
 <p class="admonition-title">Tip</p>
 <p>When faced with an error, part of the skill of computer programming is trying to work out why the command failed. Even for seasoned programmers, errors are common. Errors will decrease with experience, but they will never disappear. The trick is not panicking when you see red text, but rather reading what it says carefully and trying to fix it quickly. More times than not, the problem is a user error. So the best advice we can give when faced with a problem is to look for mistakes you have made as carefully as possible. Only when you have exhausted all other possibilities should you start wondering whether it is a bug or problem with MATLAB.</p>
 </div>
 </section>
 <section id="variables">
-<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this heading">#</a></h2>
+<h2>Variables<a class="headerlink" href="#variables" title="Link to this heading">#</a></h2>
+</section>
+<section id="vectors-and-matrices">
+<h2>Vectors and Matrices<a class="headerlink" href="#vectors-and-matrices" title="Link to this heading">#</a></h2>
+<p>The most fundamental entities in linear algebra are <em>vectors</em> and <em>matrices</em>. We will be using these a lot on this course, so it is important to both understand what a vector or matrix is, as well as understanding how they can be manipulated.</p>
+<section id="vectors">
+<h3>Vectors<a class="headerlink" href="#vectors" title="Link to this heading">#</a></h3>
+<p>A vector is simply a list of numbers. For instance</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{a} = \begin{bmatrix}3 &amp; 4 &amp; 5\end{bmatrix}.
+\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> is a 3-dimensional row vector with elements 3, 4 and 5. We can refer to the individual elements using <em>subscripts</em>. For instance, <span class="math notranslate nohighlight">\(\mathbf{a}_{1} = 3\)</span>, <span class="math notranslate nohighlight">\(\mathbf{a}_{2} = 4\)</span> and so on. A vector can also be defined as a <em>column</em> of numbers, for instance</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{b} = 
+\begin{bmatrix}
+    6 \\  
+    7 \\ 
+    8 \\
+\end{bmatrix}.
+\end{split}\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(\mathbf{b}\)</span> is a 3-dimensional column-vector with elements 6, 7 and 8. Although the orientation of a vector may seem like a trivial detail, we will soon see how important the orientation of vectors and matrices is.</p>
+<p>In MATLAB, a vector is defined using a list of numbers between square brackets. For instance, we can define <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> in MATLAB as</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>a = 1x3 double
+     3     4     5
+</pre></body></html></div></div>
+</div>
+<p>which tells us that <code class="docutils literal notranslate"><span class="pre">a</span></code> is a <span class="math notranslate nohighlight">\(1 \times 3\)</span> vector of double-precision values. We can access the individual elements using curved brackets</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>ans = 3</pre></body></html></div></div>
+</div>
+<p>or provide a range of indices to return multiple values, using the <code class="docutils literal notranslate"><span class="pre">:</span></code> syntax</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">(</span><span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>ans = 1x2 double
+     4     5
+</pre></body></html></div></div>
+</div>
+<p>We can create a column vector by designating new rows with <code class="docutils literal notranslate"><span class="pre">;</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">6</span><span class="p">;</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span><span class="w"> </span><span class="mi">8</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>b = 3x1 double
+     6
+     7
+     8
+</pre></body></html></div></div>
+</div>
+<p>and, similarly, we can access individual elements using curved brackets</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>ans = 2x1 double
+     6
+     7
+</pre></body></html></div></div>
+</div>
+</section>
+<section id="matrices">
+<h3>Matrices<a class="headerlink" href="#matrices" title="Link to this heading">#</a></h3>
+<p>… We can think of a matrix as a collection of column-vectors, or as a collection of row-vectors.</p>
+</section>
+</section>
+<section id="transposition">
+<h2>Transposition<a class="headerlink" href="#transposition" title="Link to this heading">#</a></h2>
+</section>
+<section id="matrix-operations">
+<h2>Matrix Operations<a class="headerlink" href="#matrix-operations" title="Link to this heading">#</a></h2>
+<section id="addition-and-subtraction">
+<h3>Addition and Subtraction<a class="headerlink" href="#addition-and-subtraction" title="Link to this heading">#</a></h3>
+<p>Formally, we can write that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{C} = \mathbf{A} + \mathbf{B} =
+\begin{bmatrix}
+a_{11} + b_{11} &amp; a_{12} + b_{12} &amp; \dots  &amp; a_{1k} + b_{1k} \\
+a_{21} + b_{21} &amp; a_{22} + b_{22} &amp; \dots  &amp; a_{2k} + b_{2k} \\
+\vdots          &amp; \vdots          &amp; \ddots &amp; \vdots          \\
+a_{j1} + b_{j1} &amp; a_{j2} + b_{j2} &amp; \dots  &amp; a_{jk} + b_{jk} \\
+\end{bmatrix}
+\end{split}\]</div>
+<p>where the ellipses just mean “continue the pattern along this direction”. Matrix subtraction works in the same way, so we have</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{C} = \mathbf{A} - \mathbf{B}
+\]</div>
+<p>which, again, is only defined when <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> have the same dimensions. For instance</p>
+</section>
+<section id="multiplication">
+<h3>Multiplication<a class="headerlink" href="#multiplication" title="Link to this heading">#</a></h3>
+</section>
+<section id="division">
+<h3>Division<a class="headerlink" href="#division" title="Link to this heading">#</a></h3>
+<p>The use of <code class="docutils literal notranslate"><span class="pre">inv()</span></code> is an example of a <em>function</em>. This is a key programming concept that will be explained briefly at the end of this section.</p>
+</section>
+</section>
+<section id="some-additional-programming-concepts">
+<h2>Some Additional Programming Concepts<a class="headerlink" href="#some-additional-programming-concepts" title="Link to this heading">#</a></h2>
+<section id="scripts">
+<h3>Scripts<a class="headerlink" href="#scripts" title="Link to this heading">#</a></h3>
+</section>
+<section id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h3>
+<p>Beyond just writing code within a separate script, we can further containerise MATLAB code by creating a <em>function</em>. This is important because SPM is effectively just hundreds of MATLAB functions that can be called in different ways to process and analyse images.</p>
+</section>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<p>In this lesson, we have treated MATLAB as simply a means of understanding some basic concepts in linear algebra. However, MATLAB is really a fully-fledged programming language. We have not touched any programming concepts beyond simply variable assignment, however, if you want to make the most of MATLAB as a tool then you will need to learn to use it as a programming language. Although not an essential part of this course, this would be a skill that will come in very handy in Semester 2, as well as in your dissertation project work. There are many resources available to learn to programme in MATLAB and we would encourage everyone to try and go through them as part of the additional reading throughout this course. Some resources we recommend are:</p>
+<ul class="simple">
+<li></li>
+<li></li>
+<li></li>
+</ul>
+</section>
+<section id="id1">
+<h2>Variables<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>The most basic element of any programming language is the ability to store things in memory for later use. We do this by using a variable, which you can think of as a box with a name that we put something inside to keep for later. As an example, the code below shows the declaration of a variable called a and assigning it the number 5.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -480,8 +654,8 @@ document.write(`
 <p>which we could use to store a file path or file name, for instance.</p>
 <p>There are a few rules you have to adhere to when naming variables. A variable name cannot start with a number, it cannot contain spaces and the only special character you can use is an underscore. You also need to be aware that MATLAB is case-sensitive, meaning that <code class="docutils literal notranslate"><span class="pre">hello_text</span></code> and <code class="docutils literal notranslate"><span class="pre">HELLO_TEXT</span></code> will be interpreted as different variables. In addition, remember that a variable can only hold one thing at a time and if you re-assign a variable then the original value will be lost.</p>
 </section>
-<section id="scripts">
-<h2>Scripts<a class="headerlink" href="#scripts" title="Permalink to this heading">#</a></h2>
+<section id="id2">
+<h2>Scripts<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>Typically, if we are writing code to complete some task we will not enter it line-by-line at the MATLAB prompt. Instead, we will write the steps inside a script. You can think of a script as a recipe that we write in code inside a text file. It has multiple steps that are written on different lines that MATLAB will execute one at a time. These scripts can be saved so they can be re-used, or used as templates for other scripts in the future. Indeed, writing scripts is one of the best ways of leaving a paper trail for your analysis, to fully document what you did to the data.</p>
 <p>In order to start writing a script click the New Script icon in the MATLAB toolbar to open the blank script editor. We can now enter all our code in this new window. When we want to run it, we save the file and then click the big green Run button in the toolbar. Usefully, we can also include comments in a script. These are pieces of text that MATLAB will ignore, but serve as notes for our future selves. You can include a comment in a script by typing the percentage symbol, followed by whatever text you like. These will be coloured green to make the comments obvious. For example</p>
 <div class="cell docutils container">
@@ -500,10 +674,10 @@ document.write(`
 </div>
 </section>
 <section id="control-flow">
-<h2>Control Flow<a class="headerlink" href="#control-flow" title="Permalink to this heading">#</a></h2>
+<h2>Control Flow<a class="headerlink" href="#control-flow" title="Link to this heading">#</a></h2>
 <p>In the process of writing a script, we may need to decide whether to run code based on some criteria. Alternatively, we may need to repeat a chunk of code a certain number of times. Both of these tasks are examples of control flow where we dictate a more complex path for the code to follow (rather than just running line-by-line). We can break the main types of control flow down into if-statements and for-loops.</p>
 <section id="if-statement">
-<h3>If-statement<a class="headerlink" href="#if-statement" title="Permalink to this heading">#</a></h3>
+<h3>If-statement<a class="headerlink" href="#if-statement" title="Link to this heading">#</a></h3>
 <p>An if-statement allows us to make a choice about whether some code is run or not. This is intimately tied to the ideas of variables. Because we do not necessarily know what value a variable will have when we run some code, we may want to check what the value is and then decide what we want to do. An if-statement allows us to ask a question and then decide whether to run some code or not, depending on the answer. This question has to either be true or false, so we can only ask things like “is this variable larger than 5”. We can then decide what we want MATLAB to do if the question is true and what we want MATLAB to do if the question is false.</p>
 <p>An if-statement has the following structure</p>
 <div class="cell docutils container">
@@ -572,7 +746,7 @@ document.write(`
 </div>
 </section>
 <section id="for-loops">
-<h3>For-loops<a class="headerlink" href="#for-loops" title="Permalink to this heading">#</a></h3>
+<h3>For-loops<a class="headerlink" href="#for-loops" title="Link to this heading">#</a></h3>
 <p>Beyond checking variable values, we often want to repeat some code a certain number of times in a script. For instance, we may want to copy multiple files, or run some image processing on multiple images. In both cases we want MATLAB to repeat the same set of steps multiple times, but with a different input. For this purpose, all programming languages contain the concept of loops, which allow us to write a set of steps once and then ask the computer to repeat those steps as many times as we want.</p>
 <p>The main type of loop we use is known as a for-loop, which has the following structure</p>
 <div class="cell docutils container">
@@ -626,10 +800,10 @@ document.write(`
 </section>
 </section>
 <section id="data-structures">
-<h2>Data Structures<a class="headerlink" href="#data-structures" title="Permalink to this heading">#</a></h2>
+<h2>Data Structures<a class="headerlink" href="#data-structures" title="Link to this heading">#</a></h2>
 <p>We have now seen how we can use variables and control flow to build basic scripts. However, one limitation of what we have so far is that if we want to access and process many values within the script we would need to assign each to a different variable with a different name. For instance, if we have 100 values we wanted access to, it would be incredibly tedious to assign each one to a separate variable. In these instances, we can make use of various data structures in MATLAB that allow us to assign multiple values to the same variable.</p>
 <section id="matrix">
-<h3>Matrix<a class="headerlink" href="#matrix" title="Permalink to this heading">#</a></h3>
+<h3>Matrix<a class="headerlink" href="#matrix" title="Link to this heading">#</a></h3>
 <p>The most basic form of data structure in MATLAB is a matrix. We will talk about the mathematical interpretation of a matrix in the next section, but for now we can just treat it as a container for numbers that has a certain number of rows and a certain number of columns (like a spreadsheet or a table). You specify a matrix in MATLAB using square brackets, where a space indicates a new column and a semi-colon indicates a new row. For example, the following code</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -685,7 +859,7 @@ document.write(`
 <p>where <code class="docutils literal notranslate"><span class="pre">size(A,1)</span></code> tells you how many rows <code class="docutils literal notranslate"><span class="pre">A</span></code> has, <code class="docutils literal notranslate"><span class="pre">size(A,2)</span></code> tells you how many columns <code class="docutils literal notranslate"><span class="pre">A</span></code> has and the <code class="docutils literal notranslate"><span class="pre">disp()</span></code> function tells MATLAB to print the number at the prompt.</p>
 </section>
 <section id="character-array">
-<h3>Character Array<a class="headerlink" href="#character-array" title="Permalink to this heading">#</a></h3>
+<h3>Character Array<a class="headerlink" href="#character-array" title="Link to this heading">#</a></h3>
 <p>Beyond numbers, we may also want to store text in some sort of data structure. This is where the character array comes in. We actually saw a character array earlier when we specified the <code class="docutils literal notranslate"><span class="pre">hello_text</span></code> variable. Rather than being a variable with a single value, what was returned was actually a character array with 1 row and as many columns as letters. So a character array is really the same as a matrix, but the rows and columns refer to letters instead of numbers. A limitation to this approach, however, is that if you want multiple rows there needs to be the same number of characters in each row.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -714,7 +888,7 @@ document.write(`
 </div>
 </section>
 <section id="cell-array">
-<h3>Cell Array<a class="headerlink" href="#cell-array" title="Permalink to this heading">#</a></h3>
+<h3>Cell Array<a class="headerlink" href="#cell-array" title="Link to this heading">#</a></h3>
 <p>The fact that a matrix and a character array behave so similarly is a testament to the MATLAB design principles of treating everything generically like a matrix. The issue with this is that a matrix and a character array can only contain one type of data. This means you need to have multiple variables if you want to store both text and numeric data. To get around this problem the concept of a cell was created. A cell is a container that can hold any type of data. So a cell could contain a matrix, a character array or even another cell. You can then have multiple cells stored together in a single variable called a cell array.</p>
 <p>We can create an empty cell array with 2 rows and 3 columns using the following code</p>
 <div class="cell docutils container">
@@ -766,7 +940,7 @@ document.write(`
 </div>
 </section>
 <section id="struct">
-<h3>Struct<a class="headerlink" href="#struct" title="Permalink to this heading">#</a></h3>
+<h3>Struct<a class="headerlink" href="#struct" title="Link to this heading">#</a></h3>
 <p>Continuing the theme of data structures that can store different types, an alternative to a cell array is to use something called a struct. Where a struct differs from a cell array is that rather than using indices a struct uses named fields to store the data. This is useful because we can access data by name rather than having to remember what index we need for each type of data.</p>
 <p>Structs are defined by specifying the name of the struct and then using a dot to create fields. For instance</p>
 <div class="cell docutils container">
@@ -848,8 +1022,8 @@ document.write(`
 </div>
 </section>
 </section>
-<section id="functions">
-<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">#</a></h2>
+<section id="id3">
+<h2>Functions<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <p>The final topic of this section is one of the most important concepts that we need for programming with MATLAB. One of the central tenets of writing code that can be re-used and easily maintained is to make it modular. This means breaking the code up into independent chunks that do very specific jobs. Those individual chunks are written to be very generic so they can be re-used in many places. The way we achieve this is by isolating chunks of code into functions. You can think of these like a black box that we pass data into and it gives us some data back again.</p>
 <p>An example of a function is given below</p>
 <div class="cell docutils container">
@@ -874,8 +1048,8 @@ document.write(`
 </div>
 <p>So what we have done here is saved code in a format where we can use it again simply by typing <code class="docutils literal notranslate"><span class="pre">add_five</span></code> with whatever argument we like. Now, obviously, a function that just adds 5 to a number is a bit useless. However, if you think of something more complex, such as reading neuroimaging data from a file name and returning a matrix of voxel values, you can start appreciating the power of functions. Not only do they make code re-useable, but they also make code easier to understand. For instance, seeing <code class="docutils literal notranslate"><span class="pre">image</span> <span class="pre">=</span> <span class="pre">read_data('image_file.nii')</span></code> in a script is a lot easier to understand than suddenly seeing 300 lines of code for reading the file from disk. We will see functions come up a lot during this course, mainly in terms of the functions that come with SPM. The main thing to understand is that a function is effectively hiding code from you and that in order to use a function you just need understand what it needs in terms of input variables and what it will return in terms of output variables.</p>
 </section>
-<section id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<section id="id4">
+<h2>Summary<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <p>It may seem unfair to call this section a brief introduction to programming in MATLAB, however, the world of computer programming is huge and we have only covered the very basics here. If you are new to programming, this may have felt a bit overwhelming, but do not worry. As we said at the outset, treat this section as a reference that you can come back to in future. A lot of these topics will become clearer over time as you see more examples of code and scripts. What we want at this stage is for you to have some familiarity with this so that the first time you see a MATLAB script you are not doing so cold. We will be providing more guidance on this as we go through the course. If this has whetted your appetite and you want to learn more, there are many books on MATLAB programming, such as MATLAB for Psychologists by Borgo, Soranzo and Grassi.</p>
 </section>
 </section>
@@ -907,24 +1081,24 @@ document.write(`
               
               
               
-                <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                <footer class="prev-next-footer d-print-none">
+                  
 <div class="prev-next-area">
     <a class="left-prev"
-       href="2.matlab-and-spm.html"
+       href="2.MATLAB-SPM.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">MATLAB and SPM</p>
+        <p class="prev-next-title">Installing MATLAB and SPM</p>
       </div>
     </a>
     <a class="right-next"
-       href="4.linear-algebra.html"
+       href="5.summary.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Linear Algebra</p>
+        <p class="prev-next-title">Summary</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -937,6 +1111,7 @@ document.write(`
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
@@ -945,7 +1120,26 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-matlab-prompt">The MATLAB Prompt</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">Variables</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scripts">Scripts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vectors-and-matrices">Vectors and Matrices</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vectors">Vectors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matrices">Matrices</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transposition">Transposition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-operations">Matrix Operations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#addition-and-subtraction">Addition and Subtraction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiplication">Multiplication</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#division">Division</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-additional-programming-concepts">Some Additional Programming Concepts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scripts">Scripts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Scripts</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-flow">Control Flow</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-statement">If-statement</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops">For-loops</a></li>
@@ -958,8 +1152,8 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#struct">Struct</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Summary</a></li>
 </ul>
   </nav></div>
 
@@ -981,9 +1175,10 @@ By Dr Martyn McFarquhar
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1007,8 +1202,8 @@ By Dr Martyn McFarquhar
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
