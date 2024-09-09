@@ -494,24 +494,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MATLAB Kernel Error:
-Error using &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&gt;updateRequest&#39;, &#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/+jupyter/execute.m&#39;, 72)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&gt;updateRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/+jupyter/execute.m&#39;,72,0)&quot;&gt;line 72&lt;/a&gt;)
-Invalid API version. Create an issue at https://github.com/mathworks/jupyter-matlab-proxy for further support.
-
-Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&#39;, &#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/+jupyter/execute.m&#39;, 43)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/+jupyter/execute.m&#39;,43,0)&quot;&gt;line 43&lt;/a&gt;)
-request = updateRequest(request, code);
-
-Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;processJupyterKernelRequest&#39;, &#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/processJupyterKernelRequest.m&#39;, 54)&quot; style=&quot;font-weight:bold&quot;&gt;processJupyterKernelRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/processJupyterKernelRequest.m&#39;,54,0)&quot;&gt;line 54&lt;/a&gt;)
-            output = jupyter.execute(code, kernelId);
-
-Error in connector.internal.fevalMatlab
-
-Error in connector.internal.fevalJSON
-</pre></div>
+<div class="output text_html"><html><body><pre>a = 1x3 double
+     3     4     5
+</pre></body></html></div></div>
 </div>
-</div>
-</div>
-<p>and can access the individual elements using curved brackets</p>
+<p>which tells us that <code class="docutils literal notranslate"><span class="pre">a</span></code> is a <span class="math notranslate nohighlight">\(1 \times 3\)</span> vector of double-precision values. We can access the individual elements using curved brackets</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -519,48 +506,21 @@ Error in connector.internal.fevalJSON
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MATLAB Kernel Error:
-Error using &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&gt;updateRequest&#39;, &#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/+jupyter/execute.m&#39;, 72)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&gt;updateRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/+jupyter/execute.m&#39;,72,0)&quot;&gt;line 72&lt;/a&gt;)
-Invalid API version. Create an issue at https://github.com/mathworks/jupyter-matlab-proxy for further support.
-
-Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&#39;, &#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/+jupyter/execute.m&#39;, 43)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/+jupyter/execute.m&#39;,43,0)&quot;&gt;line 43&lt;/a&gt;)
-request = updateRequest(request, code);
-
-Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;processJupyterKernelRequest&#39;, &#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/processJupyterKernelRequest.m&#39;, 54)&quot; style=&quot;font-weight:bold&quot;&gt;processJupyterKernelRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/processJupyterKernelRequest.m&#39;,54,0)&quot;&gt;line 54&lt;/a&gt;)
-            output = jupyter.execute(code, kernelId);
-
-Error in connector.internal.fevalMatlab
-
-Error in connector.internal.fevalJSON
-</pre></div>
+<div class="output text_html"><html><body><pre>ans = 3</pre></body></html></div></div>
 </div>
-</div>
-</div>
+<p>or provide a range of indices to return multiple values, using the <code class="docutils literal notranslate"><span class="pre">:</span></code> syntax</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">(</span><span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MATLAB Kernel Error:
-Error using &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&gt;updateRequest&#39;, &#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/+jupyter/execute.m&#39;, 72)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&gt;updateRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/+jupyter/execute.m&#39;,72,0)&quot;&gt;line 72&lt;/a&gt;)
-Invalid API version. Create an issue at https://github.com/mathworks/jupyter-matlab-proxy for further support.
-
-Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&#39;, &#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/+jupyter/execute.m&#39;, 43)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/+jupyter/execute.m&#39;,43,0)&quot;&gt;line 43&lt;/a&gt;)
-request = updateRequest(request, code);
-
-Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;processJupyterKernelRequest&#39;, &#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/processJupyterKernelRequest.m&#39;, 54)&quot; style=&quot;font-weight:bold&quot;&gt;processJupyterKernelRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/processJupyterKernelRequest.m&#39;,54,0)&quot;&gt;line 54&lt;/a&gt;)
-            output = jupyter.execute(code, kernelId);
-
-Error in connector.internal.fevalMatlab
-
-Error in connector.internal.fevalJSON
-</pre></div>
+<div class="output text_html"><html><body><pre>ans = 1x2 double
+     4     5
+</pre></body></html></div></div>
 </div>
-</div>
-</div>
-<p>Similarly, we can create a column vector by designating new rows with <code class="docutils literal notranslate"><span class="pre">;</span></code></p>
+<p>We can create a column vector by designating new rows with <code class="docutils literal notranslate"><span class="pre">;</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">6</span><span class="p">;</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span><span class="w"> </span><span class="mi">8</span><span class="p">]</span>
@@ -568,26 +528,29 @@ Error in connector.internal.fevalJSON
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MATLAB Kernel Error:
-Error using &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&gt;updateRequest&#39;, &#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/+jupyter/execute.m&#39;, 72)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&gt;updateRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/+jupyter/execute.m&#39;,72,0)&quot;&gt;line 72&lt;/a&gt;)
-Invalid API version. Create an issue at https://github.com/mathworks/jupyter-matlab-proxy for further support.
-
-Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&#39;, &#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/+jupyter/execute.m&#39;, 43)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/+jupyter/execute.m&#39;,43,0)&quot;&gt;line 43&lt;/a&gt;)
-request = updateRequest(request, code);
-
-Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;processJupyterKernelRequest&#39;, &#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/processJupyterKernelRequest.m&#39;, 54)&quot; style=&quot;font-weight:bold&quot;&gt;processJupyterKernelRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;/home/martyn/anaconda3/lib/python3.11/site-packages/jupyter_matlab_kernel/matlab/processJupyterKernelRequest.m&#39;,54,0)&quot;&gt;line 54&lt;/a&gt;)
-            output = jupyter.execute(code, kernelId);
-
-Error in connector.internal.fevalMatlab
-
-Error in connector.internal.fevalJSON
+<div class="output text_html"><html><body><pre>b = 3x1 double
+     6
+     7
+     8
+</pre></body></html></div></div>
+</div>
+<p>and, similarly, we can access individual elements using curved brackets</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>ans = 2x1 double
+     6
+     7
+</pre></body></html></div></div>
 </div>
 </section>
 <section id="matrices">
 <h3>Matrices<a class="headerlink" href="#matrices" title="Link to this heading">#</a></h3>
+<p>… We can think of a matrix as a collection of column-vectors, or as a collection of row-vectors.</p>
 </section>
 </section>
 <section id="transposition">
