@@ -388,10 +388,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matrices">Matrices</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transposition">Transposition</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-operations">Matrix Operations</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#addition-and-subtraction">Addition and Subtraction</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiplication">Multiplication</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transposition-and-vectorisation">Transposition and Vectorisation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#division">Division</a></li>
 </ul>
 </li>
@@ -519,7 +519,8 @@ document.write(`
 </section>
 <section id="vectors-and-matrices">
 <h2>Vectors and Matrices<a class="headerlink" href="#vectors-and-matrices" title="Link to this heading">#</a></h2>
-<p>Now that we have the idea of variables in mind, we can move on to understanding some basic principles of linear algebra. TO begin with, the most fundamental entities in linear algebra are <em>vectors</em> and <em>matrices</em>. We will be using these a lot on this course, so it is important to both understand what a vector or matrix is, as well as understanding how they can be manipulated.</p>
+<p>Now that we have the idea of variables in mind, we can move on to understanding some basic principles of linear algebra. Just to reiterate, these are concepts that we will need going forward on the course. As such, it is important to gain some familiarity at this point, even though the context will be missing. Just try and get a feel for some of these ideas and have a go at feeding the code into MATLAB. We will start to see all of this in action as the course progresses, so just press on with trying to understand it, even if the relevance is not immediately clear at this stage.</p>
+<p>To begin with, the most fundamental entities in linear algebra are <em>vectors</em> and <em>matrices</em>. We will be using these a lot on this course, so it is important to both understand what a vector or matrix is, as well as understanding how they can be manipulated.</p>
 <section id="vectors">
 <h3>Vectors<a class="headerlink" href="#vectors" title="Link to this heading">#</a></h3>
 <p>A vector is simply a list of numbers. For instance</p>
@@ -527,7 +528,7 @@ document.write(`
 \[
 \mathbf{a} = \begin{bmatrix}3 &amp; 4 &amp; 5\end{bmatrix}.
 \]</div>
-<p>Here, <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> is a 3-dimensional row vector with elements 3, 4 and 5. We can refer to the individual elements using <em>subscripts</em>. For instance, <span class="math notranslate nohighlight">\(\mathbf{a}_{1} = 3\)</span>, <span class="math notranslate nohighlight">\(\mathbf{a}_{2} = 4\)</span> and so on. A vector can also be defined as a <em>column</em> of numbers, for instance</p>
+<p>Here, <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> is a 3-dimensional row vector with elements 3, 4 and 5. We can refer to the individual elements using <em>subscripts</em>. For instance, <span class="math notranslate nohighlight">\(\mathbf{a}_{1} = 3\)</span>, <span class="math notranslate nohighlight">\(\mathbf{a}_{2} = 4\)</span> and so on. Typically, a vector is written as a <strong>bold</strong> lower-case letter. A vector can also be defined as a <em>column</em> of numbers, for instance</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \mathbf{b} = 
@@ -537,8 +538,8 @@ document.write(`
     8 \\
 \end{bmatrix}.
 \end{split}\]</div>
-<p>Here, <span class="math notranslate nohighlight">\(\mathbf{b}\)</span> is a 3-dimensional column-vector with elements 6, 7 and 8. Although the orientation of a vector may seem like a trivial detail, we will soon see how important the orientation of vectors and matrices is.</p>
-<p>In MATLAB, a vector is defined using a list of numbers between square brackets. For instance, we can define <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> in MATLAB as</p>
+<p>Here, <span class="math notranslate nohighlight">\(\mathbf{b}\)</span> is a 3-dimensional column-vector with elements <span class="math notranslate nohighlight">\(\mathbf{b}_{1} = 6\)</span>, <span class="math notranslate nohighlight">\(\mathbf{b}_{2} = 7\)</span> and <span class="math notranslate nohighlight">\(\mathbf{b}_{3} = 8\)</span>. Although the orientation of a vector may seem like a trivial detail, we will soon see that this is very important.</p>
+<p>In MATLAB, a vector is defined using a list of numbers between square brackets. For instance, we can define the vector <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> in MATLAB as</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span>
@@ -550,7 +551,7 @@ document.write(`
      3     4     5
 </pre></body></html></div></div>
 </div>
-<p>which tells us that <code class="docutils literal notranslate"><span class="pre">a</span></code> is a <span class="math notranslate nohighlight">\(1 \times 3\)</span> vector of double-precision values. We can access the individual elements using curved brackets</p>
+<p>which tells us that <code class="docutils literal notranslate"><span class="pre">a</span></code> is a <span class="math notranslate nohighlight">\(1 \times 3\)</span> vector of <a class="reference external" href="https://en.wikipedia.org/wiki/Double-precision_floating-point_format">double-precision</a> values. We can access the individual elements using curved brackets</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -602,14 +603,48 @@ document.write(`
 </section>
 <section id="matrices">
 <h3>Matrices<a class="headerlink" href="#matrices" title="Link to this heading">#</a></h3>
-<p>… We can think of a matrix as a collection of column-vectors, or as a collection of row-vectors.</p>
+<p>A matrix is simply a collection of vectors. We can either think of a matrix as a collection of column-vectors, or as a collection of row-vectors. Either way, a matrix has multiple rows <em>and</em> multiple columns. For instance</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{A} = 
+\begin{bmatrix}
+1 &amp; 2 &amp; 3 \\
+4 &amp; 5 &amp; 6 \\
+\end{bmatrix}
+\end{split}\]</div>
+<p>is a <span class="math notranslate nohighlight">\(2 \times 3\)</span> matrix consisting of elements <span class="math notranslate nohighlight">\(\mathbf{A}_{11} = 1\)</span>, <span class="math notranslate nohighlight">\(\mathbf{A}_{12} = 2\)</span> and so on. Typically, matrices are written as upper-case <strong>bold</strong> letters, to distinguish them from vectors.</p>
+<p>In MATLAB, we declare matrices using square brackets and a combination of spaces and semi-colons. For example, we could declare <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> using</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">4</span><span class="w"> </span><span class="s">5</span><span class="w"> </span><span class="s">6]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>A = 2x3 double
+     1     2     3
+     4     5     6
+</pre></body></html></div></div>
+</div>
+<p>We can also make this declaration look more like a matrix using the MATLAB line-continuation syntax</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="k">...</span>
+<span class="w">     </span><span class="mi">4</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="mi">6</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>A = 2x3 double
+     1     2     3
+     4     5     6
+</pre></body></html></div></div>
+</div>
 </section>
-</section>
-<section id="transposition">
-<h2>Transposition<a class="headerlink" href="#transposition" title="Link to this heading">#</a></h2>
 </section>
 <section id="matrix-operations">
 <h2>Matrix Operations<a class="headerlink" href="#matrix-operations" title="Link to this heading">#</a></h2>
+<p>Beyond being containers for collections of numbers, matrices and vectors are <em>mathematical objects</em>, that we can treat in similar fashion to regular numbers. As such, regular arithmetic operations, such as addition or subtraction, have matrix equivalents.</p>
 <section id="addition-and-subtraction">
 <h3>Addition and Subtraction<a class="headerlink" href="#addition-and-subtraction" title="Link to this heading">#</a></h3>
 <p>Formally, we can write that</p>
@@ -632,10 +667,16 @@ a_{j1} + b_{j1} &amp; a_{j2} + b_{j2} &amp; \dots  &amp; a_{jk} + b_{jk} \\
 </section>
 <section id="multiplication">
 <h3>Multiplication<a class="headerlink" href="#multiplication" title="Link to this heading">#</a></h3>
+<p>Multiplying a matrix by a single number simply <em>scales</em> the matrix by that amount. As such, in the world of linear algebra, single numbers are often called <em>scalars</em>.</p>
+</section>
+<section id="transposition-and-vectorisation">
+<h3>Transposition and Vectorisation<a class="headerlink" href="#transposition-and-vectorisation" title="Link to this heading">#</a></h3>
+<p>As we have seen above, the dimensions of a matrix or vector are very important for determining when matrix multiplication can be performed. As such, there exists certain matrix operations that work by rearranging matrices and vectors into different forms.</p>
 </section>
 <section id="division">
 <h3>Division<a class="headerlink" href="#division" title="Link to this heading">#</a></h3>
 <p>The use of <code class="docutils literal notranslate"><span class="pre">inv()</span></code> is an example of a <em>function</em>. This is a key programming concept that will be explained briefly at the end of this section.</p>
+<p>A special matrix is the <em>identity</em> matrix.</p>
 </section>
 </section>
 <section id="some-additional-programming-concepts">
@@ -1177,10 +1218,10 @@ a_{j1} + b_{j1} &amp; a_{j2} + b_{j2} &amp; \dots  &amp; a_{jk} + b_{jk} \\
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matrices">Matrices</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transposition">Transposition</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-operations">Matrix Operations</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#addition-and-subtraction">Addition and Subtraction</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiplication">Multiplication</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transposition-and-vectorisation">Transposition and Vectorisation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#division">Division</a></li>
 </ul>
 </li>
