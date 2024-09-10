@@ -647,18 +647,19 @@ document.write(`
 <p>Beyond being containers for collections of numbers, matrices and vectors are <em>mathematical objects</em>, that we can treat in similar fashion to regular numbers. As such, arithmetic operations, such as addition or subtraction, have matrix equivalents.</p>
 <section id="addition-and-subtraction">
 <h3>Addition and Subtraction<a class="headerlink" href="#addition-and-subtraction" title="Link to this heading">#</a></h3>
-<p>Formally, we can write that</p>
+<p>Formally, for a matrix with <span class="math notranslate nohighlight">\(m\)</span> rows and <span class="math notranslate nohighlight">\(n\)</span> columns we can write that</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \mathbf{C} = \mathbf{A} + \mathbf{B} =
 \begin{bmatrix}
-a_{11} + b_{11} &amp; a_{12} + b_{12} &amp; \dots  &amp; a_{1k} + b_{1k} \\
-a_{21} + b_{21} &amp; a_{22} + b_{22} &amp; \dots  &amp; a_{2k} + b_{2k} \\
+a_{11} + b_{11} &amp; a_{12} + b_{12} &amp; \dots  &amp; a_{1n} + b_{1n} \\
+a_{21} + b_{21} &amp; a_{22} + b_{22} &amp; \dots  &amp; a_{2n} + b_{2n} \\
 \vdots          &amp; \vdots          &amp; \ddots &amp; \vdots          \\
-a_{j1} + b_{j1} &amp; a_{j2} + b_{j2} &amp; \dots  &amp; a_{jk} + b_{jk} \\
+a_{m1} + b_{m1} &amp; a_{m2} + b_{m2} &amp; \dots  &amp; a_{mn} + b_{mn} \\
 \end{bmatrix}
 \end{split}\]</div>
-<p>where the ellipses just mean “continue the pattern along this direction”. Matrix subtraction works in the same way, so we have</p>
+<p>where the ellipses (<span class="math notranslate nohighlight">\(\dots\)</span>) just mean “continue the pattern along this direction”. In this example, the row indices run from <span class="math notranslate nohighlight">\(i = 1,\dots,m\)</span> and the column indices run from <span class="math notranslate nohighlight">\(j = 1,\dots,n\)</span>.</p>
+<p>Matrix subtraction works in much the same way, so we have</p>
 <div class="math notranslate nohighlight">
 \[
 \mathbf{C} = \mathbf{A} - \mathbf{B}
