@@ -430,10 +430,10 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="matlab-programming-and-linear-algebra">
 <h1>MATLAB Programming and Linear Algebra<a class="headerlink" href="#matlab-programming-and-linear-algebra" title="Link to this heading">#</a></h1>
-<p>As mentioned in the previous section, SPM is a software package that is built <em>on top</em> of the MATLAB scientific computing environment. Although possible to use SPM without any further knowledge of MATLAB, there is an argument to be made for being at least a <em>bit</em> familiar with the MATLAB language. Unfortunately, we do not have time on this course for in-depth training on computer programming. However, we can start using MATLAB as a way of understanding some of the mathematical theory that we will need going forward. This will do double-duty as both a way of getting familiar with MATLAB and a way of learning some mathematical concepts in a less dry and formal fashion.</p>
+<p>As mentioned in the previous section, SPM is a software package that is built <em>on top</em> of the MATLAB scientific computing environment. Although possible to use SPM without any further knowledge of MATLAB, there is an argument to be made for being at least a <em>bit</em> familiar with the MATLAB language. Unfortunately, we do not have time on this course for in-depth training on computer programming. However, we can start using MATLAB as a way of understanding some of the mathematical theory that we will need going forward. This will do double-duty as both a way of getting familiar with MATLAB and a way of learning some mathematical concepts in a more interactive fashion.</p>
 <section id="the-matlab-prompt">
 <h2>The MATLAB Prompt<a class="headerlink" href="#the-matlab-prompt" title="Link to this heading">#</a></h2>
-<p>To interact with MATLAB, we use the MATLAB prompt. The prompt is signified in the Command Window by the two angled brackets <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>. These brackets indicate where we can type commands for MATLAB to interpret. We type something at the prompt, hit <kbd>ENTER</kbd> and then whatever we typed gets sent to the MATLAB interpreter. If MATLAB understands what we typed, it will return the answer. If MATLAB does not understand what we typed, it will return an error.</p>
+<p>In order to communicate with MATLAB, we use the MATLAB prompt. The prompt is signified in the Command Window by the two angled brackets <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>. These brackets indicate where we can type commands for MATLAB to interpret. We type something at the prompt, hit <kbd>ENTER</kbd> and then whatever we typed gets sent to the MATLAB interpreter. If MATLAB understands what we typed, it will return the answer. If MATLAB does not understand what we typed, it will return an error.</p>
 <p>As an example, if we wanted to use MATLAB as a highly over-engineered calculator, we could ask what <span class="math notranslate nohighlight">\(3 \times 4\)</span> is by typing</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -442,7 +442,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><html><body><pre>ans = 12</pre></body></html></div></div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error connecting to MATLAB. Check the status of MATLAB by clicking the &quot;Open MATLAB&quot; button. Retry after ensuring MATLAB is running successfully
+</pre></div>
+</div>
+</div>
 </div>
 <p>However, if we accidentally typed <code class="docutils literal notranslate"><span class="pre">$</span></code> instead of <code class="docutils literal notranslate"><span class="pre">*</span></code>, we would get</p>
 <div class="cell docutils container">
@@ -460,7 +463,7 @@ document.write(`
 <p>In this instance, MATLAB has return an error because it does not undestand what <code class="docutils literal notranslate"><span class="pre">$</span></code> means in this context.</p>
 <div class="tip admonition">
 <p class="admonition-title">Tip</p>
-<p>When faced with an error, part of the skill of using a programming language is trying to work out why a certain command failed. Even for seasoned programmers, errors are common. Errors will decrease with experience, but they will never disappear. The trick is not panicking when you see them, but rather reading what the error says very carefully. Although tempting to assume the problem is with MATLAB, 9/10 it is a user error. As such, you need to try and develop some skills in discerning what seemingly cryptic error messages mean so that you do not get stuck. This comes with time and experience, but is a valuable skill to develop.</p>
+<p>When faced with an error, part of the skill of using a programming language is working out why a certain command failed. Even for seasoned programmers, errors are common. Errors will decrease with experience, but they will never disappear. The trick is not to panic, but to read what the error says slowly and carefully. Although tempting to assume the problem is with MATLAB, 9/10 it is a user error. As such, you need to try and develop some skills in discerning what seemingly cryptic error messages mean so that you do not get stuck. This comes with time and experience, but is a valuable skill to develop.</p>
 </div>
 </section>
 <section id="variables">
