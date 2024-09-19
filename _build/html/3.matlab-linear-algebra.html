@@ -770,7 +770,7 @@ a_{m1} + b_{m1} &amp; a_{m2} + b_{m2} &amp; \dots  &amp; a_{mn} + b_{mn} \\
 </pre></body></html></div></div>
 </div>
 <p>You might want to take a moment to ponder this result and see if you can work out how MATLAB got there.</p>
-<p>To see how this multiplication works, start with the first <em>row</em> of <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> and the first <em>column</em> of <span class="math notranslate nohighlight">\(\mathbf{B}\)</span>. Each element in the row must be multiplied by each element in the column and then added together. In this example, we do <span class="math notranslate nohighlight">\((1 \times 7) + (2 \times 9) + (3 \times 11) = 58\)</span>. This sum then becomes the result for the first element of the new matrix.</p>
+<p>To see how this multiplication works, start with the first <em>row</em> of <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> and the first <em>column</em> of <span class="math notranslate nohighlight">\(\mathbf{B}\)</span>. Each element in the row must be multiplied by each element in the column and then added together. In this example, we do <span class="math notranslate nohighlight">\((1 \times 7) + (2 \times 9) + (3 \times 11) = 58\)</span>. This sum then becomes the result for the first element of the new matrix</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{bmatrix}
@@ -785,7 +785,7 @@ a_{m1} + b_{m1} &amp; a_{m2} + b_{m2} &amp; \dots  &amp; a_{mn} + b_{mn} \\
 \begin{bmatrix}
     58            &amp; \phantom{64}  \\
     \phantom{139} &amp; \phantom{154} \\
-\end{bmatrix}
+\end{bmatrix}.
 \end{split}\]</div>
 <p>We then do the same thing with the first <em>row</em> of <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> and the second <em>column</em> of <span class="math notranslate nohighlight">\(\mathbf{B}\)</span></p>
 <div class="math notranslate nohighlight">
@@ -802,9 +802,9 @@ a_{m1} + b_{m1} &amp; a_{m2} + b_{m2} &amp; \dots  &amp; a_{mn} + b_{mn} \\
 \begin{bmatrix}
     58            &amp; 64  \\
     \phantom{139} &amp; \phantom{154} \\
-\end{bmatrix}
+\end{bmatrix},
 \end{split}\]</div>
-<p>Then the second <em>row</em> of <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> and the first <em>column</em> of <span class="math notranslate nohighlight">\(\mathbf{B}\)</span></p>
+<p>then the second <em>row</em> of <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> and the first <em>column</em> of <span class="math notranslate nohighlight">\(\mathbf{B}\)</span></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{bmatrix}
@@ -819,9 +819,9 @@ a_{m1} + b_{m1} &amp; a_{m2} + b_{m2} &amp; \dots  &amp; a_{mn} + b_{mn} \\
 \begin{bmatrix}
     58  &amp; 64  \\
     139 &amp; \phantom{154} \\
-\end{bmatrix}
+\end{bmatrix}.
 \end{split}\]</div>
-<p>And finally the second <em>row</em> of <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> and the second <em>column</em> of <span class="math notranslate nohighlight">\(\mathbf{B}\)</span></p>
+<p>Finally, we do the second <em>row</em> of <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> and the second <em>column</em> of <span class="math notranslate nohighlight">\(\mathbf{B}\)</span></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{bmatrix}
@@ -836,9 +836,13 @@ a_{m1} + b_{m1} &amp; a_{m2} + b_{m2} &amp; \dots  &amp; a_{mn} + b_{mn} \\
 \begin{bmatrix}
     58  &amp; 64  \\
     139 &amp; 154 \\
-\end{bmatrix}
+\end{bmatrix}.
 \end{split}\]</div>
-<p>If this is the first time you have come across matrix multiplication, this will seem very strange.</p>
+<p>If this is the first time you have come across matrix multiplication, this will seem very strange. For a deeper explanation of why this is the case, have a look at the info box below. However, the important thing to know from a practical perspective is that matrix-matrix, matrix-vector, vector-matrix and vector-vector multiplication are only defined when the number of <em>columns</em> in <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> matches the number of <em>rows</em> in <span class="math notranslate nohighlight">\(\mathbf{B}\)</span>. In addition, the resultant matrix will always have the same number of <em>rows</em> as <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> and the same number of <em>columns</em> as <span class="math notranslate nohighlight">\(\mathbf{B}\)</span>.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Advanced: Why is matrix multiplication so strange?</p>
+<p>To understand why…</p>
+</div>
 </section>
 <section id="transposition-and-vectorisation">
 <h3>Transposition and Vectorisation<a class="headerlink" href="#transposition-and-vectorisation" title="Link to this heading">#</a></h3>
