@@ -961,13 +961,137 @@ x_{11}a_{1} + x_{12}a_{2} + b \\
 \[
 10 \times \frac{1}{2} = \frac{10}{1} \times \frac{1}{2} = \frac{10}{2} = 5.
 \]</div>
-<p>This is known as the <em>multiplicative inverse</em> of a number. Formally, the inverse is whatever number can be multiplied by the original number to make 1. For instance, the multiplicative inverse of 2 is <span class="math notranslate nohighlight">\(\sfrac{1}{2}\)</span> because <span class="math notranslate nohighlight">\(2 \times \sfrac{1}{2} = 1\)</span>. This is written as</p>
+<p>This is known as the <em>multiplicative inverse</em> of a number. Formally, the inverse is whatever number can be multiplied by the original number to make 1. For instance, the multiplicative inverse of 2 is <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span> because <span class="math notranslate nohighlight">\(2 \times \frac{1}{2} = 1\)</span>. This is written as</p>
 <div class="math notranslate nohighlight">
 \[
 2^{-1} = \frac{1}{2}
 \]</div>
 <p>This is important because there is no definition of division for matrices. However, we know there is multiplication. As such, we perform division by multiplying one matrix by the <em>inverse</em> of another.</p>
-<p>A special matrix is the <em>identity</em> matrix.</p>
+<p>So what is the <em>inverse</em> of a matrix? Like a regular number, it is a matrix that, when multiplied by the original matrix, equals the matrix equivalent of the number 1. So what is the matrix equivalent of the number 1? This is a special matrix called the <em>identity</em> matrix that contains 1’s on the diagonal and 0’s everywhere else.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{I} = 
+\begin{bmatrix}
+    1 &amp; 0 &amp; \dots &amp; 0 \\
+    0 &amp; 1 &amp; \dots &amp; 0 \\
+    \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+    0 &amp; 0 &amp; \dots &amp; 1
+\end{bmatrix}
+\end{split}\]</div>
+<p>If you multiply any matrix by the identity matrix, it does not change and hence is equivalent to the number 1. You can try this yourself in MATLAB using the <code class="docutils literal notranslate"><span class="pre">eye(n)</span></code> function to create an <span class="math notranslate nohighlight">\(n \times n\)</span> identity matrix</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">I</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>I = 3x3 double
+     1     0     0
+     0     1     0
+     0     0     1
+</pre></body></html></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">4</span><span class="w"> </span><span class="s">5</span><span class="w"> </span><span class="s">6</span><span class="p">;</span><span class="w"> </span><span class="n">7</span><span class="w"> </span><span class="s">8</span><span class="w"> </span><span class="s">9]</span><span class="p">;</span>
+<span class="n">A</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">I</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>ans = 3x3 double
+     1     2     3
+     4     5     6
+     7     8     9
+</pre></body></html></div></div>
+</div>
+<p>The definition of the inverse of the matrix <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> is therefore the matrix that satisfies</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{A}\mathbf{A}^{-1} = \mathbf{I}.
+\]</div>
+<p>For example
+$<span class="math notranslate nohighlight">\(
+\mathbf{A} = 
+\begin{bmatrix}
+    4 &amp; 7 \\
+    2 &amp; 6
+\end{bmatrix} \quad
+\mathbf{A}^{-1} = 
+\begin{bmatrix}
+    \phantom{-}0.6 &amp; -0.7 \\
+    -0.2           &amp; \phantom{-}0.4
+\end{bmatrix},
+\)</span>$</p>
+<p>because</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+    4 &amp; 7 \\
+    2 &amp; 6
+\end{bmatrix} \times
+\begin{bmatrix}
+    \phantom{-}0.6 &amp; -0.7 \\
+    -0.2           &amp; \phantom{-}0.4
+\end{bmatrix} = 
+\begin{bmatrix}
+    1 &amp; 0 \\
+    0 &amp; 1
+\end{bmatrix}
+\end{split}\]</div>
+<p>In terms of finding an inverse, there are a multitude of algorithms available. However, we usually just trust MATLAB to do the right thing when we use the <code class="docutils literal notranslate"><span class="pre">inv()</span></code> function. For instance,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">4</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span><span class="w"> </span><span class="n">2</span><span class="w"> </span><span class="s">6]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>A = 2x2 double
+     4     7
+     2     6
+</pre></body></html></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">inv</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>ans = 2x2 double
+    0.6000   -0.7000
+   -0.2000    0.4000
+</pre></body></html></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nb">inv</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>ans = 2x2 double
+    1.0000         0
+         0    1.0000
+</pre></body></html></div></div>
+</div>
+<p>The key thing we need to understand is that there are restrictions on finding an inverse. Firstly, a matrix must be <em>square</em> to be invertible. Secondly, even if it is square, not every matrix has an inverse. As such, some matrices are <em>fundamentally uninvertible</em>. As an example</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">3</span><span class="w"> </span><span class="s">3</span><span class="w"> </span><span class="s">6</span><span class="p">;</span><span class="w"> </span><span class="n">7</span><span class="w"> </span><span class="s">2</span><span class="w"> </span><span class="s">9]</span><span class="p">;</span>
+<span class="nb">inv</span><span class="p">(</span><span class="n">A</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning: Matrix is close to singular or badly scaled. Results may be inaccurate. RCOND =  4.111937e-18.
+</pre></div>
+</div>
+</div>
+</div>
+<p>The reasons why this happens are beyond the scope of this lesson, but just know that in some cases we will not always be able to find a solution to an equation that contains a matrix inverse. We will see this more later in the course, but for now just known that matrix division is <em>tricky</em> and can get us in trouble if we are not careful.</p>
 </section>
 </section>
 <section id="some-additional-programming-concepts">
