@@ -6,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>MATLAB and Linear Algebra &#8212; Computational Tools</title>
   
@@ -28,13 +28,13 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -52,7 +52,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -442,10 +442,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error connecting to MATLAB. Check the status of MATLAB by clicking the &quot;Open MATLAB&quot; button. Retry after ensuring MATLAB is running successfully
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><html><body><pre>ans = 12</pre></body></html></div></div>
 </div>
 <p>However, if we accidentally typed <code class="docutils literal notranslate"><span class="pre">$</span></code> instead of <code class="docutils literal notranslate"><span class="pre">*</span></code>, we would get</p>
 <div class="cell docutils container">
@@ -647,10 +644,10 @@ document.write(`
 </section>
 <section id="matrix-operations">
 <h2>Matrix Operations<a class="headerlink" href="#matrix-operations" title="Link to this heading">#</a></h2>
-<p>Beyond being containers for collections of numbers, matrices and vectors are <em>mathematical objects</em>, that we can treat in similar fashion to regular numbers. As such, arithmetic operations, such as addition or subtraction, have matrix equivalents.</p>
+<p>Beyond being containers for collections of numbers, matrices and vectors are <em>mathematical objects</em>, that we can treat in similar fashion to regular numbers. As such, arithmetic operations such as addition or subtraction all have matrix equivalents. However, these equivalents may not be particularly intuitive, as we will see below.</p>
 <section id="addition-and-subtraction">
 <h3>Addition and Subtraction<a class="headerlink" href="#addition-and-subtraction" title="Link to this heading">#</a></h3>
-<p>Formally, for a matrix with <span class="math notranslate nohighlight">\(m\)</span> rows and <span class="math notranslate nohighlight">\(n\)</span> columns we can write that</p>
+<p>Starting with addition and subtraction, two matrices can be added or subtracted if they are the same dimensions. In this case, the operation is defined as the addition or subtraction of each individual element. For instance, for a matrix with <span class="math notranslate nohighlight">\(m\)</span> rows and <span class="math notranslate nohighlight">\(n\)</span> columns, we can write that</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \mathbf{C} = \mathbf{A} + \mathbf{B} =
@@ -661,13 +658,70 @@ a_{21} + b_{21} &amp; a_{22} + b_{22} &amp; \dots  &amp; a_{2n} + b_{2n} \\
 a_{m1} + b_{m1} &amp; a_{m2} + b_{m2} &amp; \dots  &amp; a_{mn} + b_{mn} \\
 \end{bmatrix}
 \end{split}\]</div>
-<p>where the ellipses (<span class="math notranslate nohighlight">\(\dots\)</span>) just mean “continue the pattern along this direction”. In this example, the row indices run from <span class="math notranslate nohighlight">\(i = 1,\dots,m\)</span> and the column indices run from <span class="math notranslate nohighlight">\(j = 1,\dots,n\)</span>.</p>
+<p>where the ellipses (<span class="math notranslate nohighlight">\(\dots\)</span>) just mean “continue the pattern along this direction”. In this example, the row indices run from <span class="math notranslate nohighlight">\(i = 1,\dots,m\)</span> and the column indices run from <span class="math notranslate nohighlight">\(j = 1,\dots,n\)</span>. We can see this in MATLAB</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">4</span><span class="w"> </span><span class="s">5</span><span class="w"> </span><span class="s">6]</span><span class="p">;</span>
+<span class="n">B</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w"> </span><span class="n">5</span><span class="w"> </span><span class="s">6</span><span class="w"> </span><span class="s">7]</span><span class="p">;</span>
+<span class="n">C</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">B</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>C = 2x3 double
+     3     5     7
+     9    11    13
+</pre></body></html></div></div>
+</div>
+<p>where the result <code class="docutils literal notranslate"><span class="pre">C</span></code> is the same as</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="w"> </span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="w"> </span><span class="mi">3</span><span class="o">+</span><span class="mi">4</span><span class="p">;</span><span class="w"> </span><span class="mi">4</span><span class="o">+</span><span class="mi">5</span><span class="w"> </span><span class="mi">5</span><span class="o">+</span><span class="mi">6</span><span class="w"> </span><span class="mi">6</span><span class="o">+</span><span class="mi">7</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>C = 2x3 double
+     3     5     7
+     9    11    13
+</pre></body></html></div></div>
+</div>
 <p>Matrix subtraction works in much the same way, so we have</p>
 <div class="math notranslate nohighlight">
 \[
 \mathbf{C} = \mathbf{A} - \mathbf{B}
 \]</div>
 <p>which, again, is only defined when <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> have the same dimensions. For instance</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span><span class="w"> </span><span class="n">3</span><span class="w"> </span><span class="s">2</span><span class="w"> </span><span class="s">3]</span><span class="p">;</span>
+<span class="n">B</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w"> </span><span class="n">5</span><span class="w"> </span><span class="s">6</span><span class="w"> </span><span class="s">7]</span><span class="p">;</span>
+<span class="n">C</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">B</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>C = 2x3 double
+    -1     1     2
+    -2    -4    -4
+</pre></body></html></div></div>
+</div>
+<p>If we try to add/subtract matrices of different dimensions MATLAB will throw an error</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w"> </span><span class="n">5</span><span class="w"> </span><span class="s">6</span><span class="w"> </span><span class="s">7</span><span class="p">;</span><span class="w"> </span><span class="n">8</span><span class="w"> </span><span class="s">9</span><span class="w"> </span><span class="s">6]</span><span class="p">;</span>
+<span class="n">B</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">6</span><span class="w"> </span><span class="s">5]</span><span class="p">;</span>
+<span class="n">C</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">B</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Arrays have incompatible sizes for this operation.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Formally, we say that addition or subtraction is <em>undefined</em> on matrices of different dimensions. Thus, we can see that the rules that govern what we can and cannot do with matrices are stricter than we may be used to with regular numbers.</p>
 </section>
 <section id="multiplication">
 <h3>Multiplication<a class="headerlink" href="#multiplication" title="Link to this heading">#</a></h3>
