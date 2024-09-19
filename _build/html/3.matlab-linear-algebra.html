@@ -847,6 +847,57 @@ a_{m1} + b_{m1} &amp; a_{m2} + b_{m2} &amp; \dots  &amp; a_{mn} + b_{mn} \\
 y = a_{1}x_{1} + a_{2}x_{2} + b
 \]</div>
 <p>where there are two <em>variables</em> (<span class="math notranslate nohighlight">\(x_{1}\)</span> and <span class="math notranslate nohighlight">\(x_{2}\)</span>) and three <em>coefficients</em> (<span class="math notranslate nohighlight">\(a_{1}\)</span>, <span class="math notranslate nohighlight">\(a_{2}\)</span> and <span class="math notranslate nohighlight">\(b\)</span>). Each variable is multiplied by its respective coefficient and then everything is added together to form the value of y. The important point here is that the variables can take on any value (hence they can <em>vary</em>), whereas the coefficients are usually fixed.</p>
+<p>Linear equations are incredibly useful in many branches of science for describing real-world phenomena. Often <em>multiple</em> equations are needed to model complex phenomena, which is known as a <em>system</em> of linear equations. These equations share the same coefficients, but have different values for the variables. For example, take the following system of 3 equations</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+y_{1} &amp;= a_{1}x_{11} + a_{2}x_{12} + b \\
+y_{2} &amp;= a_{1}x_{21} + a_{2}x_{22} + b \\
+y_{3} &amp;= a_{1}x_{31} + a_{2}x_{32} + b
+\end{split}\]</div>
+<p>Notice here that each equation has different <span class="math notranslate nohighlight">\(x\)</span> values (indicated by the different indices), but the same <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> values. The point of matrices is that they allow this system to be represented compactly <em>and</em> provides methods for solving for <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>. To see this, we can write the system as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+y_{1} \\
+y_{2} \\
+y_{3}
+\end{bmatrix}
+=
+\begin{bmatrix}
+x_{11} &amp; x_{12} &amp; 1 \\
+x_{21} &amp; x_{22} &amp; 1 \\
+x_{31} &amp; x_{32} &amp; 1 \\
+\end{bmatrix}
+\begin{bmatrix}
+a_{1} \\
+a_{2} \\
+b
+\end{bmatrix},
+\end{split}\]</div>
+<p>which can be expressed simply as</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{y} = \mathbf{X}\mathbf{a}.
+\]</div>
+<p>If we use the definition of matrix multiplication, notice that this recreates the linear equations that define the system</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+x_{11}           &amp; x_{12}           &amp; 1           \\
+\phantom{x_{21}} &amp; \phantom{x_{22}} &amp; \phantom{1} \\
+\phantom{x_{31}} &amp; \phantom{x_{32}} &amp; \phantom{1} \\
+\end{bmatrix}
+\begin{bmatrix}
+a_{1} \\
+a_{2} \\
+b
+\end{bmatrix} = 
+\begin{bmatrix}
+x_{11}a_{1} + x_{12}a_{2} + b \\
+\phantom{} \\
+\phantom
+\end{bmatrix}
+\end{split}\]</div>
 </div>
 </section>
 <section id="transposition-and-vectorisation">
