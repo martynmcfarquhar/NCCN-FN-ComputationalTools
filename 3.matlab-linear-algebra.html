@@ -840,8 +840,13 @@ a_{m1} + b_{m1} &amp; a_{m2} + b_{m2} &amp; \dots  &amp; a_{mn} + b_{mn} \\
 \end{split}\]</div>
 <p>If this is the first time you have come across matrix multiplication, this will seem very strange. For a deeper explanation of why this is the case, have a look at the info box below. However, the important thing to know from a practical perspective is that matrix-matrix, matrix-vector, vector-matrix and vector-vector multiplication are only defined when the number of <em>columns</em> in <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> matches the number of <em>rows</em> in <span class="math notranslate nohighlight">\(\mathbf{B}\)</span>. In addition, the resultant matrix will always have the same number of <em>rows</em> as <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> and the same number of <em>columns</em> as <span class="math notranslate nohighlight">\(\mathbf{B}\)</span>.</p>
 <div class="dropdown admonition">
-<p class="admonition-title">Advanced: Why is matrix multiplication so strange?</p>
-<p>To understand why…</p>
+<p class="admonition-title">Advanced: Why is Matrix Multiplication So Strange?</p>
+<p>To understand why matrix multiplication has the definition that it does, we need to first understand that linear algebra is all about <em>linear equations</em>. A linear equation is simply an equation where some numbers are multiplied by other numbers and then added together to form a weighted-sum. For example, the equation below is a linear equation</p>
+<div class="math notranslate nohighlight">
+\[
+y = a_{1}x_{1} + a_{2}x_{2} + b
+\]</div>
+<p>where there are two <em>variables</em> (<span class="math notranslate nohighlight">\(x_{1}\)</span> and <span class="math notranslate nohighlight">\(x_{2}\)</span>) and three <em>coefficients</em> (<span class="math notranslate nohighlight">\(a_{1}\)</span>, <span class="math notranslate nohighlight">\(a_{2}\)</span> and <span class="math notranslate nohighlight">\(b\)</span>). Each variable is multiplied by its respective coefficient and then everything is added together to form the value of y. The important point here is that the variables can take on any value (hence they can <em>vary</em>), whereas the coefficients are usually fixed.</p>
 </div>
 </section>
 <section id="transposition-and-vectorisation">
