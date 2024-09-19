@@ -391,7 +391,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-operations">Matrix Operations</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#addition-and-subtraction">Addition and Subtraction</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiplication">Multiplication</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transposition-and-vectorisation">Transposition and Vectorisation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transposition">Transposition</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#division">Division</a></li>
 </ul>
 </li>
@@ -879,7 +879,7 @@ b
 \[
 \mathbf{y} = \mathbf{X}\mathbf{a}.
 \]</div>
-<p>If we use the definition of matrix multiplication, notice that this recreates the linear equations that define the system</p>
+<p>If we use the definition of matrix multiplication, notice that this recreates the linear equations that define the system. For instance, the first row of <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> gives</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{bmatrix}
@@ -896,17 +896,77 @@ b
 x_{11}a_{1} + x_{12}a_{2} + b \\
 \phantom{} \\
 \phantom{}
-\end{bmatrix}
+\end{bmatrix}.
 \end{split}\]</div>
+<p>You can try this yourself for the remaining two rows. The important point here is that this only works because the rules of matrix multiplication make it work. So, the only way for a system of linear equations to be represented in matrices is by having a more convoluted definition of how multiplication works.</p>
 </div>
 </section>
-<section id="transposition-and-vectorisation">
-<h3>Transposition and Vectorisation<a class="headerlink" href="#transposition-and-vectorisation" title="Link to this heading">#</a></h3>
-<p>As we have seen above, the dimensions of a matrix or vector are very important for determining when matrix multiplication can be performed. As such, there exists certain matrix operations that work by rearranging matrices and vectors into different forms.</p>
+<section id="transposition">
+<h3>Transposition<a class="headerlink" href="#transposition" title="Link to this heading">#</a></h3>
+<p>As we have seen above, the dimensions of a matrix or vector are very important for determining when matrix multiplication can be performed. In practise, this means that the dimensions of matrices may need to be manipulated. One common approach is an operation called <em>transposition</em>, where the rows and the columns of a matrix are swapped. The notation for this is either <span class="math notranslate nohighlight">\(\mathbf{M}^{\prime}\)</span> or <span class="math notranslate nohighlight">\(\mathbf{M}^{T}\)</span> . So that if</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{M} = 
+\begin{bmatrix}
+1 &amp; 2 \\
+3 &amp; 4 \\
+5 &amp; 6
+\end{bmatrix},
+\end{split}\]</div>
+<p>the transpose would be</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{M}^{\prime} = 
+\begin{bmatrix}
+1 &amp; 3 &amp; 5 \\
+2 &amp; 4 &amp; 6
+\end{bmatrix}.
+\end{split}\]</div>
+<p>You can do this in MATLAB using the <code class="docutils literal notranslate"><span class="pre">'</span></code> symbol</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">M</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">3</span><span class="w"> </span><span class="s">4</span><span class="p">;</span><span class="w"> </span><span class="n">5</span><span class="w"> </span><span class="s">6]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>M = 3x2 double
+     1     2
+     3     4
+     5     6
+</pre></body></html></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">M</span><span class="o">&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>ans = 2x3 double
+     1     3     5
+     2     4     6
+</pre></body></html></div></div>
+</div>
 </section>
 <section id="division">
 <h3>Division<a class="headerlink" href="#division" title="Link to this heading">#</a></h3>
-<p>The use of <code class="docutils literal notranslate"><span class="pre">inv()</span></code> is an example of a <em>function</em>. This is a key programming concept that will be explained briefly at the end of this section.</p>
+<p>We have now covered matrix addition, subtraction and multiplication. So what about matrix division? Unfortunately, this is where things get complicated again. To start with, let us review a particular way of viewing division of normal numbers. As we should all know, division is simply splitting a number into equal parts. However, we can also view this as a <em>multiplication</em>. Specifically, multiplication by the <em>inverse</em> of another number. For instance</p>
+<div class="math notranslate nohighlight">
+\[
+10 \times \frac{1}{2} = 5
+\]</div>
+<p>because</p>
+<div class="math notranslate nohighlight">
+\[
+10 \times \frac{1}{2} = \frac{10}{1} \times \frac{1}{2} = \frac{10}{2} = 5.
+\]</div>
+<p>This is known as the <em>multiplicative inverse</em> of a number. Formally, the inverse is whatever number can be multiplied by the original number to make 1. For instance, the multiplicative inverse of 2 is <span class="math notranslate nohighlight">\(\sfrac{1}{2}\)</span> because <span class="math notranslate nohighlight">\(2 \times \sfrac{1}{2} = 1\)</span>. This is written as</p>
+<div class="math notranslate nohighlight">
+\[
+2^{-1} = \frac{1}{2}
+\]</div>
+<p>This is important because there is no definition of division for matrices. However, we know there is multiplication. As such, we perform division by multiplying one matrix by the <em>inverse</em> of another.</p>
 <p>A special matrix is the <em>identity</em> matrix.</p>
 </section>
 </section>
@@ -1452,7 +1512,7 @@ x_{11}a_{1} + x_{12}a_{2} + b \\
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-operations">Matrix Operations</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#addition-and-subtraction">Addition and Subtraction</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiplication">Multiplication</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transposition-and-vectorisation">Transposition and Vectorisation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transposition">Transposition</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#division">Division</a></li>
 </ul>
 </li>
