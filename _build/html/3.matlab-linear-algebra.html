@@ -395,6 +395,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#division">Division</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#element-wise-operations">Element-wise Operations</a></li>
 </ul>
             </nav>
         </div>
@@ -1072,6 +1073,41 @@ $<span class="math notranslate nohighlight">\(
 <p>The reasons why this happens are beyond the scope of this lesson, but just know that in some cases we will not always be able to find a solution to an equation that contains a matrix inverse. We will see this more later in the course, but for now just known that matrix division is <em>tricky</em> and can get us in trouble if we are not careful.</p>
 </section>
 </section>
+<section id="element-wise-operations">
+<h2>Element-wise Operations<a class="headerlink" href="#element-wise-operations" title="Link to this heading">#</a></h2>
+<p>In the discussion above, you may have intuitively thought that both multiplication and division would be equivalent to addition and subtraction, in the sense that we could take two matrices of the same dimensions and either multiply or divide the individual elements. Although this is not the formal definition of either matrix multiplication or division, we can do this in MATLAB using <em>element-wise</em> operations. This are usually distinguished in code by using a <code class="docutils literal notranslate"><span class="pre">.</span></code> before the operation symbol.</p>
+<p>As an example, if we wanted to multiply the individual elements of two matrices we can use <code class="docutils literal notranslate"><span class="pre">.*</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">4</span><span class="w">  </span><span class="s">5</span><span class="w">  </span><span class="s">6]</span><span class="p">;</span>
+<span class="n">B</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">7</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span><span class="w"> </span><span class="n">10</span><span class="w"> </span><span class="s">11</span><span class="w"> </span><span class="s">12]</span><span class="p">;</span>
+<span class="n">C</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">.*</span><span class="w"> </span><span class="n">B</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>C = 2x3 double
+     7    16    27
+    40    55    72
+</pre></body></html></div></div>
+</div>
+<p>Similarly, to divide the elements we can use <code class="docutils literal notranslate"><span class="pre">./</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">4</span><span class="w">  </span><span class="s">5</span><span class="w">  </span><span class="s">6]</span><span class="p">;</span>
+<span class="n">B</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">7</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span><span class="w"> </span><span class="n">10</span><span class="w"> </span><span class="s">11</span><span class="w"> </span><span class="s">12]</span><span class="p">;</span>
+<span class="n">C</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="o">./</span><span class="w"> </span><span class="n">B</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>C = 2x3 double
+    0.1429    0.2500    0.3333
+    0.4000    0.4545    0.5000
+</pre></body></html></div></div>
+</div>
+<p>We will see how these element-wise operators can be very useful when working with imaging data, where the images themselevs are respresented as matrices inside MATLAB.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1152,6 +1188,7 @@ $<span class="math notranslate nohighlight">\(
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#division">Division</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#element-wise-operations">Element-wise Operations</a></li>
 </ul>
   </nav></div>
 
