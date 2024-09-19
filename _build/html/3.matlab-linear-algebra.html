@@ -721,11 +721,124 @@ a_{m1} + b_{m1} &amp; a_{m2} + b_{m2} &amp; \dots  &amp; a_{mn} + b_{mn} \\
 </div>
 </div>
 </div>
-<p>Formally, we say that addition or subtraction is <em>undefined</em> on matrices of different dimensions. Thus, we can see that the rules that govern what we can and cannot do with matrices are stricter than we may be used to with regular numbers.</p>
+<p>Formally, we say that addition or subtraction is <em>undefined</em> for matrices of different dimensions. Thus, we can see that the rules that govern what we can and cannot do with matrices are stricter than we may be used to with regular numbers.</p>
 </section>
 <section id="multiplication">
 <h3>Multiplication<a class="headerlink" href="#multiplication" title="Link to this heading">#</a></h3>
-<p>Multiplying a matrix by a single number simply <em>scales</em> the matrix by that amount. As such, in the world of linear algebra, single numbers are often called <em>scalars</em>.</p>
+<p>Multiplication of matrices is also possible, however, this is a more complex operation than addition/subtraction. To begin with, multiplying a matrix by a single number simply <em>scales</em> the matrix by that amount. As such, in the world of linear algebra, single numbers are often called <em>scalars</em>. For instance</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">4</span><span class="w"> </span><span class="s">5</span><span class="w"> </span><span class="s">6]</span><span class="p">;</span>
+<span class="n">B</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">A</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>B = 2x3 double
+     2     4     6
+     8    10    12
+</pre></body></html></div></div>
+</div>
+<p>Unfortunately, that is where the simplicity ends. Let us consider the case of multiplying two matrices. For example</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{A} = 
+\begin{bmatrix}
+    1 &amp; 2 &amp; 3 \\
+    4 &amp; 5 &amp; 6
+\end{bmatrix} \quad
+\mathbf{B} = 
+\begin{bmatrix}
+    7  &amp; 8  \\
+    9  &amp; 10 \\
+    11 &amp; 12
+\end{bmatrix}
+\end{split}\]</div>
+<p>You may notice that these are different dimensions, which is something that will be explained soon. To begin with, let us see what MATLAB tells us <span class="math notranslate nohighlight">\(\mathbf{A} \times \mathbf{B}\)</span> is</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">4</span><span class="w"> </span><span class="s">5</span><span class="w"> </span><span class="s">6]</span><span class="p">;</span>
+<span class="n">B</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">7</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span><span class="w"> </span><span class="n">9</span><span class="w"> </span><span class="s">10</span><span class="p">;</span><span class="w"> </span><span class="n">11</span><span class="w"> </span><span class="s">12]</span><span class="p">;</span>
+<span class="n">C</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">A</span><span class="o">*</span><span class="n">B</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>C = 2x2 double
+    58    64
+   139   154
+</pre></body></html></div></div>
+</div>
+<p>You might want to take a moment to ponder this result and see if you can work out how MATLAB got there.</p>
+<p>To see how this multiplication works, start with the first <em>row</em> of <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> and the first <em>column</em> of <span class="math notranslate nohighlight">\(\mathbf{B}\)</span>. Each element in the row must be multiplied by each element in the column and then added together. In this example, we do <span class="math notranslate nohighlight">\((1 \times 7) + (2 \times 9) + (3 \times 11) = 58\)</span>. This sum then becomes the result for the first element of the new matrix.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+    1           &amp; 2           &amp; 3           \\
+    \phantom{4} &amp; \phantom{5} &amp; \phantom{6} \\
+\end{bmatrix} \times
+\begin{bmatrix}
+    7  &amp; \phantom{8}  \\
+    9  &amp; \phantom{10} \\
+    11 &amp; \phantom{12} \\
+\end{bmatrix} =
+\begin{bmatrix}
+    58            &amp; \phantom{64}  \\
+    \phantom{139} &amp; \phantom{154} \\
+\end{bmatrix}
+\end{split}\]</div>
+<p>We then do the same thing with the first <em>row</em> of <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> and the second <em>column</em> of <span class="math notranslate nohighlight">\(\mathbf{B}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+    1           &amp; 2           &amp; 3           \\
+    \phantom{4} &amp; \phantom{5} &amp; \phantom{6} \\
+\end{bmatrix} \times
+\begin{bmatrix}
+    \phantom{7}  &amp; 8  \\
+    \phantom{9}  &amp; 10 \\
+    \phantom{11} &amp; 12 \\
+\end{bmatrix} =
+\begin{bmatrix}
+    58            &amp; 64  \\
+    \phantom{139} &amp; \phantom{154} \\
+\end{bmatrix}
+\end{split}\]</div>
+<p>Then the second <em>row</em> of <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> and the first <em>column</em> of <span class="math notranslate nohighlight">\(\mathbf{B}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+    \phantom{1} &amp; \phantom{2} &amp; \phantom{3} \\
+    4           &amp; 5           &amp; 6 \\
+\end{bmatrix} \times
+\begin{bmatrix}
+    7  &amp; \phantom{8}  \\
+    9  &amp; \phantom{10} \\
+    11 &amp; \phantom{12} \\
+\end{bmatrix} =
+\begin{bmatrix}
+    58  &amp; 64  \\
+    139 &amp; \phantom{154} \\
+\end{bmatrix}
+\end{split}\]</div>
+<p>And finally the second <em>row</em> of <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> and the second <em>column</em> of <span class="math notranslate nohighlight">\(\mathbf{B}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+    \phantom{1} &amp; \phantom{2} &amp; \phantom{3} \\
+    4           &amp; 5           &amp; 6 \\
+\end{bmatrix} \times
+\begin{bmatrix}
+    \phantom{7}  &amp; 8  \\
+    \phantom{9}  &amp; 10 \\
+    \phantom{11} &amp; 12 \\
+\end{bmatrix} =
+\begin{bmatrix}
+    58  &amp; 64  \\
+    139 &amp; 154 \\
+\end{bmatrix}
+\end{split}\]</div>
+<p>If this is the first time you have come across matrix multiplication, this will seem very strange.</p>
 </section>
 <section id="transposition-and-vectorisation">
 <h3>Transposition and Vectorisation<a class="headerlink" href="#transposition-and-vectorisation" title="Link to this heading">#</a></h3>
