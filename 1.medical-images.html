@@ -398,16 +398,16 @@ document.write(`
 <section id="what-is-an-image">
 <h2>What is an Image?<a class="headerlink" href="#what-is-an-image" title="Link to this heading">#</a></h2>
 <p>Put simply, a digital image is an array of numbers that correspond to spatial locations. The elements of this array can be visualised by a computer by assigning each number a colour. For traditional digital images, the array is two-dimensional and each element is called a <em>picture-element</em> (pixel). These types of image contain three values for each pixel, corresponding to the colours <span style="color:red"><em>red</em></span>, <span style="color:green"><em>green</em></span> and <span style="color:blue"><em>blue</em></span>. Each pixel can therefore represent any colour within the <a class="reference external" href="https://en.wikipedia.org/wiki/RGB_color_model">RGB colour model</a>. Medical images, by comparison, are generally a bit simpler. A standard structural MR image, for example, is a three-dimensional array where each element contains only a single value representing the magnitude of the signal captured at that location. This can be thought of as a stack of 2D images (like a pack of playing cards), where each individual 2D image is known as a <em>slice</em>. Because these images are constructed from <em>cubes</em> rather than <em>squares</em>, each element is called a <em>volume-element</em> (voxel). To make this clear, <code class="xref std std-numref docutils literal notranslate"><span class="pre">voxel-render-fig</span></code> shows a rendering of a scan designed to make the voxel structure visible.</p>
-<figure class="align-default" id="id3">
-<img alt="_images/voxel-render-dark.png" src="_images/voxel-render-dark.png" />
+<figure class="align-default" id="voxel-render-fig" style="width: 700px">
+<img alt="_images/voxel-render-dark.png" class="only-dark" src="_images/voxel-render-dark.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Illustration of the voxel structure of a brain image.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Illustration of the voxel structure of a brain image.</span><a class="headerlink" href="#voxel-render-fig" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-default" id="id4">
-<img alt="_images/voxel-render-light.png" src="_images/voxel-render-light.png" />
+<figure class="align-default" id="id1" style="width: 700px">
+<img alt="_images/voxel-render-light.png" class="only-light" src="_images/voxel-render-light.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Illustration of the voxel structure of a brain image.</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Illustration of the voxel structure of a brain image.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Because medical images contain values of signal magnitudes rather than colour, an additional step is needed in order to visualise them. To draw an image on the screen, the computer needs to associate each voxel value with a colour. This is a process known as <em>colour mapping</em>, where the range of values in the image are associated with a pre-selected range of colours (known as a colour map). Typically, this is done by associating small numbers with dark colours and large numbers with bright colours. There are a variety of different colour maps that are used in neuroimaging. For instance, structural MR images traditionally use a <em>greyscale</em> map, whereas results from fMRI experiments are often shown using a <em>hot</em> colour map. To indicate how this mapping has been performed, displays of medical images will often include a <em>colour bar</em>, which is a visual representation of how the range of voxel values has been associated with the range of colours. These concepts are illustrated in <code class="xref std std-numref docutils literal notranslate"><span class="pre">camera-medical-fig</span></code>.</p>
@@ -417,10 +417,10 @@ document.write(`
 <p><span class="caption-number">Fig. 3 </span><span class="caption-text">Comparison between an image produced with a digital camera and a brain image.</span><a class="headerlink" href="#camera-medical-fig" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-default" id="id1">
+<figure class="align-default" id="id2">
 <a class="only-light reference internal image-reference" href="_images/camera-medical-light.png"><img alt="_images/camera-medical-light.png" class="only-light" src="_images/camera-medical-light.png" style="width: 700px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Comparison between an image produced with a digital camera and a brain image.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Comparison between an image produced with a digital camera and a brain image.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The important point here is that visual display is a <em>primary feature</em> of a traditional digital image, as the only information contained in the image is colour information. For a medical image, visual display can be considered a <em>secondary feature</em>, as the main information the image contains is not colour but <em>magnitude</em> of a biological signal. As such, it is important to remember that when it comes to analysing brain images, our primary interest is often the numbers inside the image and not necessarily what the image looks like. In that sense, we can more accurately think of medical images as maps of signal intensity, as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">image-intensities-fig</span></code>.</p>
@@ -430,10 +430,10 @@ document.write(`
 <p><span class="caption-number">Fig. 5 </span><span class="caption-text">Comparison between an image produced with a digital camera and a brain image.</span><a class="headerlink" href="#image-intensities-fig" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-default" id="id2">
+<figure class="align-default" id="id3">
 <a class="only-light reference internal image-reference" href="_images/image-intensities-light.png"><img alt="_images/image-intensities-light.png" class="only-light" src="_images/image-intensities-light.png" style="width: 700px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Comparison between an image produced with a digital camera and a brain image.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Comparison between an image produced with a digital camera and a brain image.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
