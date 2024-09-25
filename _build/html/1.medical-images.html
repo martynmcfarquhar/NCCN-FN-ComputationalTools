@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Medical Images &#8212; Computational Tools</title>
+    <title>1. Medical Images &#8212; Computational Tools</title>
   
   
   
@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = '1.medical-images';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Installing MATLAB and SPM" href="2.MATLAB-SPM.html" />
+    <link rel="next" title="2. Installing MATLAB and SPM" href="2.MATLAB-SPM.html" />
     <link rel="prev" title="Introduction" href="0.intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -180,10 +180,10 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Medical Images</a></li>
-<li class="toctree-l1"><a class="reference internal" href="2.MATLAB-SPM.html">Installing MATLAB and SPM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="3.matlab-linear-algebra.html">MATLAB and Linear Algebra</a></li>
-<li class="toctree-l1"><a class="reference internal" href="5.summary.html">Summary</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Medical Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2.MATLAB-SPM.html">2. Installing MATLAB and SPM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.matlab-linear-algebra.html">3. MATLAB and Linear Algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5.summary.html">4. Summary</a></li>
 </ul>
 
     </div>
@@ -379,8 +379,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-an-image">What is an Image?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-images-in-a-computer">Working with Images in a Computer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-an-image">1.1. What is an Image?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-images-in-a-computer">1.2. Working with Images in a Computer</a></li>
 </ul>
             </nav>
         </div>
@@ -393,52 +393,52 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="medical-images">
-<h1>Medical Images<a class="headerlink" href="#medical-images" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">1. </span>Medical Images<a class="headerlink" href="#medical-images" title="Link to this heading">#</a></h1>
 <p>As mentioned in the overview, there are three main computational tools we rely on for this course. The first is the MATLAB computing environment, the second is the Statistical Parametric Mapping (SPM) analysis software, and the third is the branch of mathematics known as linear algebra. Before discussing any of these topics in detail, it is useful to contextualise their utility for analysing brain images in order to motivate this lesson. As such, we are going to spend a little bit of time making sure we understand what a medical image actually is and how it is represented in a computer.</p>
 <section id="what-is-an-image">
-<h2>What is an Image?<a class="headerlink" href="#what-is-an-image" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.1. </span>What is an Image?<a class="headerlink" href="#what-is-an-image" title="Link to this heading">#</a></h2>
 <p>Put simply, a digital image is an array of numbers that correspond to spatial locations. The elements of this array can be visualised by a computer by assigning each number a colour. For traditional digital images, the array is two-dimensional and each element is called a <em>picture-element</em> (pixel). These types of image contain three values for each pixel, corresponding to the colours <span style="color:red"><em>red</em></span>, <span style="color:green"><em>green</em></span> and <span style="color:blue"><em>blue</em></span>. Each pixel can therefore represent any colour within the <a class="reference external" href="https://en.wikipedia.org/wiki/RGB_color_model">RGB colour model</a>. Medical images, by comparison, are generally a bit simpler. A standard structural MR image, for example, is a three-dimensional array where each element contains only a single value representing the magnitude of the signal captured at that location. This can be thought of as a stack of 2D images (like a pack of playing cards), where each individual 2D image is known as a <em>slice</em>. Because these images are constructed from <em>cubes</em> rather than <em>squares</em>, each element is called a <em>volume-element</em> (voxel). To make this clear, <code class="xref std std-numref docutils literal notranslate"><span class="pre">voxel-render-fig</span></code> shows a rendering of a scan designed to make the voxel structure visible.</p>
 <figure class="align-default" id="voxel-render-fig">
 <a class="only-dark reference internal image-reference" href="_images/voxel-render-dark.png"><img alt="_images/voxel-render-dark.png" class="only-dark" src="_images/voxel-render-dark.png" style="width: 700px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Illustration of the voxel structure of a brain image.</span><a class="headerlink" href="#voxel-render-fig" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 1.1 </span><span class="caption-text">Illustration of the voxel structure of a brain image.</span><a class="headerlink" href="#voxel-render-fig" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id1">
 <a class="only-light reference internal image-reference" href="_images/voxel-render-light.png"><img alt="_images/voxel-render-light.png" class="only-light" src="_images/voxel-render-light.png" style="width: 700px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Illustration of the voxel structure of a brain image.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 1.2 </span><span class="caption-text">Illustration of the voxel structure of a brain image.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Because medical images contain values of signal magnitudes rather than colour, an additional step is needed in order to visualise them. To draw an image on the screen, the computer needs to associate each voxel value with a colour. This is a process known as <em>colour mapping</em>, where the range of values in the image are associated with a pre-selected range of colours (known as a colour map). Typically, this is done by associating small numbers with dark colours and large numbers with bright colours. There are a variety of different colour maps that are used in neuroimaging. For instance, structural MR images traditionally use a <em>greyscale</em> map, whereas results from fMRI experiments are often shown using a <em>hot</em> colour map. To indicate how this mapping has been performed, displays of medical images will often include a <em>colour bar</em>, which is a visual representation of how the range of voxel values has been associated with the range of colours. These concepts are illustrated in <code class="xref std std-numref docutils literal notranslate"><span class="pre">camera-medical-fig</span></code>.</p>
 <figure class="align-default" id="camera-medical-fig">
 <a class="only-dark reference internal image-reference" href="_images/camera-medical-dark.png"><img alt="_images/camera-medical-dark.png" class="only-dark" src="_images/camera-medical-dark.png" style="width: 700px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Comparison between an image produced with a digital camera and a brain image.</span><a class="headerlink" href="#camera-medical-fig" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 1.3 </span><span class="caption-text">Comparison between an image produced with a digital camera and a brain image.</span><a class="headerlink" href="#camera-medical-fig" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id2">
 <a class="only-light reference internal image-reference" href="_images/camera-medical-light.png"><img alt="_images/camera-medical-light.png" class="only-light" src="_images/camera-medical-light.png" style="width: 700px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Comparison between an image produced with a digital camera and a brain image.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 1.4 </span><span class="caption-text">Comparison between an image produced with a digital camera and a brain image.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The important point here is that visual display is a <em>primary feature</em> of a traditional digital image, as the only information contained in the image is colour information. For a medical image, visual display can be considered a <em>secondary feature</em>, as the main information the image contains is not colour but <em>magnitude</em> of a biological signal. As such, it is important to remember that when it comes to analysing brain images, our primary interest is often the numbers inside the image and not necessarily what the image looks like. In that sense, we can more accurately think of medical images as maps of signal intensity, as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">image-intensities-fig</span></code>.</p>
 <figure class="align-default" id="image-intensities-fig">
 <a class="only-dark reference internal image-reference" href="_images/image-intensities-dark.png"><img alt="_images/image-intensities-dark.png" class="only-dark" src="_images/image-intensities-dark.png" style="width: 700px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Comparison between an image produced with a digital camera and a brain image.</span><a class="headerlink" href="#image-intensities-fig" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 1.5 </span><span class="caption-text">Comparison between an image produced with a digital camera and a brain image.</span><a class="headerlink" href="#image-intensities-fig" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id3">
 <a class="only-light reference internal image-reference" href="_images/image-intensities-light.png"><img alt="_images/image-intensities-light.png" class="only-light" src="_images/image-intensities-light.png" style="width: 700px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Comparison between an image produced with a digital camera and a brain image.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 1.6 </span><span class="caption-text">Comparison between an image produced with a digital camera and a brain image.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="working-with-images-in-a-computer">
-<h2>Working with Images in a Computer<a class="headerlink" href="#working-with-images-in-a-computer" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.2. </span>Working with Images in a Computer<a class="headerlink" href="#working-with-images-in-a-computer" title="Link to this heading">#</a></h2>
 <p>As explained above, a medical image is simply an array of numbers. This is all that a computer understands when an image is loaded into memory. The fact that this array can be visualised to represent a physical object is inconsequential, as far as the computer is concerned. Throughout this course, our basic aim is to take these arrays of numbers and do things that changes those numbers into different numbers. The hope is that these new numbers can be used to tell us something meaningful about the real-life object represented in the image. Our images start out as meaningful representations of a brain. Throughout all the processing steps, we have to make sure that this is retained in order for our images to have any utility as scientific data.</p>
 <p>In order to interact with and manipulate images we need a suitable computing environment that allows access to individual voxel values. In this course, we will be using <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> for this purpose. Usually we will not be doing this directly through <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> code, but rather indirectly using the methods implemented in the <code class="docutils literal notranslate"><span class="pre">SPM</span></code> software. <code class="docutils literal notranslate"><span class="pre">SPM</span></code> is written using the <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> language and as such leverages many of the core linear algebra tools that <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> contains. Because of this, understanding <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> and <code class="docutils literal notranslate"><span class="pre">SPM</span></code> also requires some understanding of linear algebra itself. With this in mind, the main aim of this lesson is to start creating some familiarity with each of these topics. It is not expected that you will have mastery by the end of this lesson, but what you should have is some understanding of what <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> and <code class="docutils literal notranslate"><span class="pre">SPM</span></code> are, some familiarity with basic <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> programming and some familiarity with basic linear algebra concepts.</p>
 </section>
@@ -488,7 +488,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Installing MATLAB and SPM</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Installing MATLAB and SPM</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -508,8 +508,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-an-image">What is an Image?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-images-in-a-computer">Working with Images in a Computer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-an-image">1.1. What is an Image?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-images-in-a-computer">1.2. Working with Images in a Computer</a></li>
 </ul>
   </nav></div>
 
