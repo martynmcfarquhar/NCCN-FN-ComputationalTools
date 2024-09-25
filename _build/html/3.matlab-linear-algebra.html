@@ -182,7 +182,7 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="1.medical-images.html">Medical Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1.medical-images.html">Understanding Medical Images</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2.MATLAB-SPM.html">Installing MATLAB and SPM</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">MATLAB and Linear Algebra</a></li>
 <li class="toctree-l1"><a class="reference internal" href="5.summary.html">Summary</a></li>
@@ -409,11 +409,11 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="matlab-and-linear-algebra">
 <h1>MATLAB and Linear Algebra<a class="headerlink" href="#matlab-and-linear-algebra" title="Link to this heading">#</a></h1>
-<p>As mentioned in the previous section, SPM is a software package that is built <em>on top</em> of the MATLAB scientific computing environment. Although possible to use SPM without any further knowledge of MATLAB, there is an argument to be made for being at least a <em>bit</em> familiar with the MATLAB language. Unfortunately, we do not have time on this course for in-depth training on computer programming. However, we can start using MATLAB as a way of understanding some of the mathematical theory that we will need going forward. This will do double-duty as both a way of getting familiar with MATLAB and a way of learning some mathematical concepts in a more interactive fashion.</p>
+<p>As mentioned in the previous section, <code class="docutils literal notranslate"><span class="pre">SPM</span></code> is a software package that is built <em>on top</em> of the <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> scientific computing environment. Although possible to use <code class="docutils literal notranslate"><span class="pre">SPM</span></code> without any further knowledge of <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code>, there is an argument to be made for being at least a <em>bit</em> familiar with the <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> language. Unfortunately, we do not have time on this course for in-depth training on computer programming. However, we can start using <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> as a way of understanding some of the mathematical theory that we will need going forward. This will do double-duty as a way of getting familiar with <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code>, as well as a way of learning some mathematical concepts in a more interactive fashion.</p>
 <section id="the-matlab-prompt">
 <h2>The MATLAB Prompt<a class="headerlink" href="#the-matlab-prompt" title="Link to this heading">#</a></h2>
-<p>In order to communicate with MATLAB, we use the MATLAB prompt. The prompt is signified in the Command Window by the two angled brackets <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>. These brackets indicate where we can type commands for MATLAB to interpret. We type something at the prompt, hit <kbd>ENTER</kbd> and then whatever we typed gets sent to the MATLAB interpreter. If MATLAB understands what we typed, it will return the answer. If MATLAB does not understand what we typed, it will return an error.</p>
-<p>As an example, if we wanted to use MATLAB as a highly over-engineered calculator, we could ask what <span class="math notranslate nohighlight">\(3 \times 4\)</span> is by typing</p>
+<p>In order to communicate with <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code>, we use the <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> prompt. The prompt is signified in the Command Window by the two angled brackets <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>. These brackets indicate where we can type commands for <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> to interpret. We type something at the prompt, hit <kbd>ENTER</kbd> and then whatever we typed gets sent to the interpreter. If <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> understands what we typed, it will return the answer. If <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> does not understand what we typed, it will return an error.</p>
+<p>As an example, if we wanted to use <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> as a highly over-engineered calculator, we could ask what <span class="math notranslate nohighlight">\(3 \times 4\)</span> is by typing</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">4</span>
@@ -437,14 +437,10 @@ document.write(`
 </div>
 </div>
 <p>In this instance, MATLAB has return an error because it does not undestand what <code class="docutils literal notranslate"><span class="pre">$</span></code> means in this context.</p>
-<div class="tip admonition">
-<p class="admonition-title">Tip</p>
-<p>When faced with an error, part of the skill of using a programming language is working out why a certain command failed. Even for seasoned programmers, errors are common. Errors will decrease with experience, but they will never disappear. The trick is not to panic, but to read what the error says slowly and carefully. Although tempting to assume the problem is with MATLAB, 9/10 it is a user error. As such, you need to try and develop some skills in discerning what seemingly cryptic error messages mean so that you do not get stuck. This comes with time and experience, but is a valuable skill to develop.</p>
-</div>
 </section>
 <section id="variables">
 <h2>Variables<a class="headerlink" href="#variables" title="Link to this heading">#</a></h2>
-<p>Before getting into some of the key linear algebra concepts, we first need to understand some programming fundamentals. One of the most basic characteristics of any programming language is the ability to store things in memory for later use. We do this by using <em>variables</em>, which you can think of as boxes with names that we can put something inside to keep for later. As an example, the code below shows the declaration of a variable called <code class="docutils literal notranslate"><span class="pre">a</span></code> and assigning it the number 5.</p>
+<p>Before getting into some of the key concepts of linear algebra, we first need to understand some programming fundamentals. One of the most basic characteristics of any programming language is the ability to store data in memory for later use. We do this by using <em>variables</em>, which you can think of as boxes with names that we can put data inside to keep for later. As an example, the code below shows the declaration of a variable called <code class="docutils literal notranslate"><span class="pre">a</span></code> and assigning it the number 5.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
@@ -452,7 +448,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Notice here that we have used a semi-colon <code class="docutils literal notranslate"><span class="pre">;</span></code> at the end of the line to suppress MATLAB printing any output. In declaring the variable <code class="docutils literal notranslate"><span class="pre">a</span></code>, we have created a box that we have called <code class="docutils literal notranslate"><span class="pre">a</span></code> that contains the number <code class="docutils literal notranslate"><span class="pre">5</span></code>. Now, every time we type <code class="docutils literal notranslate"><span class="pre">a</span></code>, MATLAB will open this box and use whatever is inside it. As such, if we just type <code class="docutils literal notranslate"><span class="pre">a</span></code> we get</p>
+<p>Notice here that we have used a semi-colon <code class="docutils literal notranslate"><span class="pre">;</span></code> at the end of the line to suppress <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> printing any output. In declaring the variable <code class="docutils literal notranslate"><span class="pre">a</span></code>, we have created a box that we have called <code class="docutils literal notranslate"><span class="pre">a</span></code> that contains the number <code class="docutils literal notranslate"><span class="pre">5</span></code>. Now, every time we type <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> will open this box and use whatever is inside it. As such, if we just type <code class="docutils literal notranslate"><span class="pre">a</span></code> we get</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>
@@ -474,7 +470,7 @@ document.write(`
 </div>
 <div class="tip admonition">
 <p class="admonition-title">Tip</p>
-<p>Whenever a value is not explicitly assigned to a variable, MATLAB will automatically assign it to a default variable called <code class="docutils literal notranslate"><span class="pre">ans</span></code> (for <em>answer</em>).</p>
+<p>Whenever a value is not explicitly assigned to a variable, <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> will automatically assign it to a default variable called <code class="docutils literal notranslate"><span class="pre">ans</span></code> (for <em>answer</em>).</p>
 </div>
 <p>Similarly, we could declare another variable with the name <code class="docutils literal notranslate"><span class="pre">b</span></code></p>
 <div class="cell docutils container">
@@ -497,12 +493,12 @@ document.write(`
 <p>Although these examples are quite trivial, the power of variables means that we can create code where we do not know the values of <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>. Perhaps their value depends upon the data we are using? Or perhaps it depends on some other factor that may change each time the code runs? Either way, it does not really matter what value they have if we know that we want to add them together. Thus we can write generic code that can be used irrespective of what the inputs will be.</p>
 <div class="tip admonition">
 <p class="admonition-title">Tip</p>
-<p>There are rules about naming variables. A variable name cannot start with a number, it cannot contain spaces and the only special character you can use is an underscore. You also need to be aware that MATLAB is case-sensitive, meaning that <code class="docutils literal notranslate"><span class="pre">variable_a</span></code> and <code class="docutils literal notranslate"><span class="pre">VARIABLE_A</span></code> will be interpreted as different entities. MATLAB does not know what you meant to type, only what you <em>did</em> type. In addition, remember that a variable can only hold one thing at a time and if you re-assign a variable then the original value will be lost.</p>
+<p>There are rules about naming variables. A variable name cannot start with a number, it cannot contain spaces and the only special character you can use is an underscore. You also need to be aware that <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> is case-sensitive, meaning that <code class="docutils literal notranslate"><span class="pre">variable_a</span></code> and <code class="docutils literal notranslate"><span class="pre">VARIABLE_A</span></code> will be interpreted as different entities. In addition, remember that a variable can only hold one thing at a time and if you re-assign a variable then the original value will be lost.</p>
 </div>
 </section>
 <section id="vectors-and-matrices">
 <h2>Vectors and Matrices<a class="headerlink" href="#vectors-and-matrices" title="Link to this heading">#</a></h2>
-<p>Now that we have the idea of variables in mind, we can move on to understanding some basic principles of linear algebra. Just to reiterate, these are concepts that we will need going forward on the course. As such, it is important to gain some familiarity at this point, even though the context will be missing. Just try and get a feel for some of these ideas and have a go at feeding the code into MATLAB. We will start to see all of this in action as the course progresses, so just do your best to try and understand it even if the relevance is not immediately apparent.</p>
+<p>Now that we have the idea of variables in mind, we can move on to understanding some basic principles of linear algebra. Just to reiterate, these are concepts that we will need going forward on the course. As such, it is important to gain some familiarity at this point, even though the context will be missing. Just try and get a feel for some of these ideas and have a go at feeding the code into <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code>. We will start to see all of this in action as the course progresses.</p>
 <p>To begin with, the most fundamental entities in linear algebra are <em>vectors</em> and <em>matrices</em>. We will be using these a lot on this course, so it is important to both understand what a vector or matrix is, as well as understanding how they can be manipulated.</p>
 <section id="vectors">
 <h3>Vectors<a class="headerlink" href="#vectors" title="Link to this heading">#</a></h3>
@@ -522,7 +518,7 @@ document.write(`
 \end{bmatrix}.
 \end{split}\]</div>
 <p>Here, <span class="math notranslate nohighlight">\(\mathbf{b}\)</span> is a 3-dimensional column-vector with elements <span class="math notranslate nohighlight">\(b_{1} = 6\)</span>, <span class="math notranslate nohighlight">\(b_{2} = 7\)</span> and <span class="math notranslate nohighlight">\(b_{3} = 8\)</span>. Although the orientation of a vector may seem like a trivial detail, we will soon see that this is very important.</p>
-<p>In MATLAB, a vector is defined using a list of numbers between square brackets. For instance, we can define the vector <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> in MATLAB as</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code>, a vector is defined using a list of numbers between square brackets. For instance, we can define the vector <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> in <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> as</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span>
@@ -597,7 +593,7 @@ document.write(`
 \end{bmatrix}
 \end{split}\]</div>
 <p>is a <span class="math notranslate nohighlight">\(2 \times 3\)</span> matrix consisting of elements <span class="math notranslate nohighlight">\(a_{11} = 1\)</span>, <span class="math notranslate nohighlight">\(a_{12} = 2\)</span> and so on. We can refer to any element generically as <span class="math notranslate nohighlight">\(a_{ij}\)</span> for row <span class="math notranslate nohighlight">\(i\)</span> and column <span class="math notranslate nohighlight">\(j\)</span>. Typically, matrices are written as upper-case <strong>bold</strong> letters, to distinguish them from vectors.</p>
-<p>In MATLAB, we declare matrices using square brackets and a combination of spaces and semi-colons. For example, we could declare <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> using</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code>, we declare matrices using square brackets and a combination of spaces and semi-colons. For example, we could declare <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> using</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">4</span><span class="w"> </span><span class="s">5</span><span class="w"> </span><span class="s">6]</span>
@@ -637,7 +633,7 @@ a_{21} + b_{21} &amp; a_{22} + b_{22} &amp; \dots  &amp; a_{2n} + b_{2n} \\
 a_{m1} + b_{m1} &amp; a_{m2} + b_{m2} &amp; \dots  &amp; a_{mn} + b_{mn} \\
 \end{bmatrix}
 \end{split}\]</div>
-<p>where the ellipses (<span class="math notranslate nohighlight">\(\dots\)</span>) just mean “continue the pattern along this direction”. In this example, the row indices run from <span class="math notranslate nohighlight">\(i = 1,\dots,m\)</span> and the column indices run from <span class="math notranslate nohighlight">\(j = 1,\dots,n\)</span>. We can see this in MATLAB</p>
+<p>where the ellipses (<span class="math notranslate nohighlight">\(\dots\)</span>) just mean “continue the pattern along this direction”. In this example, the row indices run from <span class="math notranslate nohighlight">\(i = 1,\dots,m\)</span> and the column indices run from <span class="math notranslate nohighlight">\(j = 1,\dots,n\)</span>. We can see this in <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">4</span><span class="w"> </span><span class="s">5</span><span class="w"> </span><span class="s">6]</span><span class="p">;</span>
@@ -685,7 +681,7 @@ a_{m1} + b_{m1} &amp; a_{m2} + b_{m2} &amp; \dots  &amp; a_{mn} + b_{mn} \\
     -2    -4    -4
 </pre></body></html></div></div>
 </div>
-<p>If we try to add/subtract matrices of different dimensions MATLAB will throw an error</p>
+<p>If we try to add/subtract matrices of different dimensions <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> will throw an error</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w"> </span><span class="n">5</span><span class="w"> </span><span class="s">6</span><span class="w"> </span><span class="s">7</span><span class="p">;</span><span class="w"> </span><span class="n">8</span><span class="w"> </span><span class="s">9</span><span class="w"> </span><span class="s">6]</span><span class="p">;</span>
@@ -733,7 +729,7 @@ a_{m1} + b_{m1} &amp; a_{m2} + b_{m2} &amp; \dots  &amp; a_{mn} + b_{mn} \\
     11 &amp; 12
 \end{bmatrix}
 \end{split}\]</div>
-<p>You may notice that these are different dimensions, which is something that will be explained soon. To begin with, let us see what MATLAB tells us <span class="math notranslate nohighlight">\(\mathbf{A} \times \mathbf{B}\)</span> is</p>
+<p>You may notice that these are different dimensions, which is something that will be explained soon. To begin with, let us see what <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> tells us <span class="math notranslate nohighlight">\(\mathbf{A} \times \mathbf{B}\)</span> is</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="n">4</span><span class="w"> </span><span class="s">5</span><span class="w"> </span><span class="s">6]</span><span class="p">;</span>
@@ -743,12 +739,12 @@ a_{m1} + b_{m1} &amp; a_{m2} + b_{m2} &amp; \dots  &amp; a_{mn} + b_{mn} \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><html><body><pre>C = 2x2 double
+<div class="output text_html"><html><body><pre>C = 2×2 double
     58    64
    139   154
 </pre></body></html></div></div>
 </div>
-<p>You might want to take a moment to ponder this result and see if you can work out how MATLAB got there.</p>
+<p>You might want to take a moment to ponder this result and see if you can work out how <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> got there.</p>
 <p>To see how this multiplication works, start with the first <em>row</em> of <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> and the first <em>column</em> of <span class="math notranslate nohighlight">\(\mathbf{B}\)</span>. Each element in the row must be multiplied by each element in the column and then added together. In this example, we do <span class="math notranslate nohighlight">\((1 \times 7) + (2 \times 9) + (3 \times 11) = 58\)</span>. This sum then becomes the result for the first element of the new matrix</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -901,7 +897,7 @@ x_{11}a_{1} + x_{12}a_{2} + b \\
 2 &amp; 4 &amp; 6
 \end{bmatrix}.
 \end{split}\]</div>
-<p>You can do this in MATLAB using the <code class="docutils literal notranslate"><span class="pre">'</span></code> symbol</p>
+<p>You can do this in <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> using the <code class="docutils literal notranslate"><span class="pre">'</span></code> symbol</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">M</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">3</span><span class="w"> </span><span class="s">4</span><span class="p">;</span><span class="w"> </span><span class="n">5</span><span class="w"> </span><span class="s">6]</span>
@@ -1020,7 +1016,7 @@ x_{11}a_{1} + x_{12}a_{2} + b \\
     0 &amp; 1
 \end{bmatrix}
 \end{split}\]</div>
-<p>In terms of finding an inverse, there are a multitude of algorithms available. However, we usually just trust MATLAB to do the right thing when we use the <code class="docutils literal notranslate"><span class="pre">inv()</span></code> function. For instance,</p>
+<p>In terms of finding an inverse, there are a multitude of algorithms available. However, we usually just trust <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> to do the right thing when we use the <code class="docutils literal notranslate"><span class="pre">inv()</span></code> function. For instance,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">4</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span><span class="w"> </span><span class="n">2</span><span class="w"> </span><span class="s">6]</span>
@@ -1076,7 +1072,7 @@ x_{11}a_{1} + x_{12}a_{2} + b \\
 </section>
 <section id="element-wise-operations">
 <h2>Element-wise Operations<a class="headerlink" href="#element-wise-operations" title="Link to this heading">#</a></h2>
-<p>In the discussion above, you may have intuitively thought that both multiplication and division would be equivalent to addition and subtraction, in the sense that we could take two matrices of the same dimensions and either multiply or divide the individual elements. Although this is not the formal definition of either matrix multiplication or division, we can do this in MATLAB using <em>element-wise</em> operations. This are usually distinguished in code by using a <code class="docutils literal notranslate"><span class="pre">.</span></code> before the operation symbol.</p>
+<p>In the discussion above, you may have intuitively thought that both multiplication and division would be equivalent to addition and subtraction, in the sense that we could take two matrices of the same dimensions and either multiply or divide the individual elements. Although this is not the formal definition of either matrix multiplication or division, we can do this in <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> using <em>element-wise</em> operations. This are usually distinguished in code by using a <code class="docutils literal notranslate"><span class="pre">.</span></code> before the operation symbol.</p>
 <p>As an example, if we wanted to multiply the individual elements of two matrices we can use <code class="docutils literal notranslate"><span class="pre">.*</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1107,7 +1103,7 @@ x_{11}a_{1} + x_{12}a_{2} + b \\
     0.4000    0.4545    0.5000
 </pre></body></html></div></div>
 </div>
-<p>We will see how these element-wise operators can be very useful when working with imaging data, where the images themselevs are respresented as matrices inside MATLAB.</p>
+<p>We will see how these element-wise operators can be very useful when working with imaging data, where the images themselevs are respresented as matrices inside <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code>.</p>
 </section>
 </section>
 
