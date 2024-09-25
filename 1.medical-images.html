@@ -404,30 +404,18 @@ document.write(`
 <p><span class="caption-number">Fig. 1 </span><span class="caption-text">Illustration of the voxel structure of a brain image.</span><a class="headerlink" href="#voxel-render-fig" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Because medical images contain values of signal magnitudes rather than colour, an additional step is needed in order to visualise them. To draw an image on the screen, the computer needs to associate each voxel value with a colour. This is a process known as <em>colour mapping</em>, where the range of values in the image are associated with a pre-selected range of colours (known as a colour map). Typically, this is done by associating small numbers with dark colours and large numbers with bright colours. There are a variety of different colour maps that are used in neuroimaging. For instance, structural MR images traditionally use a <em>greyscale</em> map, whereas results from fMRI experiments are often shown using a <em>hot</em> colour map. To indicate how this mapping has been performed, displays of medical images will often include a <em>colour bar</em>, which is a visual representation of how the range of voxel values has been associated with the range of colours. These concepts are illustrated in the figure below.</p>
+<p>Because medical images contain values of signal magnitudes rather than colour, an additional step is needed in order to visualise them. To draw an image on the screen, the computer needs to associate each voxel value with a colour. This is a process known as <em>colour mapping</em>, where the range of values in the image are associated with a pre-selected range of colours (known as a colour map). Typically, this is done by associating small numbers with dark colours and large numbers with bright colours. There are a variety of different colour maps that are used in neuroimaging. For instance, structural MR images traditionally use a <em>greyscale</em> map, whereas results from fMRI experiments are often shown using a <em>hot</em> colour map. To indicate how this mapping has been performed, displays of medical images will often include a <em>colour bar</em>, which is a visual representation of how the range of voxel values has been associated with the range of colours. These concepts are illustrated in <a class="reference internal" href="#camera-medical-fig"><span class="std std-numref">Fig. 2</span></a>.</p>
 <figure class="align-default" id="camera-medical-fig">
-<a class="only-dark reference internal image-reference" href="_images/camera-medical-dark.png"><img alt="_images/camera-medical-dark.png" class="only-dark" src="_images/camera-medical-dark.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="_images/camera-medical-dark.png"><img alt="_images/camera-medical-dark.png" src="_images/camera-medical-dark.png" style="width: 800px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 2 </span><span class="caption-text">Comparison between an image produced with a digital camera and a brain image.</span><a class="headerlink" href="#camera-medical-fig" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-default" id="id1">
-<a class="only-light reference internal image-reference" href="_images/camera-medical-light.png"><img alt="_images/camera-medical-light.png" class="only-light" src="_images/camera-medical-light.png" style="width: 800px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Comparison between an image produced with a digital camera and a brain image.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>The important point here is that visual display is a <em>primary feature</em> of a traditional digital image, as the only information contained in the image is colour information. For a medical image, visual display can be considered a <em>secondary feature</em>, as the main information the image contains is not colour but <em>magnitude</em> of a biological signal. As such, it is important to remember that when it comes to analysing brain images, our primary interest is often the numbers inside the image and not necessarily what the image looks like. In that sense, we can more accurately think of medical images as maps of signal intensity, as shown below.</p>
+<p>The important point here is that visual display is a <em>primary feature</em> of a traditional digital image, as the only information contained in the image is colour information. For a medical image, visual display can be considered a <em>secondary feature</em>, as the main information the image contains is not colour but <em>magnitude</em> of a biological signal. As such, it is important to remember that when it comes to analysing brain images, our primary interest is often the numbers inside the image and not necessarily what the image looks like. In that sense, we can more accurately think of medical images as maps of signal intensity, as shown in <a class="reference internal" href="#image-intensities-fig"><span class="std std-numref">Fig. 3</span></a>.</p>
 <figure class="align-default" id="image-intensities-fig">
-<a class="only-dark reference internal image-reference" href="_images/image-intensities-dark.png"><img alt="_images/image-intensities-dark.png" class="only-dark" src="_images/image-intensities-dark.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="_images/image-intensities-dark.png"><img alt="_images/image-intensities-dark.png" src="_images/image-intensities-dark.png" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Illustration of how a brain image can be conceptualised as a map of signal intensity.</span><a class="headerlink" href="#image-intensities-fig" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<figure class="align-default" id="id2">
-<a class="only-light reference internal image-reference" href="_images/image-intensities-light.png"><img alt="_images/image-intensities-light.png" class="only-light" src="_images/image-intensities-light.png" style="width: 800px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Illustration of how a brain image can be conceptualised as a map of signal intensity.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Illustration of how a brain image can be conceptualised as a map of signal intensity.</span><a class="headerlink" href="#image-intensities-fig" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
