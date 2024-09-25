@@ -3,8 +3,6 @@
 
 format: jb-book
 root: 0.intro
-options:
-  numbered: true
 chapters:
 - file: 1.medical-images
 - file: 2.MATLAB-SPM
