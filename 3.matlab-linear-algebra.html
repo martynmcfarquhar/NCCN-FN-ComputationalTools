@@ -1,8 +1,9 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="./" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -28,35 +29,33 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.4cbf315f70debaebd550c87a6162cf0f.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=9a2dae69"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '3.matlab-linear-algebra';</script>
@@ -408,10 +407,10 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="matlab-and-linear-algebra">
-<h1>MATLAB and Linear Algebra<a class="headerlink" href="#matlab-and-linear-algebra" title="Link to this heading">#</a></h1>
+<h1>MATLAB and Linear Algebra<a class="headerlink" href="#matlab-and-linear-algebra" title="Permalink to this heading">#</a></h1>
 <p>As mentioned in the previous section, <code class="docutils literal notranslate"><span class="pre">SPM</span></code> is a software package that is built <em>on top</em> of the <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> scientific computing environment. Although possible to use <code class="docutils literal notranslate"><span class="pre">SPM</span></code> without any further knowledge of <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code>, there is an argument to be made for being at least a <em>bit</em> familiar with the <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> language. Unfortunately, we do not have time on this course for in-depth training on computer programming. However, we can start using <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> as a way of understanding some of the mathematical theory that we will need going forward. This will do double-duty as a way of getting familiar with <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code>, as well as a way of learning some mathematical concepts in a more interactive fashion.</p>
 <section id="the-matlab-prompt">
-<h2>The MATLAB Prompt<a class="headerlink" href="#the-matlab-prompt" title="Link to this heading">#</a></h2>
+<h2>The MATLAB Prompt<a class="headerlink" href="#the-matlab-prompt" title="Permalink to this heading">#</a></h2>
 <p>In order to communicate with <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code>, we use the <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> prompt. The prompt is signified in the Command Window by the two angled brackets <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>. These brackets indicate where we can type commands for <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> to interpret. We type something at the prompt, hit <kbd>ENTER</kbd> and then whatever we typed gets sent to the interpreter. If <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> understands what we typed, it will return the answer. If <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> does not understand what we typed, it will return an error.</p>
 <p>As an example, if we wanted to use <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> as a highly over-engineered calculator, we could ask what <span class="math notranslate nohighlight">\(3 \times 4\)</span> is by typing</p>
 <div class="cell docutils container">
@@ -439,7 +438,7 @@ document.write(`
 <p>In this instance, MATLAB has return an error because it does not undestand what <code class="docutils literal notranslate"><span class="pre">$</span></code> means in this context.</p>
 </section>
 <section id="variables">
-<h2>Variables<a class="headerlink" href="#variables" title="Link to this heading">#</a></h2>
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this heading">#</a></h2>
 <p>Before getting into some of the key concepts of linear algebra, we first need to understand some programming fundamentals. One of the most basic characteristics of any programming language is the ability to store data in memory for later use. We do this by using <em>variables</em>, which you can think of as boxes with names that we can put data inside to keep for later. As an example, the code below shows the declaration of a variable called <code class="docutils literal notranslate"><span class="pre">a</span></code> and assigning it the number 5.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -497,11 +496,11 @@ document.write(`
 </div>
 </section>
 <section id="vectors-and-matrices">
-<h2>Vectors and Matrices<a class="headerlink" href="#vectors-and-matrices" title="Link to this heading">#</a></h2>
+<h2>Vectors and Matrices<a class="headerlink" href="#vectors-and-matrices" title="Permalink to this heading">#</a></h2>
 <p>Now that we have the idea of variables in mind, we can move on to understanding some basic principles of linear algebra. Just to reiterate, these are concepts that we will need going forward on the course. As such, it is important to gain some familiarity at this point, even though the context will be missing. Just try and get a feel for some of these ideas and have a go at feeding the code into <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code>. We will start to see all of this in action as the course progresses.</p>
 <p>To begin with, the most fundamental entities in linear algebra are <em>vectors</em> and <em>matrices</em>. We will be using these a lot on this course, so it is important to both understand what a vector or matrix is, as well as understanding how they can be manipulated.</p>
 <section id="vectors">
-<h3>Vectors<a class="headerlink" href="#vectors" title="Link to this heading">#</a></h3>
+<h3>Vectors<a class="headerlink" href="#vectors" title="Permalink to this heading">#</a></h3>
 <p>A vector is simply a list of numbers. For instance</p>
 <div class="math notranslate nohighlight">
 \[
@@ -582,7 +581,7 @@ document.write(`
 </div>
 </section>
 <section id="matrices">
-<h3>Matrices<a class="headerlink" href="#matrices" title="Link to this heading">#</a></h3>
+<h3>Matrices<a class="headerlink" href="#matrices" title="Permalink to this heading">#</a></h3>
 <p>A matrix is simply a collection of vectors. We can either think of a matrix as a collection of column-vectors, or as a collection of row-vectors. Either way, a matrix has multiple rows <em>and</em> multiple columns. For instance</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -618,10 +617,10 @@ document.write(`
 </section>
 </section>
 <section id="matrix-operations">
-<h2>Matrix Operations<a class="headerlink" href="#matrix-operations" title="Link to this heading">#</a></h2>
+<h2>Matrix Operations<a class="headerlink" href="#matrix-operations" title="Permalink to this heading">#</a></h2>
 <p>Beyond being containers for collections of numbers, matrices and vectors are <em>mathematical objects</em>, that we can treat in similar fashion to regular numbers. As such, arithmetic operations such as addition or subtraction all have matrix equivalents. However, these equivalents may not be particularly intuitive, as we will see below.</p>
 <section id="addition-and-subtraction">
-<h3>Addition and Subtraction<a class="headerlink" href="#addition-and-subtraction" title="Link to this heading">#</a></h3>
+<h3>Addition and Subtraction<a class="headerlink" href="#addition-and-subtraction" title="Permalink to this heading">#</a></h3>
 <p>Starting with addition and subtraction, two matrices can be added or subtracted if they are the same dimensions. In this case, the operation is defined as the addition or subtraction of each individual element. For instance, for a matrix with <span class="math notranslate nohighlight">\(m\)</span> rows and <span class="math notranslate nohighlight">\(n\)</span> columns, we can write that</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -699,7 +698,7 @@ a_{m1} + b_{m1} &amp; a_{m2} + b_{m2} &amp; \dots  &amp; a_{mn} + b_{mn} \\
 <p>Formally, we say that addition or subtraction is <em>undefined</em> for matrices of different dimensions. Thus, we can see that the rules that govern what we can and cannot do with matrices are stricter than we may be used to with regular numbers.</p>
 </section>
 <section id="multiplication">
-<h3>Multiplication<a class="headerlink" href="#multiplication" title="Link to this heading">#</a></h3>
+<h3>Multiplication<a class="headerlink" href="#multiplication" title="Permalink to this heading">#</a></h3>
 <p>Multiplication of matrices is also possible, however, this is a more complex operation than addition/subtraction. To begin with, multiplying a matrix by a single number simply <em>scales</em> the matrix by that amount. As such, in the world of linear algebra, single numbers are often called <em>scalars</em>. For instance</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -877,7 +876,7 @@ x_{11}a_{1} + x_{12}a_{2} + b \\
 </div>
 </section>
 <section id="transposition">
-<h3>Transposition<a class="headerlink" href="#transposition" title="Link to this heading">#</a></h3>
+<h3>Transposition<a class="headerlink" href="#transposition" title="Permalink to this heading">#</a></h3>
 <p>As we have seen above, the dimensions of a matrix or vector are very important for determining when matrix multiplication can be performed. In practise, this means that the dimensions of matrices may need to be manipulated. One common approach is an operation called <em>transposition</em>, where the rows and the columns of a matrix are swapped. The notation for this is either <span class="math notranslate nohighlight">\(\mathbf{M}^{\prime}\)</span> or <span class="math notranslate nohighlight">\(\mathbf{M}^{T}\)</span> . So that if</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -925,7 +924,7 @@ x_{11}a_{1} + x_{12}a_{2} + b \\
 </div>
 </section>
 <section id="division">
-<h3>Division<a class="headerlink" href="#division" title="Link to this heading">#</a></h3>
+<h3>Division<a class="headerlink" href="#division" title="Permalink to this heading">#</a></h3>
 <p>We have now covered matrix addition, subtraction and multiplication. So what about matrix division? Unfortunately, this is where things get complicated again. To start with, let us review a particular way of viewing division of normal numbers. As we should all know, division is simply splitting a number into equal parts. However, we can also view this as a <em>multiplication</em>. Specifically, multiplication by the <em>inverse</em> of another number. For instance</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1071,7 +1070,7 @@ x_{11}a_{1} + x_{12}a_{2} + b \\
 </section>
 </section>
 <section id="element-wise-operations">
-<h2>Element-wise Operations<a class="headerlink" href="#element-wise-operations" title="Link to this heading">#</a></h2>
+<h2>Element-wise Operations<a class="headerlink" href="#element-wise-operations" title="Permalink to this heading">#</a></h2>
 <p>In the discussion above, you may have intuitively thought that both multiplication and division would be equivalent to addition and subtraction, in the sense that we could take two matrices of the same dimensions and either multiply or divide the individual elements. Although this is not the formal definition of either matrix multiplication or division, we can do this in <code class="docutils literal notranslate"><span class="pre">MATLAB</span></code> using <em>element-wise</em> operations. These are usually distinguished in code by using a <code class="docutils literal notranslate"><span class="pre">.</span></code> before the operation symbol.</p>
 <p>As an example, if we wanted to multiply the individual elements of two matrices we can use <code class="docutils literal notranslate"><span class="pre">.*</span></code> instead of <code class="docutils literal notranslate"><span class="pre">*</span></code></p>
 <div class="cell docutils container">
